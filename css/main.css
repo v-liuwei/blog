@@ -17,10 +17,10 @@
   --btn-default-hover-bg: #222;
   --btn-default-hover-color: #fff;
   --btn-default-hover-border-color: #222;
-  --highlight-background: #ebf8ff;
-  --highlight-foreground: #516d7b;
-  --highlight-gutter-background: #dbeaf1;
-  --highlight-gutter-foreground: #607a88;
+  --highlight-background: #efecf4;
+  --highlight-foreground: #585260;
+  --highlight-gutter-background: #dfdce5;
+  --highlight-gutter-foreground: #67616e;
 }
 html {
   line-height: 1.15; /* 1 */
@@ -359,17 +359,17 @@ td {
   top: -5px;
   transform: rotate(45deg);
 }
-/* Base16 Atelier Lakeside Light - Theme */
-/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/lakeside) */
+/* Base16 Atelier Cave Light - Theme */
+/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/cave) */
 /* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
 
-/* Atelier-Lakeside Comment */
+/* Atelier-Cave Comment */
 .hljs-comment,
 .hljs-quote {
-  color: #5a7b8c;
+  color: #655f6d;
 }
 
-/* Atelier-Lakeside Red */
+/* Atelier-Cave Red */
 .hljs-variable,
 .hljs-template-variable,
 .hljs-attribute,
@@ -378,12 +378,13 @@ td {
 .hljs-regexp,
 .hljs-link,
 .hljs-name,
+.hljs-name,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: #d22d72;
+  color: #be4678;
 }
 
-/* Atelier-Lakeside Orange */
+/* Atelier-Cave Orange */
 .hljs-number,
 .hljs-meta,
 .hljs-built_in,
@@ -391,33 +392,48 @@ td {
 .hljs-literal,
 .hljs-type,
 .hljs-params {
-  color: #935c25;
+  color: #aa573c;
 }
 
-/* Atelier-Lakeside Green */
+/* Atelier-Cave Green */
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet {
-  color: #568c3b;
+  color: #2a9292;
 }
 
-/* Atelier-Lakeside Blue */
+/* Atelier-Cave Blue */
 .hljs-title,
 .hljs-section {
-  color: #257fad;
+  color: #576ddb;
 }
 
-/* Atelier-Lakeside Purple */
+/* Atelier-Cave Purple */
 .hljs-keyword,
 .hljs-selector-tag {
-  color: #6b6bb8;
+  color: #955ae7;
+}
+
+.hljs-deletion,
+.hljs-addition {
+  color: #19171c;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: #be4678;
+}
+
+.hljs-addition {
+  background-color: #2a9292;
 }
 
 .hljs {
   display: block;
   overflow-x: auto;
-  background: #ebf8ff;
-  color: #516d7b;
+  background: #efecf4;
+  color: #585260;
   padding: 0.5em;
 }
 
@@ -1234,7 +1250,7 @@ pre code {
   display: flex;
   flex-shrink: 0;
   padding: 0 10px;
-  border-radius: 15px;
+  border-radius: 15px 15px 0px 0px;
 }
 .use-motion .header,
 .use-motion .site-brand-container .toggle {
@@ -3088,4 +3104,18 @@ mjx-container[display="true"] + br {
   align: center;
   height: 1rem;
   width: 1rem;
+}
+body {
+  background: url("/uploads/images/coldplay_wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+.main-inner {
+  background: #fff;
+  opacity: 0.9;
+}
+.content {
+  padding: 30px 60px 30px 60px;
 }

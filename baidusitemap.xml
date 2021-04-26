@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://pybug.tech/blog/python-class-based-descriptor-applied-to-method/</loc>
+    <lastmod>2021-04-26</lastmod>
+  </url>
+  <url>
     <loc>https://pybug.tech/blog/LaTeX-text-and-symbols/</loc>
     <lastmod>2021-04-26</lastmod>
   </url>
   <url>
     <loc>https://pybug.tech/blog/LaTeX-paragraph-and-text-environment/</loc>
-    <lastmod>2021-04-26</lastmod>
-  </url>
-  <url>
-    <loc>https://pybug.tech/blog/python-class-based-descriptor-applied-to-method/</loc>
     <lastmod>2021-04-26</lastmod>
   </url>
 </urlset> 
