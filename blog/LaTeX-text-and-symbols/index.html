@@ -28,31 +28,31 @@
   <meta name="description" content="本文介绍$\LaTeX$中最基本的对象：字符、盒子的使用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文字与符号">
-<meta property="og:url" content="https://pybug.tech/blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/">
+<meta property="og:url" content="https://pybug.tech/blog/LaTeX-text-and-symbols/">
 <meta property="og:site_name" content="PyBug🐞">
 <meta property="og:description" content="本文介绍$\LaTeX$中最基本的对象：字符、盒子的使用。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pybug.tech/latex_accents.jpg">
-<meta property="og:image" content="https://pybug.tech/latex_special_letter.jpg">
-<meta property="og:image" content="https://pybug.tech/latex_special_symbol.jpg">
-<meta property="og:image" content="https://pybug.tech/latex_font_shape.jpg">
-<meta property="og:image" content="https://pybug.tech/latex_ulem.jpg">
-<meta property="og:image" content="https://pybug.tech/latex_fontsize.jpg">
-<meta property="og:image" content="https://pybug.tech/latex_space.jpg">
-<meta property="og:image" content="https://pybug.tech/latex_space_able.jpg">
-<meta property="og:image" content="https://pybug.tech/latex_box.jpg">
-<meta property="og:image" content="https://pybug.tech/latex_space_and_box_eg.jpg">
+<meta property="og:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_accents.jpg">
+<meta property="og:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_special_letter.jpg">
+<meta property="og:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_special_symbol.jpg">
+<meta property="og:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_font_shape.jpg">
+<meta property="og:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_ulem.jpg">
+<meta property="og:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_fontsize.jpg">
+<meta property="og:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_space.jpg">
+<meta property="og:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_space_able.jpg">
+<meta property="og:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_box.jpg">
+<meta property="og:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_space_and_box_eg.jpg">
 <meta property="article:published_time" content="2020-01-18T05:56:33.000Z">
-<meta property="article:modified_time" content="2021-04-26T10:12:35.933Z">
+<meta property="article:modified_time" content="2021-04-26T14:05:23.230Z">
 <meta property="article:author" content="Infiniv">
 <meta property="article:tag" content="LaTeX">
 <meta property="article:tag" content="排版">
 <meta property="article:tag" content="字体">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pybug.tech/latex_accents.jpg">
+<meta name="twitter:image" content="https://pybug.tech/.tech//LaTeX-text-and-symbols/latex_accents.jpg">
 
 
-<link rel="canonical" href="https://pybug.tech/blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/">
+<link rel="canonical" href="https://pybug.tech/blog/LaTeX-text-and-symbols/">
 
 
 <script data-pjax class="page-configurations">
@@ -331,7 +331,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://pybug.tech/blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/">
+    <link itemprop="mainEntityOfPage" href="https://pybug.tech/blog/LaTeX-text-and-symbols/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.ico">
@@ -365,7 +365,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：4月 26日, 2021 18:12" itemprop="dateModified" datetime="2021-04-26T18:12:35+08:00">4月 26日, 2021</time>
+        <time title="修改时间：4月 26日, 2021 22:05" itemprop="dateModified" datetime="2021-04-26T22:05:23+08:00">4月 26日, 2021</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -401,8 +401,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/" itemprop="commentCount"></span>
+    <a title="disqus" href="/blog/LaTeX-text-and-symbols/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/LaTeX-text-and-symbols/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -423,9 +423,9 @@
 <p>显示ASCII以外的字母表需要编辑器所使用的字体的支持。并且$\TeX$系统输出时所使用的字体也必须要能直接显示这些字母。</p>
 <p>而传统的解决方案是使用特殊的命令，给字母加上重音的标记，使用特殊字母或者整体更换字母表。</p>
 <p>重音是指加在字母上的标记。$\LaTeX$支持的重音记号及其命令如表1：</p>
-<p><img data-src="/latex_accents.jpg"></p>
+<p><img data-src="/.tech//LaTeX-text-and-symbols/latex_accents.jpg"></p>
 <p>使用命令可以输入的$\LaTeX$字母，见表2。其中<code>\ij</code> <code>\IJ</code> <code>\SS</code>是字母连写，在默认的字体中没有区别。</p>
-<p><img data-src="/latex_special_letter.jpg"></p>
+<p><img data-src="/.tech//LaTeX-text-and-symbols/latex_special_letter.jpg"></p>
 <p>如果还要输入希腊字母和西里尔字母，默认的字体就不够了，需要更换其他编码和字体。为此，$\LaTeX$提供了babel宏包，可以方便同时访问多种语言的字母表。babel宏包可带有一个或多个语言的可选参数，支持不同的语言，如</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>[greek,english]&#123;babel&#125;</span><br></pre></td></tr></table></figure>
 
@@ -464,7 +464,7 @@
 <p>分段也可以用<code>\par</code>命令生成，这种用法一般只在命令或环境定义的内部使用，而普通行文中不宜出现。与连续的空行类似，连续的<code>\par</code>命令也只产生一次分段效果。</p>
 <p>除了分段，也可以让$\LaTeX$直接另起一行，并不分段。有两种相关命令：<code>\\</code>命令直接另起一行，上一行保持原来的样子；而<code>\linebreak</code>则指定一行的断点，上一行仍按完整一行散开对齐。<code>\\</code>命令可以带一个可选的长度参数，表示换行后增加的额外行距。如<code>\\[2cm]</code>。因此必须注意在命令<code>\\</code>后面如果确实需要使用方括号（即使括号在下一行），则应该在<code>\\</code>后面加空的分组以示分隔，否则会发生错误。</p>
 <h2 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h2><p>除了一般的文字，有时还需要使用一些特殊的符号，其中在正文中最为常用的如表3所示。</p>
-<p><img data-src="/latex_special_symbol.jpg"></p>
+<p><img data-src="/.tech//LaTeX-text-and-symbols/latex_special_symbol.jpg"></p>
 <h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><h3 id="字体的性质"><a href="#字体的性质" class="headerlink" title="字体的性质"></a>字体的性质</h3><p>字体有五种基本的性质：字号（font size）、字体编码（font encoding）、字体族（font family）、字体形状（font shape）、字体系列（font series）。字号，即文字大小，常常被独立出来。看做不同于字体的单独的性质；字体编码，即字体包含的符号也较少直接设定。使用最多的是其它三种性质。</p>
 <p>$\LaTeX$提供了带参数的命令和字体声明两类修改字体的命令，前者用于少量字体的更换，后者用于分组或环境中字体的整体更换。</p>
 <p>预定义的字体族命令有3种：罗马字体族（roman family，默认）、无衬线字体族（sans serif family）和打字机字体族（typewriter family）。其命令为：</p>
@@ -497,7 +497,7 @@
 </tr>
 </tbody></table>
 <p>预定义命令的字体形状有4种：直立形状（upright shape，也称为roman shape，默认）、意大利形状（italic shape）、倾斜形状（slanted shape）、小型大写形状（small capitals shape）。其命令为：</p>
-<p><img data-src="/latex_font_shape.jpg"></p>
+<p><img data-src="/.tech//LaTeX-text-and-symbols/latex_font_shape.jpg"></p>
 <p>注意其中倾斜形状和意大利形状的区别，倾斜形状差不多是直接对符号倾斜产生的，而通常所说的“斜体”往往是指意大利形状，它类似于圆滑的手写体。</p>
 <p>预定义命令的字体系列有中等（medium，默认）和加宽加粗（bold extended）两类：</p>
 <table>
@@ -533,9 +533,9 @@
 <h3 id="强调文字"><a href="#强调文字" class="headerlink" title="强调文字"></a>强调文字</h3><p><code>\emph</code>命令表示强调，用于把直立体改为意大利体，把意大利体改为直立体。其声明形式为<code>\em</code>。除了使用意大利体表示强调之外你也可以用大写，小型大写或者粗体进行更醒目的强调。</p>
 <p><code>\underline</code>命令可以给文字加下划线以达到强调文字的目的，但这个命令作用的下划线部分不能换行，而且不太美观。ulem宏包的<code>\ulem</code>命令解决了这些问题，并且把默认的<code>emph</code>命令也改为使用下划线的方式。如果不希望这样做，可以给ulem宏包加normalem参数，或者使用<code>\normalem</code>和<code>ULforem</code>命令切换两种强调。</p>
 <p>除了下划线，ulem宏包也提供了其他一些修饰文字的命令：</p>
-<p><img data-src="/latex_ulem.jpg"></p>
+<p><img data-src="/.tech//LaTeX-text-and-symbols/latex_ulem.jpg"></p>
 <h2 id="字号与行距"><a href="#字号与行距" class="headerlink" title="字号与行距"></a>字号与行距</h2><h3 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h3><p>基本的$\LaTeX$提供了10个简单的声明式命令调整文字大小：</p>
-<p><img data-src="/latex_fontsize.jpg"></p>
+<p><img data-src="/.tech//LaTeX-text-and-symbols/latex_fontsize.jpg"></p>
 <p>中文字号也可以使用同样的命令设置（字号命令不区分中西文）。不过为了明确字号的具体大小，也可以使用ctex宏包或ctexart等文档类提供的<code>\zihao</code>声明式命令设置。<code>\zihao</code>命令带一个参数，表示中文的字号，可用的范围为<code>0~8</code>及<code>-0~8</code>，如<code>\zihao&#123;0&#125;</code>表示初号，<code>\zihao&#123;-4&#125;</code>表示小四号。</p>
 <h3 id="行距"><a href="#行距" class="headerlink" title="行距"></a>行距</h3><p>$\LaTeX$中的行距是与字号直接相关的。在设置字号时，同时也就设置了基本行距为文字大小的1.2倍。行距一词指的是一行文字的基线（base line）到下一行文字的基线的距离。</p>
 <p>可以使用命令<code>\linespread&#123;&lt;因子&gt;&#125;</code>来设置实际行距为基本行距的倍数。与许多其他底层字体命令一样，它也在<code>\selectfont</code>命令后生效。对article等标准文档来说，默认值为1，即行距是字号大小的1.2倍；而对ctexart等中文文档来说，默认值为1.3，即行距是字号大小的1.56倍。</p>
@@ -597,9 +597,9 @@
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2cm  1.5pc  -.1cm  +72.dd  1234567sp</span><br></pre></td></tr></table></figure>
 
 <p>在正文中可以使用下面的命令表示不可换行的水平间距：</p>
-<p><img data-src="/latex_space.jpg"></p>
+<p><img data-src="/.tech//LaTeX-text-and-symbols/latex_space.jpg"></p>
 <p>可以使用下面的命令表示可以换行的水平间距：</p>
-<p><img data-src="/latex_space_able.jpg"></p>
+<p><img data-src="/.tech//LaTeX-text-and-symbols/latex_space_able.jpg"></p>
 <p>当上面的命令中没有合适的距离时，可以用<code>\hspace&#123;&lt;距离&gt;&#125;</code>命令来产生指定的水平间距，如<code>\hspace&#123;1cm&#125;</code>将产生长度为1cm的间距。这个命令产生的距离是可以断行的，当它出现在行首时，$\LaTeX$会忽略它产生的距离，此时可以用带星号的命令<code>\hspace*&#123;&lt;距离&gt;&#125;</code>阻止距离被忽略。</p>
 <p><code>\hspace</code>可以产生随内容可伸缩的距离，即所谓胶（glue）或者橡皮长度（rubber length，又称弹性长度）。橡皮长度的语法是：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;普通长度&gt; plus &lt;可伸长长度&gt; minus &lt;可缩短长度&gt;</span><br></pre></td></tr></table></figure>
@@ -621,7 +621,7 @@
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\newsavebox</span>&#123;<span class="keyword">\mybox</span>&#125;</span><br><span class="line"><span class="keyword">\sbox</span>&#123;<span class="keyword">\mybox</span>&#125;&#123;我想反复使用的文本&#125; </span><br><span class="line"><span class="comment">% 或 \savebox&#123;\mybox&#125;[&lt;宽度&gt;][&lt;对齐&gt;]&#123;我想反复使用的文本&#125;</span></span><br><span class="line"><span class="comment">% 或 \begin&#123;lrbox&#125;&#123;\mybox&#125;我想反复使用的文本\end&#123;lrbox&#125;</span></span><br></pre></td></tr></table></figure>
 <p>之后就可以使用<code>\usebox&#123;\mybox&#125;</code>来产生<code>我想反复使用的文本</code>。</p>
 <p>$\TeX$中的每个盒子都有其宽度（width）、高度（height）和深度（depth），高度和深度以基点（base）为界：</p>
-<p><img data-src="/latex_box.jpg"></p>
+<p><img data-src="/.tech//LaTeX-text-and-symbols/latex_box.jpg"></p>
 <p>可以用以下命令把内容的宽度、高度或深度赋值给长度变量：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\settowidth</span>&#123;&lt;长度变量&gt;&#125;&#123;&lt;内容&gt;&#125;</span><br><span class="line"><span class="keyword">\settoheight</span>&#123;&lt;长度变量&gt;&#125;&#123;&lt;内容&gt;&#125;</span><br><span class="line"><span class="keyword">\settodepth</span>&#123;&lt;长度变量&gt;&#125;&#123;&lt;内容&gt;&#125;</span><br></pre></td></tr></table></figure>
 
@@ -630,7 +630,7 @@
 
 <p>除此之外，在<code>\makebox</code>、<code>\framebox</code>等盒子命令的参数中，也可以使用<code>\width</code>、<code>height</code>、<code>\depth</code>、<code>\totalheight</code>来分别表示盒子内容的自然宽度、高度、深度、高度和深度之和。</p>
 <h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>下面给出一些使用长度和盒子的例子：</p>
-<p><img data-src="/latex_space_and_box_eg.jpg"></p>
+<p><img data-src="/.tech//LaTeX-text-and-symbols/latex_space_and_box_eg.jpg"></p>
 
     </div>
 
@@ -662,7 +662,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://pybug.tech/blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/" title="文字与符号">https://pybug.tech/blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/</a>
+      <a href="https://pybug.tech/blog/LaTeX-text-and-symbols/" title="文字与符号">https://pybug.tech/blog/LaTeX-text-and-symbols/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -687,7 +687,7 @@
             <div class="post-nav-item">
             </div>
             <div class="post-nav-item">
-                <a href="/blog/LaTeX_paragraph_and_text_environment/LaTeX-paragraph-and-text-environment/" rel="next" title="段落与文本环境">
+                <a href="/blog/LaTeX-paragraph-and-text-environment/" rel="next" title="段落与文本环境">
                   段落与文本环境 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -916,7 +916,7 @@ if (document.querySelectorAll('.mermaid').length) {
       quicklink.listen({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://pybug.tech/blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://pybug.tech/blog/LaTeX-text-and-symbols/',]
       });
       });
   </script>
@@ -933,8 +933,8 @@ if (document.querySelectorAll('.mermaid').length) {
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://pybug.tech/blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/";
-    this.page.identifier = "blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/";
+    this.page.url = "https://pybug.tech/blog/LaTeX-text-and-symbols/";
+    this.page.identifier = "blog/LaTeX-text-and-symbols/";
     this.page.title = "文字与符号";
     };
   NexT.utils.loadComments('#disqus_thread', () => {

@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://pybug.tech/blog/LaTeX-text-and-symbols/</loc>
+    
+    <lastmod>2021-04-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://pybug.tech/blog/LaTeX-paragraph-and-text-environment/</loc>
+    
+    <lastmod>2021-04-26</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://pybug.tech/blog/python-class-based-descriptor-applied-to-method/</loc>
-    
-    <lastmod>2021-04-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://pybug.tech/blog/LaTeX_paragraph_and_text_environment/LaTeX-paragraph-and-text-environment/</loc>
-    
-    <lastmod>2021-04-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://pybug.tech/blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/</loc>
     
     <lastmod>2021-04-26</lastmod>
     
@@ -53,20 +53,6 @@
 
   
   <url>
-    <loc>https://pybug.tech/tags/Python/</loc>
-    <lastmod>2021-04-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://pybug.tech/tags/descriptor/</loc>
-    <lastmod>2021-04-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://pybug.tech/tags/LaTeX/</loc>
     <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
@@ -75,6 +61,20 @@
   
   <url>
     <loc>https://pybug.tech/tags/%E6%8E%92%E7%89%88/</loc>
+    <lastmod>2021-04-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://pybug.tech/tags/Python/</loc>
+    <lastmod>2021-04-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://pybug.tech/tags/descriptor/</loc>
     <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -90,13 +90,6 @@
 
   
   <url>
-    <loc>https://pybug.tech/categories/Python/</loc>
-    <lastmod>2021-04-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://pybug.tech/categories/Tools/</loc>
     <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
@@ -104,7 +97,7 @@
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/Python/descriptor/</loc>
+    <loc>https://pybug.tech/categories/Python/</loc>
     <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -112,6 +105,13 @@
   
   <url>
     <loc>https://pybug.tech/categories/Tools/LaTeX/</loc>
+    <lastmod>2021-04-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://pybug.tech/categories/Python/descriptor/</loc>
     <lastmod>2021-04-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
