@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>在类方法上应用基于类的装饰器时产生错误：missing required positional arguments &#39;self&#39;.</title>
-    <url>/blog/python-class-based-descriptor-applied-to-method</url>
+    <url>/blog/python-class-based-descriptor-applied-to-method/</url>
     <content><![CDATA[<p>在类方法上应用基于类的装饰器时产生错误：missing required positional arguments ‘self’.</p>
 <span id="more"></span>
 
@@ -41,7 +41,7 @@
   </entry>
   <entry>
     <title>段落与文本环境</title>
-    <url>/blog/LaTeX-paragraph-and-text-environment</url>
+    <url>/blog/LaTeX_paragraph_and_text_environment/LaTeX-paragraph-and-text-environment/</url>
     <content><![CDATA[<p>本文介绍$\LaTeX$中段落以及各种常用的文本环境的使用方法。</p>
 <span id="more"></span>
 
@@ -88,7 +88,7 @@
   </entry>
   <entry>
     <title>文字与符号</title>
-    <url>/blog/LaTeX-text-and-symbols</url>
+    <url>/blog/LaTeX_text_and_symbols/LaTeX-text-and-symbols/</url>
     <content><![CDATA[<p>本文介绍$\LaTeX$中最基本的对象：字符、盒子的使用。</p>
 <span id="more"></span>
 <h2 id="字斟句酌"><a href="#字斟句酌" class="headerlink" title="字斟句酌"></a>字斟句酌</h2><h3 id="从字母表到单词"><a href="#从字母表到单词" class="headerlink" title="从字母表到单词"></a>从字母表到单词</h3><p>我们常用的字母表包括扩展的拉丁字母、希腊字母和西里尔字母(Cyrillic alphabet)，这比标准键盘上所能直接输入的52个字母要多得多。不过不用担心，数以万计的汉字我们也搞定了，区区几个字母也不在话下。解决输入超过ASCII码范围的字母的问题有传统和现代两类方案。</p>
