@@ -460,6 +460,7 @@ figure.highlight,
 pre {
   line-height: 1.6;
   margin: 0 auto 20px;
+  border-radius: 5px;
 }
 pre,
 code {
@@ -1205,6 +1206,7 @@ pre code {
 .headband {
   background: #222;
   height: 3px;
+  opacity: 0;
 }
 @media (max-width: 991px) {
   .headband {
