@@ -52,6 +52,17 @@
   };
 </script>
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('This is a private page, input password to view.') !== ''){
+                alert('Wrong password!');
+                history.back();
+            }
+        }
+    })();
+</script>
+
   <title>标签 | PyBug🐞
 </title>
   
@@ -228,8 +239,10 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a href="/">
     <img class="site-author-image" itemprop="image" alt="Infiniv"
       src="/images/avatar.ico">
+  </a>
   <p class="site-author-name" itemprop="name">Infiniv</p>
   <div class="site-description" itemprop="description">Simple is Better than Complex</div>
 </div>

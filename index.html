@@ -50,6 +50,17 @@
   };
 </script>
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('This is a private page, input password to view.') !== ''){
+                alert('Wrong password!');
+                history.back();
+            }
+        }
+    })();
+</script>
+
   <title>PyBug🐞</title>
   
 
@@ -225,8 +236,10 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a href="/">
     <img class="site-author-image" itemprop="image" alt="Infiniv"
       src="/images/avatar.ico">
+  </a>
   <p class="site-author-name" itemprop="name">Infiniv</p>
   <div class="site-description" itemprop="description">Simple is Better than Complex</div>
 </div>
@@ -383,6 +396,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
+        
           <p>在类方法上应用基于类的装饰器时产生错误：missing required positional arguments ‘self’.</p>
           <!--noindex-->
             <div class="post-button">
@@ -491,6 +505,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
+        
           <p>本文介绍$\LaTeX$中段落以及各种常用的文本环境的使用方法。</p>
           <!--noindex-->
             <div class="post-button">
@@ -599,6 +614,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
+        
           <p>本文介绍$\LaTeX$中最基本的对象：字符、盒子的使用。</p>
           <!--noindex-->
             <div class="post-button">
