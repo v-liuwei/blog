@@ -1234,6 +1234,7 @@ pre code {
   display: flex;
   flex-shrink: 0;
   padding: 0 10px;
+  border-radius: 15px;
 }
 .use-motion .header,
 .use-motion .site-brand-container .toggle {
