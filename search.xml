@@ -6,9 +6,8 @@
     <content><![CDATA[<p>在类方法上应用基于类的装饰器时产生错误：missing required positional arguments ‘self’.</p>
 <span id="more"></span>
 
-<div class="note info">
-            <p>Python version: 3.8.0</p>
-          </div>
+<div class="note info"><p>Python version: 3.8.0</p>
+</div>
 
 <h2 id="从程序计时器说起"><a href="#从程序计时器说起" class="headerlink" title="从程序计时器说起"></a>从程序计时器说起</h2><p>当我们想要计算一个程序的执行时间时，也许会写这样一个简单的程序计时器：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t1 = time.time()</span><br><span class="line">func1()</span><br><span class="line">func2()</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">t2 = time.time()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;time consumed:&quot;</span>, time.strftime(<span class="string">&#x27;%H:%M:%S&#x27;</span>, time.gmtime(t2-t1)))</span><br></pre></td></tr></table></figure>
