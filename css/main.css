@@ -3112,10 +3112,18 @@ body {
   background-attachment: fixed;
   background-position: 50% 50%;
 }
-.main-inner {
-  background: #fff;
+.content-wrap {
+  opacity: 0.95;
+}
+.sidebar {
   opacity: 0.9;
 }
-.content {
-  padding: 30px 60px 30px 60px;
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}
+.popup {
+  opacity: 0.9;
+}
+.post-block {
+  opacity: 0.9;
 }
