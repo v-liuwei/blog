@@ -26,13 +26,13 @@
     scheme: 'Gemini',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":"default"},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":true,"color":"#222","save":"auto"},
     fancybox: true,
-    mediumzoom: false,
-    lazyload: false,
+    mediumzoom: true,
+    lazyload: true,
     pangu: true,
     comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
@@ -79,7 +79,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?25414418a969c33898af6b00a4f197ca";
+      hm.src = "https://hm.baidu.com/hm.js?c8719b2d8e811692b8fead7a7bf7ae44";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -238,15 +238,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-04-25T19:07:39+08:00"
-              content="4月 25日, 2021">
-          04-25
+              datetime="2021-04-26T17:29:18+08:00"
+              content="4月 26日, 2021">
+          04-26
         </time>
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2021/04/test/" itemprop="url">
-            <span itemprop="name">test</span>
+          <a class="post-title-link" href="/blog/python-class-based-descriptor-applied-to-method" itemprop="url">
+            <span itemprop="name">在类方法上应用基于类的装饰器时产生错误：missing required positional arguments 'self'.</span>
           </a>
       </h2>
 
@@ -268,8 +268,8 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/LaTeX-paragraph-and-text-environment/" itemprop="url">
-            <span itemprop="name">LaTeX-段落与文本环境</span>
+          <a class="post-title-link" href="/blog/LaTeX-paragraph-and-text-environment" itemprop="url">
+            <span itemprop="name">段落与文本环境</span>
           </a>
       </h2>
 
@@ -288,8 +288,8 @@
       </div>
 
       <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/LaTeX-text-and-symbols/" itemprop="url">
-            <span itemprop="name">LaTeX-文字与符号</span>
+          <a class="post-title-link" href="/blog/LaTeX-text-and-symbols" itemprop="url">
+            <span itemprop="name">文字与符号</span>
           </a>
       </h2>
 
@@ -377,13 +377,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -481,6 +481,8 @@
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
@@ -570,6 +572,26 @@ window.addEventListener('pjax:success', () => {
 
 
 
+  <script pjax>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 30306,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
 
   
 <script src="/js/local-search.js"></script>
@@ -582,8 +604,40 @@ window.addEventListener('pjax:success', () => {
 
 
 
+<script pjax>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
     <div id="pjax">
@@ -640,6 +694,27 @@ window.addEventListener('pjax:success', () => {
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout: 3000,
+        priority: true,
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://pybug.tech/archives/',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://pybug.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
 
     </div>
 </body>

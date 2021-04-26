@@ -26,13 +26,13 @@
     scheme: 'Gemini',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":"default"},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":true,"color":"#222","save":"auto"},
     fancybox: true,
-    mediumzoom: false,
-    lazyload: false,
+    mediumzoom: true,
+    lazyload: true,
     pangu: true,
     comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
     algolia: {
@@ -50,24 +50,24 @@
 
   <meta name="description" content="本文介绍$\LaTeX$中段落以及各种常用的文本环境的使用方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LaTeX-段落与文本环境">
-<meta property="og:url" content="https://pybug.tech/2020/01/LaTeX-paragraph-and-text-environment/">
+<meta property="og:title" content="段落与文本环境">
+<meta property="og:url" content="https://pybug.tech/blog/LaTeX-paragraph-and-text-environment">
 <meta property="og:site_name" content="PyBug🐞">
 <meta property="og:description" content="本文介绍$\LaTeX$中段落以及各种常用的文本环境的使用方法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pybug.tech/2020/01/uploads/blog_img/latex_parwidth.jpg">
-<meta property="og:image" content="https://pybug.tech/2020/01/uploads/blog_img/latex_hang_indent.jpg">
-<meta property="og:image" content="https://pybug.tech/2020/01/uploads/blog_img/latex_lettrine.jpg">
-<meta property="og:image" content="https://pybug.tech/2020/01/uploads/blog_img/latex_heartpar.jpg">
+<meta property="og:image" content="https://pybug.tech/latex_parwidth.jpg">
+<meta property="og:image" content="https://pybug.tech/latex_hang_indent.jpg">
+<meta property="og:image" content="https://pybug.tech/latex_lettrine.jpg">
+<meta property="og:image" content="https://pybug.tech/latex_heartpar.jpg">
 <meta property="article:published_time" content="2020-01-20T06:36:29.000Z">
-<meta property="article:modified_time" content="2021-04-25T13:35:24.459Z">
+<meta property="article:modified_time" content="2021-04-26T10:12:42.890Z">
 <meta property="article:author" content="Infiniv">
 <meta property="article:tag" content="LaTeX">
 <meta property="article:tag" content="排版">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pybug.tech/2020/01/uploads/blog_img/latex_parwidth.jpg">
+<meta name="twitter:image" content="https://pybug.tech/latex_parwidth.jpg">
 
-<link rel="canonical" href="https://pybug.tech/2020/01/LaTeX-paragraph-and-text-environment/">
+<link rel="canonical" href="https://pybug.tech/blog/LaTeX-paragraph-and-text-environment">
 
 
 <script id="page-configurations">
@@ -79,7 +79,7 @@
   };
 </script>
 
-  <title>LaTeX-段落与文本环境 | PyBug🐞</title>
+  <title>段落与文本环境 | PyBug🐞</title>
   
 
 
@@ -87,7 +87,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?25414418a969c33898af6b00a4f197ca";
+      hm.src = "https://hm.baidu.com/hm.js?c8719b2d8e811692b8fead7a7bf7ae44";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -232,7 +232,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://pybug.tech/2020/01/LaTeX-paragraph-and-text-environment/">
+    <link itemprop="mainEntityOfPage" href="https://pybug.tech/blog/LaTeX-paragraph-and-text-environment">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.ico">
@@ -245,7 +245,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LaTeX-段落与文本环境
+          段落与文本环境
         </h1>
 
         <div class="post-meta">
@@ -262,7 +262,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：4月 25日, 2021 21:35" itemprop="dateModified" datetime="2021-04-25T21:35:24+08:00">4月 25日, 2021</time>
+                <time title="修改时间：4月 26日, 2021 18:12" itemprop="dateModified" datetime="2021-04-26T18:12:42+08:00">4月 26日, 2021</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -296,6 +296,20 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/blog/LaTeX-paragraph-and-text-environment#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="blog/LaTeX-paragraph-and-text-environment" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -308,7 +322,8 @@
       
         <p>本文介绍$\LaTeX$中段落以及各种常用的文本环境的使用方法。</p>
 <span id="more"></span>
-<h2 id="正文段落"><a href="#正文段落" class="headerlink" title="正文段落"></a>正文段落</h2><h3 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h3><h3 id="段首缩进"><a href="#段首缩进" class="headerlink" title="段首缩进"></a>段首缩进</h3><p>$\LaTeX$中使用<strong>空行</strong>或者<code>\par</code>命令来分段。每个自然段第一行有一个固定的缩进，可以由长度变量<code>\parindent</code>控制。在西文标准文档类（如article）中，<strong>每个章节的第一段</strong>是<strong>不缩进</strong>的，但可以使用indentfirst宏包启用它；而中文文档类（如ctexart）则每段缩进，并自动设置段落缩进为两个汉字宽。</p>
+
+<h2 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h2><h3 id="段首缩进"><a href="#段首缩进" class="headerlink" title="段首缩进"></a>段首缩进</h3><p>$\LaTeX$中使用<strong>空行</strong>或者<code>\par</code>命令来分段。每个自然段第一行有一个固定的缩进，可以由长度变量<code>\parindent</code>控制。在西文标准文档类（如article）中，<strong>每个章节的第一段</strong>是<strong>不缩进</strong>的，但可以使用indentfirst宏包启用它；而中文文档类（如ctexart）则每段缩进，并自动设置段落缩进为两个汉字宽。</p>
 <p>要临时禁用缩进，可在段前使用<code>\noindent</code>命令；或者想要在本来没有缩进的地方使用缩进，可以用<code>\indent</code>命令产生。</p>
 <h3 id="段间距离"><a href="#段间距离" class="headerlink" title="段间距离"></a>段间距离</h3><p>段与段间的垂直距离由长度变量<code>\parskip</code>控制。其默认值是橡皮长度<code>0 pt plus 1 pt</code>，在中文排版中常使用</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>&#123;<span class="keyword">\parskip</span>&#125;&#123;0 pt&#125;</span><br></pre></td></tr></table></figure>
@@ -324,20 +339,20 @@
 <p><strong>断词只在均匀对齐地段落中起作用，左对齐的段落就没有断词。</strong>使用<code>\sloppy</code>命令可以允许段落中更大的空格，从而<strong>禁用断词</strong>功能；与之相对的命令是<code>\fussy</code>，让段落恢复默认的较严格的间距。更多地是使用等效的sloppypar环境，把允许更宽松间距的文本放在环境中。</p>
 <h4 id="其他断词方式"><a href="#其他断词方式" class="headerlink" title="其他断词方式"></a>其他断词方式</h4><p>以<code>none</code>选项使用hyphenat宏包可以更好地禁用断词。而ragged2e宏包则可以在左对齐（\RaggedRight）、右对齐（\RaggedLeft）或居中（\Centering）的段落中使用断词，这样可以得到更合理的段落。ragged2e宏包还提供<code>\justifying</code>命令回到均匀对齐的段落，以及对应的Center、FlushLeft、FlushRight、justify环境，作为标准$\LaTeX$命令和环境的补充。</p>
 <h3 id="段落宽度"><a href="#段落宽度" class="headerlink" title="段落宽度"></a>段落宽度</h3><p>可以使用长度变量<code>\leftskip</code>和<code>rightskip</code>来控制段落的宽度，如果是局部修改，注意把整个段落放在一个分组里面，或定义为单独的环境。例如：</p>
-<p><img src="../uploads/blog_img/latex_parwidth.jpg" alt="latex_paragraph_width"></p>
+<p><img data-src="/latex_parwidth.jpg"></p>
 <h3 id="特殊段落"><a href="#特殊段落" class="headerlink" title="特殊段落"></a>特殊段落</h3><p>较为常用的一种特殊段落是“悬挂缩进”，它可以由命令<code>\hangafter</code>和<code>hangindent</code>控制，例如：</p>
-<p><img src="../uploads/blog_img/latex_hang_indent.jpg" alt="latex_hang_indent"></p>
+<p><img data-src="/latex_hang_indent.jpg"></p>
 <p>正的<code>\hangindent</code>作用于段落左侧，负的<code>\hangindent</code>作用于段落右侧；正的<code>\hangafter</code>作用于段落的 $n$ 行之后，负的<code>\hangafter</code>作用于段落的前 $n$ 行。<strong>两者均只对当前段起作用</strong>。</p>
 <p><code>\lettrine</code>宏包利用特殊的段落形状产生<strong>首字下沉</strong>的效果，例如</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 导言区使用 \usepackage&#123;lettrine&#125;</span></span><br><span class="line"><span class="keyword">\lettrine</span>&#123;孔&#125;&#123;&#125;乙己喝过半碗酒，涨红的脸色渐渐复了原，旁人便又问道，“孔乙己，你当真认识字么？”孔乙己看着问他的人，显出不屑置辩的神气。他们便接着说道，“你怎的连半个秀才也捞不到呢？”孔乙己立刻显出颓唐不安模样，脸上笼上了一层灰色，嘴里说些话；这回可是全是之乎者也之类，一些不懂了。在这时候，众人也都哄笑起来：店内外充满了快活的空气。</span><br></pre></td></tr></table></figure>
 
 <p>将产生</p>
-<p><img src="../uploads/blog_img/latex_lettrine.jpg" alt="latex_lettrine"></p>
+<p><img data-src="/latex_lettrine.jpg"></p>
 <p>shapepar宏包预定义了一些段落形状，可以方便的排出一些有趣的效果，例如<code>\heartpar</code>命令将产生心形的段落：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 导言区 \usepackage&#123;shapepar&#125;</span></span><br><span class="line"><span class="keyword">\heartpar</span>&#123;<span class="comment">%</span></span><br><span class="line">八月秋高风怒号，卷我屋上三重茅。茅飞渡江洒江郊，高者挂罥长林梢，下者飘转沉塘坳。南村群童欺我老无力，忍能对面为盗贼。公然抱茅入竹去，唇焦口燥呼不得，归来倚杖自叹息。俄顷风定云墨色，秋天漠漠向昏黑。布衾多年冷似铁，娇儿恶卧踏里裂。床头屋漏无干处，雨脚如麻未断绝。自经丧乱少睡眠，长夜沾湿何由彻？安得广厦千万间，大庇天下寒士俱欢颜！风雨不动安如山。呜呼！何时眼前突兀见此屋，吾庐独破受冻死亦足！</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>将产生</p>
-<p><img src="../uploads/blog_img/latex_heartpar.jpg" alt="latex_heartpar"></p>
+<p><img data-src="/latex_heartpar.jpg"></p>
 
     </div>
 
@@ -368,7 +383,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://pybug.tech/2020/01/LaTeX-paragraph-and-text-environment/" title="LaTeX-段落与文本环境">https://pybug.tech/2020/01/LaTeX-paragraph-and-text-environment/</a>
+    <a href="https://pybug.tech/blog/LaTeX-paragraph-and-text-environment" title="段落与文本环境">https://pybug.tech/blog/LaTeX-paragraph-and-text-environment</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -385,17 +400,22 @@
           </div>
 
         
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
 
 
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/01/LaTeX-text-and-symbols/" rel="prev" title="LaTeX-文字与符号">
-      <i class="fa fa-chevron-left"></i> LaTeX-文字与符号
+    <a href="/blog/LaTeX-text-and-symbols" rel="prev" title="文字与符号">
+      <i class="fa fa-chevron-left"></i> 文字与符号
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/04/test/" rel="next" title="test">
-      test <i class="fa fa-chevron-right"></i>
+    <a href="/blog/python-class-based-descriptor-applied-to-method" rel="next" title="在类方法上应用基于类的装饰器时产生错误：missing required positional arguments 'self'.">
+      在类方法上应用基于类的装饰器时产生错误：missing required positional arguments 'self'. <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -410,6 +430,13 @@
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -456,7 +483,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87%E6%AE%B5%E8%90%BD"><span class="nav-number">1.</span> <span class="nav-text">正文段落</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%AE%B5"><span class="nav-number">1.1.</span> <span class="nav-text">分段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E9%A6%96%E7%BC%A9%E8%BF%9B"><span class="nav-number">1.2.</span> <span class="nav-text">段首缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E9%97%B4%E8%B7%9D%E7%A6%BB"><span class="nav-number">1.3.</span> <span class="nav-text">段间距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">对齐方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%AD%E8%AF%8D"><span class="nav-number">1.5.</span> <span class="nav-text">断词</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%96%AD%E8%AF%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.5.1.</span> <span class="nav-text">其他断词方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E5%AE%BD%E5%BA%A6"><span class="nav-number">1.6.</span> <span class="nav-text">段落宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E6%AE%B5%E8%90%BD"><span class="nav-number">1.7.</span> <span class="nav-text">特殊段落</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%AE%B5"><span class="nav-number">1.</span> <span class="nav-text">分段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E9%A6%96%E7%BC%A9%E8%BF%9B"><span class="nav-number">1.1.</span> <span class="nav-text">段首缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E9%97%B4%E8%B7%9D%E7%A6%BB"><span class="nav-number">1.2.</span> <span class="nav-text">段间距离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">对齐方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%AD%E8%AF%8D"><span class="nav-number">1.4.</span> <span class="nav-text">断词</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%96%AD%E8%AF%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.1.</span> <span class="nav-text">其他断词方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E5%AE%BD%E5%BA%A6"><span class="nav-number">1.5.</span> <span class="nav-text">段落宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E6%AE%B5%E8%90%BD"><span class="nav-number">1.6.</span> <span class="nav-text">特殊段落</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -479,13 +506,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -583,6 +610,8 @@
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
@@ -672,6 +701,26 @@ window.addEventListener('pjax:success', () => {
 
 
 
+  <script pjax>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 30306,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
 
   
 <script src="/js/local-search.js"></script>
@@ -684,8 +733,40 @@ window.addEventListener('pjax:success', () => {
 
 
 
+<script pjax>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
     <div id="pjax">
@@ -742,6 +823,47 @@ window.addEventListener('pjax:success', () => {
     
 
   
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout: 3000,
+        priority: true,
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://pybug.tech/blog/LaTeX-paragraph-and-text-environment',]
+      });
+      });
+  </script>
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://pybug.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "https://pybug.tech/blog/LaTeX-paragraph-and-text-environment",
+            identifier: "blog/LaTeX-paragraph-and-text-environment",
+            title: "段落与文本环境"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://pybug.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
     </div>
 </body>
