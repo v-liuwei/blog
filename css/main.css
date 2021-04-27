@@ -539,7 +539,6 @@ figure.highlight .gutter {
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  border-radius: 5px 0px 0px 5px;
 }
 figure.highlight .gutter pre {
   background: var(--highlight-gutter-background);
@@ -547,7 +546,6 @@ figure.highlight .gutter pre {
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
-  border-radius: 5px 0px 0px 5px;
 }
 figure.highlight .code pre {
   padding-left: 10px;
@@ -1224,7 +1222,7 @@ pre code {
 .headband {
   background: #222;
   height: 3px;
-  opacity: 0;
+  display: none;
 }
 @media (max-width: 991px) {
   .headband {
@@ -1868,7 +1866,7 @@ pre code {
   }
   .post-block {
     margin-top: initial !important;
-    padding: 8px 18px 8px !important;
+    padding: 20px 18px 20px !important;
   }
   .post-body h1,
   .post-body h2,
@@ -2019,8 +2017,8 @@ pre code {
 }
 @media (max-width: 767px) {
   .posts-collapse .post-content {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 .posts-collapse .post-content .collection-title {
@@ -2834,7 +2832,7 @@ mjx-container[display="true"] + br {
 }
 .header-inner {
   background: var(--content-bg-color);
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 0px 0px 10px 10px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   width: 240px;
 }
@@ -2869,7 +2867,7 @@ mjx-container[display="true"] + br {
   }
 }
 .main-inner {
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 0px 0px 10px 10px;
   box-sizing: border-box;
   width: calc(100% - 252px);
 }
@@ -3069,7 +3067,7 @@ mjx-container[display="true"] + br {
 .main-inner > .comments,
 .main-inner > .pagination {
   background: var(--content-bg-color);
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 0px 0px 10px 10px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 .main-inner > .sub-menu:not(:first-child):not(.sub-menu),
@@ -3096,7 +3094,7 @@ mjx-container[display="true"] + br {
   .main-inner > .tabs-comment:not(:first-child):not(.sub-menu),
   .main-inner > .comments:not(:first-child):not(.sub-menu),
   .main-inner > .pagination:not(:first-child):not(.sub-menu) {
-    margin-top: 8px;
+    margin-top: 20px;
   }
 }
 .post-block,
@@ -3133,7 +3131,7 @@ mjx-container[display="true"] + br {
 }
 @media (max-width: 767px) {
   .main-inner {
-    padding: 8px;
+    padding: 20px;
   }
   .posts-expand .post-button {
     margin: 12px 0;
