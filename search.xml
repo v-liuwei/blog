@@ -24,19 +24,19 @@
 <p>以<code>none</code>选项使用hyphenat宏包可以更好地禁用断词。而ragged2e宏包则可以在左对齐（）、右对齐（）或居中（）的段落中使用断词，这样可以得到更合理的段落。ragged2e宏包还提供<code>\justifying</code>命令回到均匀对齐的段落，以及对应的Center、FlushLeft、FlushRight、justify环境，作为标准<span class="math inline">\(\LaTeX\)</span>命令和环境的补充。</p>
 <h3 id="段落宽度">段落宽度</h3>
 <p>可以使用长度变量<code>\leftskip</code>和<code>rightskip</code>来控制段落的宽度，如果是局部修改，注意把整个段落放在一个分组里面，或定义为单独的环境。例如：</p>
-<p><img data-src="/.tech//latex_parwidth.jpg"></p>
+<p><img data-src="/blog/LaTeX-paragraph-and-text-environment/latex_parwidth.jpg"></p>
 <h3 id="特殊段落">特殊段落</h3>
 <p>较为常用的一种特殊段落是“悬挂缩进”，它可以由命令<code>\hangafter</code>和<code>hangindent</code>控制，例如：</p>
-<p><img data-src="/.tech//latex_hang_indent.jpg"></p>
+<p><img data-src="/blog/LaTeX-paragraph-and-text-environment/latex_hang_indent.jpg"></p>
 <p>正的<code>\hangindent</code>作用于段落左侧，负的<code>\hangindent</code>作用于段落右侧；正的<code>\hangafter</code>作用于段落的 <span class="math inline">\(n\)</span> 行之后，负的<code>\hangafter</code>作用于段落的前 <span class="math inline">\(n\)</span> 行。<strong>两者均只对当前段起作用</strong>。</p>
 <p><code>\lettrine</code>宏包利用特殊的段落形状产生<strong>首字下沉</strong>的效果，例如</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 导言区使用 \usepackage&#123;lettrine&#125;</span></span><br><span class="line"><span class="keyword">\lettrine</span>&#123;孔&#125;&#123;&#125;乙己喝过半碗酒，涨红的脸色渐渐复了原，旁人便又问道，“孔乙己，你当真认识字么？”孔乙己看着问他的人，显出不屑置辩的神气。他们便接着说道，“你怎的连半个秀才也捞不到呢？”孔乙己立刻显出颓唐不安模样，脸上笼上了一层灰色，嘴里说些话；这回可是全是之乎者也之类，一些不懂了。在这时候，众人也都哄笑起来：店内外充满了快活的空气。</span><br></pre></td></tr></table></figure>
 <p>将产生</p>
-<p><img data-src="/.tech//latex_lettrine.jpg"></p>
+<p><img data-src="/blog/LaTeX-paragraph-and-text-environment/latex_lettrine.jpg"></p>
 <p>shapepar宏包预定义了一些段落形状，可以方便的排出一些有趣的效果，例如<code>\heartpar</code>命令将产生心形的段落：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 导言区 \usepackage&#123;shapepar&#125;</span></span><br><span class="line"><span class="keyword">\heartpar</span>&#123;<span class="comment">%</span></span><br><span class="line">八月秋高风怒号，卷我屋上三重茅。茅飞渡江洒江郊，高者挂罥长林梢，下者飘转沉塘坳。南村群童欺我老无力，忍能对面为盗贼。公然抱茅入竹去，唇焦口燥呼不得，归来倚杖自叹息。俄顷风定云墨色，秋天漠漠向昏黑。布衾多年冷似铁，娇儿恶卧踏里裂。床头屋漏无干处，雨脚如麻未断绝。自经丧乱少睡眠，长夜沾湿何由彻？安得广厦千万间，大庇天下寒士俱欢颜！风雨不动安如山。呜呼！何时眼前突兀见此屋，吾庐独破受冻死亦足！</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>将产生</p>
-<p><img data-src="/.tech//latex_heartpar.jpg"></p>
+<p><img data-src="/blog/LaTeX-paragraph-and-text-environment/latex_heartpar.jpg"></p>
 ]]></content>
       <categories>
         <category>Tools</category>
@@ -51,11 +51,18 @@
   <entry>
     <title>在类方法上应用基于类的装饰器时产生错误：missing required positional arguments &#39;self&#39;.</title>
     <url>/blog/python-class-based-descriptor-applied-to-method/</url>
-    <content><![CDATA[<p>在类方法上应用基于类的装饰器时产生错误：missing required positional arguments 'self'. <span id="more"></span></p>
+    <content><![CDATA[<p>假设我们写好了一个基于类的装饰器: <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">print_name</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, func</span>):</span></span><br><span class="line">		self.func = func</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self, *args, **kwargs</span>):</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">f&quot;calling function `<span class="subst">&#123;self.func.__name__&#125;</span>`...&quot;</span>)</span><br><span class="line">		<span class="keyword">return</span> func(*args, **kwargs)</span><br></pre></td></tr></table></figure> 我们可能会想要装饰在类方法上，像这样： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">someClass</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line"><span class="meta">	@print_name</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">someMethod</span>(<span class="params">self</span>):</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;decorator is tricky:)&quot;</span>)</span><br></pre></td></tr></table></figure> 看起来似乎没什么问题？Just try it.</p>
+<span id="more"></span>
 <div class="note info"><p>Python version: 3.8.0</p>
 </div>
 <h2 id="从程序计时器说起">从程序计时器说起</h2>
-<p>当我们想要计算一个程序的执行时间时，也许会写这样一个简单的程序计时器： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t1 = time.time()</span><br><span class="line">func1()</span><br><span class="line">func2()</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">t2 = time.time()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;time consumed:&quot;</span>, time.strftime(<span class="string">&#x27;%H:%M:%S&#x27;</span>, time.gmtime(t2-t1)))</span><br></pre></td></tr></table></figure> 它的好处是简单易操作，<del>有手就行</del> ， 可以一次计算多个函数的总执行时间。但它的缺点也很明显，每次想计算某个函数的运行时间时，都得重复这几行代码。 然而，重复“函数调用时应该执行的操作”正是装饰器（decorator）派上用的地方，于是上网查了下程序计时的装饰器，就发现了两种不一样的写法： + 基于函数的装饰器 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span>(<span class="params">func</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">        t1 = time.time()</span><br><span class="line">        ret = func(*args, **kwargs)</span><br><span class="line">        t2 = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;time consumed:&quot;</span>, time.strftime(<span class="string">&#x27;%H:%M:%S&#x27;</span>, time.gmtime(t2-t1)))</span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure> + 基于类的装饰器 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">timer</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, func</span>):</span></span><br><span class="line">		self.func = func</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self, *args, **kwargs</span>):</span></span><br><span class="line">		t1 = time.time()</span><br><span class="line">        ret = self.func(*args, **kwargs)</span><br><span class="line">        t2 = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;time consumed:&quot;</span>, time.strftime(<span class="string">&#x27;%H:%M:%S&#x27;</span>, time.gmtime(t2-t1)))</span><br><span class="line">        <span class="keyword">return</span> ret</span><br></pre></td></tr></table></figure> 无论使用上面那种方式，当我们想要对函数<code>func</code>计时时，只需要在定义该函数时加上<code>@timer</code>。例如 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@timer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">sec</span>):</span></span><br><span class="line">   	time.sleep(sec)</span><br><span class="line"></span><br><span class="line">func(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># time consumed: 00:00:01</span></span><br></pre></td></tr></table></figure> ## 装饰器是如何工作的 +当我们对一个函数使用装饰器时，实际上发生了什么？ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure> 实际上这等同于： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line">func = decorator(func)</span><br></pre></td></tr></table></figure> 也就是说，当我们调用<code>func</code>时，实际上已经不是我们当初定义的<code>func</code>了，它变成了由<code>decorator</code>返回的函数，在前面计时器的例子中，就是<code>wrapper</code>。可以看到，<code>wrapper</code>函数几乎做了与<code>func</code>函数一样的事情: 它们都以<code>(*args, **kwargs)</code>为参数，并返回相同的值，不同的是，在<code>wrapper</code>中，还计算了<code>func</code>函数的运行时间。这正是装饰器该做的事情：在原有函数功能的基础上，增加一些新的功能，但不用修改原来的函数。这是对基于函数的装饰器的理解。 对基于类的装饰器，实际上做了几乎同样的事情。如果<code>decorator</code>是一个类，那么<code>func = decorator(func)</code>将<code>func</code>作为类构造参数，并将实例化的对象赋给<code>func</code>, 即现在<code>func</code>已经变成了<code>decorator</code>类的一个实例。如果这个类实现了<code>__call__</code>方法，那么这个类的实例将是可调用的，行为与函数几乎没有区别。这时如果调用<code>func(*args, **kwargs)</code>，等价于<code>func.__call__(*args, **kwargs)</code>，因此如果我们在<code>__call__</code>中增加一些代码，在其中调用原函数并返回其返回值，就可以达到与前面的基于函数的装饰器相同的效果。 对比前面计时装饰器的两种实现方法，可以更好的理解装饰器的本质。</p>
+<p>当我们想要计算一个程序的执行时间时，也许会写这样一个简单的程序计时器： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t1 = time.time()</span><br><span class="line">func1()</span><br><span class="line">func2()</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">t2 = time.time()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;time consumed:&quot;</span>, time.strftime(<span class="string">&#x27;%H:%M:%S&#x27;</span>, time.gmtime(t2-t1)))</span><br></pre></td></tr></table></figure> 它的好处是简单易操作，<del>有手就行</del> ， 可以一次计算多个函数的总执行时间。但它的缺点也很明显，每次想计算某个函数的运行时间时，都得重复这几行代码。 然而，重复“函数调用时应该执行的操作”正是装饰器（decorator）派上用的地方，于是上网查了下程序计时的装饰器，就发现了两种不一样的写法：</p>
+<ul>
+<li><p>基于函数的装饰器 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span>(<span class="params">func</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">        t1 = time.time()</span><br><span class="line">        ret = func(*args, **kwargs)</span><br><span class="line">        t2 = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;time consumed:&quot;</span>, time.strftime(<span class="string">&#x27;%H:%M:%S&#x27;</span>, time.gmtime(t2-t1)))</span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure></p></li>
+<li><p>基于类的装饰器 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">timer</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, func</span>):</span></span><br><span class="line">		self.func = func</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self, *args, **kwargs</span>):</span></span><br><span class="line">		t1 = time.time()</span><br><span class="line">        ret = self.func(*args, **kwargs)</span><br><span class="line">        t2 = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;time consumed:&quot;</span>, time.strftime(<span class="string">&#x27;%H:%M:%S&#x27;</span>, time.gmtime(t2-t1)))</span><br><span class="line">        <span class="keyword">return</span> ret</span><br></pre></td></tr></table></figure> 无论使用上面那种方式，当我们想要对函数<code>func</code>计时时，只需要在定义该函数时加上<code>@timer</code>。例如 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@timer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">sec</span>):</span></span><br><span class="line">   	time.sleep(sec)</span><br><span class="line"></span><br><span class="line">func(<span class="number">1</span>)</span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># time consumed: 00:00:01</span></span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<h2 id="装饰器是如何工作的">装饰器是如何工作的</h2>
+<p>+当我们对一个函数使用装饰器时，实际上发生了什么？ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure> 实际上这等同于： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line">func = decorator(func)</span><br></pre></td></tr></table></figure> 也就是说，当我们调用<code>func</code>时，实际上已经不是我们当初定义的<code>func</code>了，它变成了由<code>decorator</code>返回的函数，在前面计时器的例子中，就是<code>wrapper</code>。可以看到，<code>wrapper</code>函数几乎做了与<code>func</code>函数一样的事情: 它们都以<code>(*args, **kwargs)</code>为参数，并返回相同的值，不同的是，在<code>wrapper</code>中，还计算了<code>func</code>函数的运行时间。这正是装饰器该做的事情：在原有函数功能的基础上，增加一些新的功能，但不用修改原来的函数。这是对基于函数的装饰器的理解。 对基于类的装饰器，实际上做了几乎同样的事情。如果<code>decorator</code>是一个类，那么<code>func = decorator(func)</code>将<code>func</code>作为类构造参数，并将实例化的对象赋给<code>func</code>, 即现在<code>func</code>已经变成了<code>decorator</code>类的一个实例。如果这个类实现了<code>__call__</code>方法，那么这个类的实例将是可调用的，行为与函数几乎没有区别。这时如果调用<code>func(*args, **kwargs)</code>，等价于<code>func.__call__(*args, **kwargs)</code>，因此如果我们在<code>__call__</code>中增加一些代码，在其中调用原函数并返回其返回值，就可以达到与前面的基于函数的装饰器相同的效果。 对比前面计时装饰器的两种实现方法，可以更好的理解装饰器的本质。</p>
 <h2 id="当装饰对象从函数转向类方法">当装饰对象从函数转向类方法</h2>
 <p>前面两种装饰器对于普通函数的作用没有区别，但当我想对类方法也使用装饰器时，问题就出现了。 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, sec</span>):</span></span><br><span class="line">		self.sec = sec</span><br><span class="line"></span><br><span class="line"><span class="meta">	@timer</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">method</span>(<span class="params">self</span>):</span></span><br><span class="line">		time.sleep(self.sec)</span><br><span class="line"></span><br><span class="line">obj = SomeClass(<span class="number">1</span>)  <span class="comment"># 实例化一个对象</span></span><br><span class="line">obj.method()  <span class="comment"># 调用经过装饰的方法</span></span><br></pre></td></tr></table></figure> 如果使用基于函数的装饰器，这并没有任何问题，调用<code>method(1)</code>后，会输出该方法的运行用时。但是如果使用基于类的装饰器，发生了错误： <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">TypeError: method() missing <span class="number">1</span> required positional argument: <span class="string">&#x27;self&#x27;</span></span><br></pre></td></tr></table></figure> 为什么装饰在函数时上两者效果相同，但装饰在类方法上却产生了差异？ 如果我们从装饰器的原理出发，很容易明白这里究竟发生了什么。上面的类定义等同于 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, sec</span>):</span></span><br><span class="line">		self.sec = sec</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">method</span>(<span class="params">self</span>):</span></span><br><span class="line">		time.sleep(self.sec)</span><br><span class="line">	method = timer(method)</span><br></pre></td></tr></table></figure> 当我们创建一个该类的实例，并调用方法</p>
 <h3 id="数学公式">数学公式</h3>
@@ -68,26 +75,27 @@
 ]]></content>
       <categories>
         <category>Python</category>
-        <category>descriptor</category>
+        <category>decorator</category>
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>descriptor</tag>
+        <tag>decorator</tag>
       </tags>
   </entry>
   <entry>
     <title>文字与符号</title>
     <url>/blog/LaTeX-text-and-symbols/</url>
-    <content><![CDATA[<p>本文介绍<span class="math inline">\(\LaTeX\)</span>中最基本的对象：字符、盒子的使用。 <span id="more"></span> ## 字斟句酌</p>
+    <content><![CDATA[<p>本文介绍<span class="math inline">\(\LaTeX\)</span>中最基本的对象：字符、盒子的使用。 <span id="more"></span></p>
+<h2 id="字斟句酌">字斟句酌</h2>
 <h3 id="从字母表到单词">从字母表到单词</h3>
 <p>我们常用的字母表包括扩展的拉丁字母、希腊字母和西里尔字母(Cyrillic alphabet)，这比标准键盘上所能直接输入的52个字母要多得多。不过不用担心，数以万计的汉字我们也搞定了，区区几个字母也不在话下。解决输入超过ASCII码范围的字母的问题有传统和现代两类方案。</p>
 <p>现代的方案就是使用UTF-8编码直接输入。输入特殊的字母需要计算机键盘布局或输入法的支持。如果不方便使用特殊键盘来设置，操作系统或编辑器往往还提供了“字符映射表”一类的程序或插件，可以用鼠标选取一些字符输入。</p>
 <p>显示ASCII以外的字母表需要编辑器所使用的字体的支持。并且<span class="math inline">\(\TeX\)</span>系统输出时所使用的字体也必须要能直接显示这些字母。</p>
 <p>而传统的解决方案是使用特殊的命令，给字母加上重音的标记，使用特殊字母或者整体更换字母表。</p>
 <p>重音是指加在字母上的标记。<span class="math inline">\(\LaTeX\)</span>支持的重音记号及其命令如表1：</p>
-<p><img data-src="/.tech//latex_accents.jpg"></p>
+<p><img data-src="/blog/LaTeX-text-and-symbols/latex_accents.jpg"></p>
 <p>使用命令可以输入的<span class="math inline">\(\LaTeX\)</span>字母，见表2。其中<code>\ij</code> <code>\IJ</code> <code>\SS</code>是字母连写，在默认的字体中没有区别。</p>
-<p><img data-src="/.tech//latex_special_letter.jpg"></p>
+<p><img data-src="/blog/LaTeX-text-and-symbols/latex_special_letter.jpg"></p>
 <p>如果还要输入希腊字母和西里尔字母，默认的字体就不够了，需要更换其他编码和字体。为此，<span class="math inline">\(\LaTeX\)</span>提供了babel宏包，可以方便同时访问多种语言的字母表。babel宏包可带有一个或多个语言的可选参数，支持不同的语言，如</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>[greek,english]&#123;babel&#125;</span><br></pre></td></tr></table></figure>
 <p>将使用英语和希腊语，其中最后一个参数的英语是默认语言，此时希腊语就可以用ACSCII字符代替，如<code>\textgreek&#123;abcde&#125;</code>将输出<span class="math inline">\(\alpha\beta\varsigma\delta\varepsilon\)</span>。如果只有<code>greek</code>参数或将它放在最后，全文将默认使用希腊语。</p>
@@ -123,7 +131,7 @@
 <p>除了分段，也可以让<span class="math inline">\(\LaTeX\)</span>直接另起一行，并不分段。有两种相关命令：<code>\\</code>命令直接另起一行，上一行保持原来的样子；而<code>\linebreak</code>则指定一行的断点，上一行仍按完整一行散开对齐。<code>\\</code>命令可以带一个可选的长度参数，表示换行后增加的额外行距。如<code>\\[2cm]</code>。因此必须注意在命令<code>\\</code>后面如果确实需要使用方括号（即使括号在下一行），则应该在<code>\\</code>后面加空的分组以示分隔，否则会发生错误。</p>
 <h2 id="特殊符号">特殊符号</h2>
 <p>除了一般的文字，有时还需要使用一些特殊的符号，其中在正文中最为常用的如表3所示。</p>
-<p><img data-src="/.tech//latex_special_symbol.jpg"></p>
+<p><img data-src="/blog/LaTeX-text-and-symbols/latex_special_symbol.jpg"></p>
 <h2 id="字体">字体</h2>
 <h3 id="字体的性质">字体的性质</h3>
 <p>字体有五种基本的性质：字号（font size）、字体编码（font encoding）、字体族（font family）、字体形状（font shape）、字体系列（font series）。字号，即文字大小，常常被独立出来。看做不同于字体的单独的性质；字体编码，即字体包含的符号也较少直接设定。使用最多的是其它三种性质。</p>
@@ -160,7 +168,7 @@
 </tbody>
 </table>
 <p>预定义命令的字体形状有4种：直立形状（upright shape，也称为roman shape，默认）、意大利形状（italic shape）、倾斜形状（slanted shape）、小型大写形状（small capitals shape）。其命令为：</p>
-<p><img data-src="/.tech//latex_font_shape.jpg"></p>
+<p><img data-src="/blog/LaTeX-text-and-symbols/latex_font_shape.jpg"></p>
 <p>注意其中倾斜形状和意大利形状的区别，倾斜形状差不多是直接对符号倾斜产生的，而通常所说的“斜体”往往是指意大利形状，它类似于圆滑的手写体。</p>
 <p>预定义命令的字体系列有中等（medium，默认）和加宽加粗（bold extended）两类：</p>
 <table>
@@ -198,11 +206,11 @@
 <p><code>\emph</code>命令表示强调，用于把直立体改为意大利体，把意大利体改为直立体。其声明形式为<code>\em</code>。除了使用意大利体表示强调之外你也可以用大写，小型大写或者粗体进行更醒目的强调。</p>
 <p><code>\underline</code>命令可以给文字加下划线以达到强调文字的目的，但这个命令作用的下划线部分不能换行，而且不太美观。ulem宏包的<code>\ulem</code>命令解决了这些问题，并且把默认的<code>emph</code>命令也改为使用下划线的方式。如果不希望这样做，可以给ulem宏包加normalem参数，或者使用<code>\normalem</code>和<code>ULforem</code>命令切换两种强调。</p>
 <p>除了下划线，ulem宏包也提供了其他一些修饰文字的命令：</p>
-<p><img data-src="/.tech//latex_ulem.jpg"></p>
+<p><img data-src="/blog/LaTeX-text-and-symbols/latex_ulem.jpg"></p>
 <h2 id="字号与行距">字号与行距</h2>
 <h3 id="字号">字号</h3>
 <p>基本的<span class="math inline">\(\LaTeX\)</span>提供了10个简单的声明式命令调整文字大小：</p>
-<p><img data-src="/.tech//latex_fontsize.jpg"></p>
+<p><img data-src="/blog/LaTeX-text-and-symbols/latex_fontsize.jpg"></p>
 <p>中文字号也可以使用同样的命令设置（字号命令不区分中西文）。不过为了明确字号的具体大小，也可以使用ctex宏包或ctexart等文档类提供的<code>\zihao</code>声明式命令设置。<code>\zihao</code>命令带一个参数，表示中文的字号，可用的范围为<code>0~8</code>及<code>-0~8</code>，如<code>\zihao&#123;0&#125;</code>表示初号，<code>\zihao&#123;-4&#125;</code>表示小四号。</p>
 <h3 id="行距">行距</h3>
 <p><span class="math inline">\(\LaTeX\)</span>中的行距是与字号直接相关的。在设置字号时，同时也就设置了基本行距为文字大小的1.2倍。行距一词指的是一行文字的基线（base line）到下一行文字的基线的距离。</p>
@@ -268,9 +276,9 @@
 <p>一个长度必须数字和单位齐全，正确的长度如下所示：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">2cm  1.5pc  -.1cm  +72.dd  1234567sp</span><br></pre></td></tr></table></figure>
 <p>在正文中可以使用下面的命令表示不可换行的水平间距：</p>
-<p><img data-src="/.tech//latex_space.jpg"></p>
+<p><img data-src="/blog/LaTeX-text-and-symbols/latex_space.jpg"></p>
 <p>可以使用下面的命令表示可以换行的水平间距：</p>
-<p><img data-src="/.tech//latex_space_able.jpg"></p>
+<p><img data-src="/blog/LaTeX-text-and-symbols/latex_space_able.jpg"></p>
 <p>当上面的命令中没有合适的距离时，可以用<code>\hspace&#123;&lt;距离&gt;&#125;</code>命令来产生指定的水平间距，如<code>\hspace&#123;1cm&#125;</code>将产生长度为1cm的间距。这个命令产生的距离是可以断行的，当它出现在行首时，<span class="math inline">\(\LaTeX\)</span>会忽略它产生的距离，此时可以用带星号的命令<code>\hspace*&#123;&lt;距离&gt;&#125;</code>阻止距离被忽略。</p>
 <p><code>\hspace</code>可以产生随内容可伸缩的距离，即所谓胶（glue）或者橡皮长度（rubber length，又称弹性长度）。橡皮长度的语法是：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">&lt;普通长度&gt; plus &lt;可伸长长度&gt; minus &lt;可缩短长度&gt;</span><br></pre></td></tr></table></figure>
@@ -290,7 +298,7 @@
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\newsavebox</span>&#123;<span class="keyword">\mybox</span>&#125;</span><br><span class="line"><span class="keyword">\sbox</span>&#123;<span class="keyword">\mybox</span>&#125;&#123;我想反复使用的文本&#125; </span><br><span class="line"><span class="comment">% 或 \savebox&#123;\mybox&#125;[&lt;宽度&gt;][&lt;对齐&gt;]&#123;我想反复使用的文本&#125;</span></span><br><span class="line"><span class="comment">% 或 \begin&#123;lrbox&#125;&#123;\mybox&#125;我想反复使用的文本\end&#123;lrbox&#125;</span></span><br></pre></td></tr></table></figure>
 <p>之后就可以使用<code>\usebox&#123;\mybox&#125;</code>来产生<code>我想反复使用的文本</code>。</p>
 <p><span class="math inline">\(\TeX\)</span>中的每个盒子都有其宽度（width）、高度（height）和深度（depth），高度和深度以基点（base）为界：</p>
-<p><img data-src="/.tech//latex_box.jpg"></p>
+<p><img data-src="/blog/LaTeX-text-and-symbols/latex_box.jpg"></p>
 <p>可以用以下命令把内容的宽度、高度或深度赋值给长度变量：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\settowidth</span>&#123;&lt;长度变量&gt;&#125;&#123;&lt;内容&gt;&#125;</span><br><span class="line"><span class="keyword">\settoheight</span>&#123;&lt;长度变量&gt;&#125;&#123;&lt;内容&gt;&#125;</span><br><span class="line"><span class="keyword">\settodepth</span>&#123;&lt;长度变量&gt;&#125;&#123;&lt;内容&gt;&#125;</span><br></pre></td></tr></table></figure>
 <p>也可以用以下命令分别得到盒子的宽度和深度：</p>
@@ -298,7 +306,7 @@
 <p>除此之外，在<code>\makebox</code>、<code>\framebox</code>等盒子命令的参数中，也可以使用<code>\width</code>、<code>height</code>、<code>\depth</code>、<code>\totalheight</code>来分别表示盒子内容的自然宽度、高度、深度、高度和深度之和。</p>
 <h3 id="例子">例子</h3>
 <p>下面给出一些使用长度和盒子的例子：</p>
-<p><img data-src="/.tech//latex_space_and_box_eg.jpg"></p>
+<p><img data-src="/blog/LaTeX-text-and-symbols/latex_space_and_box_eg.jpg"></p>
 ]]></content>
       <categories>
         <category>Tools</category>

@@ -32,17 +32,17 @@
 <meta property="og:site_name" content="PyBug🐞">
 <meta property="og:description" content="本文介绍\(\LaTeX\)中段落以及各种常用的文本环境的使用方法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pybug.tech/.tech//latex_parwidth.jpg">
-<meta property="og:image" content="https://pybug.tech/.tech//latex_hang_indent.jpg">
-<meta property="og:image" content="https://pybug.tech/.tech//latex_lettrine.jpg">
-<meta property="og:image" content="https://pybug.tech/.tech//latex_heartpar.jpg">
+<meta property="og:image" content="https://pybug.tech/blog/LaTeX-paragraph-and-text-environment/latex_parwidth.jpg">
+<meta property="og:image" content="https://pybug.tech/blog/LaTeX-paragraph-and-text-environment/latex_hang_indent.jpg">
+<meta property="og:image" content="https://pybug.tech/blog/LaTeX-paragraph-and-text-environment/latex_lettrine.jpg">
+<meta property="og:image" content="https://pybug.tech/blog/LaTeX-paragraph-and-text-environment/latex_heartpar.jpg">
 <meta property="article:published_time" content="2020-01-20T06:36:29.000Z">
 <meta property="article:modified_time" content="2021-04-26T14:05:06.155Z">
 <meta property="article:author" content="Infiniv">
 <meta property="article:tag" content="LaTeX">
 <meta property="article:tag" content="排版">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pybug.tech/.tech//latex_parwidth.jpg">
+<meta name="twitter:image" content="https://pybug.tech/blog/LaTeX-paragraph-and-text-environment/latex_parwidth.jpg">
 
 
 <link rel="canonical" href="https://pybug.tech/blog/LaTeX-paragraph-and-text-environment/">
@@ -146,7 +146,7 @@
       <h1 class="site-title">PyBug🐞</h1>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">Play with Python</p>
+      <p class="site-subtitle" itemprop="description">Play with Python🤗</p>
   </div>
 
   <div class="site-nav-right">
@@ -445,19 +445,19 @@
 <p>以<code>none</code>选项使用hyphenat宏包可以更好地禁用断词。而ragged2e宏包则可以在左对齐（）、右对齐（）或居中（）的段落中使用断词，这样可以得到更合理的段落。ragged2e宏包还提供<code>\justifying</code>命令回到均匀对齐的段落，以及对应的Center、FlushLeft、FlushRight、justify环境，作为标准<span class="math inline">\(\LaTeX\)</span>命令和环境的补充。</p>
 <h3 id="段落宽度">段落宽度</h3>
 <p>可以使用长度变量<code>\leftskip</code>和<code>rightskip</code>来控制段落的宽度，如果是局部修改，注意把整个段落放在一个分组里面，或定义为单独的环境。例如：</p>
-<p><img data-src="/.tech//latex_parwidth.jpg"></p>
+<p><img data-src="/blog/LaTeX-paragraph-and-text-environment/latex_parwidth.jpg"></p>
 <h3 id="特殊段落">特殊段落</h3>
 <p>较为常用的一种特殊段落是“悬挂缩进”，它可以由命令<code>\hangafter</code>和<code>hangindent</code>控制，例如：</p>
-<p><img data-src="/.tech//latex_hang_indent.jpg"></p>
+<p><img data-src="/blog/LaTeX-paragraph-and-text-environment/latex_hang_indent.jpg"></p>
 <p>正的<code>\hangindent</code>作用于段落左侧，负的<code>\hangindent</code>作用于段落右侧；正的<code>\hangafter</code>作用于段落的 <span class="math inline">\(n\)</span> 行之后，负的<code>\hangafter</code>作用于段落的前 <span class="math inline">\(n\)</span> 行。<strong>两者均只对当前段起作用</strong>。</p>
 <p><code>\lettrine</code>宏包利用特殊的段落形状产生<strong>首字下沉</strong>的效果，例如</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 导言区使用 \usepackage&#123;lettrine&#125;</span></span><br><span class="line"><span class="keyword">\lettrine</span>&#123;孔&#125;&#123;&#125;乙己喝过半碗酒，涨红的脸色渐渐复了原，旁人便又问道，“孔乙己，你当真认识字么？”孔乙己看着问他的人，显出不屑置辩的神气。他们便接着说道，“你怎的连半个秀才也捞不到呢？”孔乙己立刻显出颓唐不安模样，脸上笼上了一层灰色，嘴里说些话；这回可是全是之乎者也之类，一些不懂了。在这时候，众人也都哄笑起来：店内外充满了快活的空气。</span><br></pre></td></tr></table></figure>
 <p>将产生</p>
-<p><img data-src="/.tech//latex_lettrine.jpg"></p>
+<p><img data-src="/blog/LaTeX-paragraph-and-text-environment/latex_lettrine.jpg"></p>
 <p>shapepar宏包预定义了一些段落形状，可以方便的排出一些有趣的效果，例如<code>\heartpar</code>命令将产生心形的段落：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 导言区 \usepackage&#123;shapepar&#125;</span></span><br><span class="line"><span class="keyword">\heartpar</span>&#123;<span class="comment">%</span></span><br><span class="line">八月秋高风怒号，卷我屋上三重茅。茅飞渡江洒江郊，高者挂罥长林梢，下者飘转沉塘坳。南村群童欺我老无力，忍能对面为盗贼。公然抱茅入竹去，唇焦口燥呼不得，归来倚杖自叹息。俄顷风定云墨色，秋天漠漠向昏黑。布衾多年冷似铁，娇儿恶卧踏里裂。床头屋漏无干处，雨脚如麻未断绝。自经丧乱少睡眠，长夜沾湿何由彻？安得广厦千万间，大庇天下寒士俱欢颜！风雨不动安如山。呜呼！何时眼前突兀见此屋，吾庐独破受冻死亦足！</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>将产生</p>
-<p><img data-src="/.tech//latex_heartpar.jpg"></p>
+<p><img data-src="/blog/LaTeX-paragraph-and-text-environment/latex_heartpar.jpg"></p>
 
     </div>
 
