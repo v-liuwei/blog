@@ -3174,6 +3174,11 @@ body {
   background-attachment: fixed;
   background-position: 50% 50%;
 }
+@media (max-width: 767px) {
+  body {
+    display: none;
+  }
+}
 .content-wrap {
   opacity: 0.95;
 }
