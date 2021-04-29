@@ -339,13 +339,15 @@ td {
   margin-top: 3px;
 }
 .toggle.toggle-arrow .toggle-line:first-child {
+  left: 50%;
   top: 2px;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
   width: 50%;
 }
 .toggle.toggle-arrow .toggle-line:last-child {
+  left: 50%;
   top: -2px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   width: 50%;
 }
 .toggle.toggle-close .toggle-line:nth-child(2) {
@@ -353,11 +355,11 @@ td {
 }
 .toggle.toggle-close .toggle-line:first-child {
   top: 5px;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 .toggle.toggle-close .toggle-line:last-child {
   top: -5px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 /* Base16 Atelier Cave Light - Theme */
 /* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/cave) */
@@ -539,6 +541,7 @@ figure.highlight .gutter {
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  border-radius: 5px 0px 0px 5px;
 }
 figure.highlight .gutter pre {
   background: var(--highlight-gutter-background);
@@ -546,6 +549,7 @@ figure.highlight .gutter pre {
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
+  border-radius: 5px 0px 0px 5px;
 }
 figure.highlight .code pre {
   padding-left: 10px;
@@ -1391,11 +1395,11 @@ pre code {
   position: fixed;
   top: -10px;
   transition: top 0.3s;
-  left: 30px;
+  right: 30px;
 }
 @media (max-width: 991px) {
   .book-mark-link {
-    left: 20px;
+    right: 20px;
   }
 }
 @media (max-width: 991px) {
@@ -1641,11 +1645,11 @@ pre code {
   opacity: 0.6;
   position: fixed;
   z-index: 1300;
-  left: 30px;
+  right: 30px;
 }
 @media (max-width: 991px) {
   .sidebar-toggle {
-    left: 20px;
+    right: 20px;
   }
 }
 .sidebar-toggle:hover {
@@ -1661,13 +1665,15 @@ pre code {
 }
 @media (any-hover: hover) {
   body:not(.sidebar-active) .sidebar-toggle:hover .toggle-line:first-child {
+    left: 50%;
     top: 2px;
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
     width: 50%;
   }
   body:not(.sidebar-active) .sidebar-toggle:hover .toggle-line:last-child {
+    left: 50%;
     top: -2px;
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
     width: 50%;
   }
 }
@@ -1676,11 +1682,11 @@ pre code {
 }
 .sidebar-active .sidebar-toggle .toggle-line:first-child {
   top: 5px;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 .sidebar-active .sidebar-toggle .toggle-line:last-child {
   top: -5px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 .post-toc {
   font-size: 0.875em;
@@ -1857,67 +1863,6 @@ pre code {
     transform: scale(1.1);
   }
 }
-@media (max-width: 567px) {
-  .main-inner {
-    padding: initial !important;
-  }
-  .posts-expand .post-header {
-    margin-bottom: 10px !important;
-  }
-  .post-block {
-    margin-top: initial !important;
-    padding: 20px 18px 20px !important;
-  }
-  .post-body h1,
-  .post-body h2,
-  .post-body h3,
-  .post-body h4,
-  .post-body h5,
-  .post-body h6 {
-    margin: 10px 0 8px;
-  }
-  .post-body .note h1,
-  .post-body .tabs .tab-content .tab-pane h1,
-  .post-body .note h2,
-  .post-body .tabs .tab-content .tab-pane h2,
-  .post-body .note h3,
-  .post-body .tabs .tab-content .tab-pane h3,
-  .post-body .note h4,
-  .post-body .tabs .tab-content .tab-pane h4,
-  .post-body .note h5,
-  .post-body .tabs .tab-content .tab-pane h5,
-  .post-body .note h6,
-  .post-body .tabs .tab-content .tab-pane h6 {
-    margin: 0 5px;
-  }
-  .post-body > p {
-    margin: 0 0 10px 0;
-  }
-  .post-body .note > p,
-  .post-body .tabs .tab-content .tab-pane > p {
-    padding: 0 5px;
-  }
-  .post-body img,
-  .post-body video {
-    margin-bottom: 10px !important;
-  }
-  .post-body .note {
-    margin-bottom: 10px !important;
-    padding: 10px !important;
-  }
-  .post-body .note:not(.no-icon) {
-    padding-left: 35px !important;
-  }
-  .post-body .tabs .tab-content .tab-pane {
-    padding: 10px 10px 0 10px !important;
-  }
-  .post-eof {
-    margin: 40px auto 20px !important;
-  }
-  .pagination {
-    margin-top: 40px;
-  }
-}
 .back-to-top {
   font-size: 12px;
 }
@@ -1932,11 +1877,11 @@ pre code {
   opacity: 0.6;
   position: fixed;
   z-index: 1300;
-  left: 30px;
+  right: 30px;
 }
 @media (max-width: 991px) {
   .back-to-top {
-    left: 20px;
+    right: 20px;
   }
 }
 .back-to-top:hover {
@@ -2848,7 +2793,6 @@ mjx-container[display="true"] + br {
   justify-content: space-between;
   margin: 0 auto;
   width: calc(100% - 20px);
-  flex-direction: row-reverse;
 }
 @media (min-width: 1200px) {
   .main {
@@ -2878,7 +2822,7 @@ mjx-container[display="true"] + br {
   }
 }
 .footer-inner {
-  padding-right: 252px;
+  padding-left: 252px;
 }
 @media (max-width: 991px) {
   .footer-inner {
@@ -3094,7 +3038,7 @@ mjx-container[display="true"] + br {
   .main-inner > .tabs-comment:not(:first-child):not(.sub-menu),
   .main-inner > .comments:not(:first-child):not(.sub-menu),
   .main-inner > .pagination:not(:first-child):not(.sub-menu) {
-    margin-top: 20px;
+    margin-top: 8px;
   }
 }
 .post-block,
@@ -3131,7 +3075,7 @@ mjx-container[display="true"] + br {
 }
 @media (max-width: 767px) {
   .main-inner {
-    padding: 20px;
+    padding: 8px;
   }
   .posts-expand .post-button {
     margin: 12px 0;
