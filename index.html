@@ -252,12 +252,12 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -343,7 +343,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/python-class-based-descriptor-applied-to-method/" class="post-title-link" itemprop="url">在类方法上应用基于类的装饰器时产生错误：missing required positional arguments 'self'.</a>
+            <a href="/blog/python-class-based-descriptor-applied-to-method/" class="post-title-link" itemprop="url">在类方法上应用基于类的装饰器时发生错误：missing 1 required positional argument</a>
         </h2>
 
         <div class="post-meta-container">
@@ -361,7 +361,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：4月 29日, 2021 17:48" itemprop="dateModified" datetime="2021-04-29T17:48:09+08:00">4月 29日, 2021</time>
+        <time title="修改时间：5月 1日, 2021 23:28" itemprop="dateModified" datetime="2021-05-01T23:28:05+08:00">5月 1日, 2021</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -374,6 +374,10 @@
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Python/decorator/" itemprop="url" rel="index"><span itemprop="name">decorator</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/descriptor/" itemprop="url" rel="index"><span itemprop="name">descriptor</span></a>
         </span>
     </span>
 
@@ -402,7 +406,7 @@
     
     <div class="post-body" itemprop="articleBody">
         
-          <p>现在我们写了一个基于类的装饰器，它很简单，能够在函数调用之前打印函数的名字: <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">print_name</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, func</span>):</span></span><br><span class="line">        self.func = func</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self, *args, **kwargs</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;calling function `<span class="subst">&#123;self.func.__name__&#125;</span>`...&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> func(*args, **kwargs)</span><br></pre></td></tr></table></figure> 我们可能会想要装饰在类方法上，像这样： <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">someClass</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line"><span class="meta">    @print_name</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">someMethod</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;decorator may be tricky:)&quot;</span>)</span><br></pre></td></tr></table></figure> 看起来似乎没什么问题？然而...</p>
+          <p>当你想要对类方法使用装饰器时，应当格外小心...</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/python-class-based-descriptor-applied-to-method/#more" rel="contents">

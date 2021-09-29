@@ -3087,34 +3087,8 @@ mjx-container[display="true"] + br {
     padding: 10px 12px;
   }
 }
-.fa-bilibili-logo-blue {
-  background: url("/images/bilibili-logo-blue.svg");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  height: 1rem;
-  width: 1rem;
-}
-.fa-bilibili-logo {
-  background: url("/images/bilibili-logo.svg");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  height: 1rem;
-  width: 1rem;
-}
-.fa-bilibili-tv {
-  background: url("/images/bilibili-tv.svg");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  align: center;
-  height: 1rem;
-  width: 1rem;
-}
 body {
-  background: url("/uploads/images/wallpaper_coldplay.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
+  background-color: #ccf;
 }
 @media (max-width: 767px) {
   body {
