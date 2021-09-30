@@ -11,7 +11,7 @@
   <url>
     <loc>https://pybug.tech/blog/python-class-based-descriptor-applied-to-method/</loc>
     
-    <lastmod>2021-05-01</lastmod>
+    <lastmod>2021-09-30</lastmod>
     
   </url>
   
@@ -67,13 +67,6 @@
 
   
   <url>
-    <loc>https://pybug.tech/tags/Python/</loc>
-    <lastmod>2021-09-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://pybug.tech/tags/LaTeX/</loc>
     <lastmod>2021-09-30</lastmod>
     <changefreq>daily</changefreq>
@@ -87,24 +80,31 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://pybug.tech/tags/Python/</loc>
+    <lastmod>2021-09-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://pybug.tech/tags/Windows/</loc>
+    <lastmod>2021-09-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://pybug.tech/tags/SSH/</loc>
+    <lastmod>2021-09-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
-    <loc>https://pybug.tech/categories/Python/</loc>
-    <lastmod>2021-09-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://pybug.tech/categories/Tools/</loc>
-    <lastmod>2021-09-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://pybug.tech/categories/Python/decorator/</loc>
     <lastmod>2021-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -119,6 +119,27 @@
   
   <url>
     <loc>https://pybug.tech/categories/Tools/LaTeX/LaTeX%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2021-09-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://pybug.tech/categories/Python/</loc>
+    <lastmod>2021-09-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://pybug.tech/categories/Tools/SSH/</loc>
+    <lastmod>2021-09-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://pybug.tech/categories/Python/decorator/</loc>
     <lastmod>2021-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

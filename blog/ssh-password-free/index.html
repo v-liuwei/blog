@@ -25,17 +25,18 @@
     var CONFIG = {"hostname":"pybug.tech","root":"/","scheme":"Gemini","version":"8.0.0","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}};
   </script>
 
-  <meta name="description" content="我在使用VSCode进行远程开发时每次连接服务器都得输入密码，于是希望能够免密登录。 Step1: 生成SSH密钥  如果你的用户目录（C:）下的.ssh文件夹内已经有id_rsa文件，你可能曾经生成过密钥了，可以跳过这一步。 打开cmd，输入如下命令： 1C:\Users\PyBug&gt; ssh-keygen 然后一路回车。  Step2: 将生成的公钥上传到远程服务器上 将刚才">
+  <meta name="description" content="我在使用VSCode进行远程开发时每次连接服务器都得输入密码，于是希望能够免密登录。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下SSH远程连接免密登录">
 <meta property="og:url" content="https://pybug.tech/blog/ssh-password-free/">
 <meta property="og:site_name" content="PyBug🐞">
-<meta property="og:description" content="我在使用VSCode进行远程开发时每次连接服务器都得输入密码，于是希望能够免密登录。 Step1: 生成SSH密钥  如果你的用户目录（C:）下的.ssh文件夹内已经有id_rsa文件，你可能曾经生成过密钥了，可以跳过这一步。 打开cmd，输入如下命令： 1C:\Users\PyBug&gt; ssh-keygen 然后一路回车。  Step2: 将生成的公钥上传到远程服务器上 将刚才">
+<meta property="og:description" content="我在使用VSCode进行远程开发时每次连接服务器都得输入密码，于是希望能够免密登录。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-29T14:46:11.000Z">
-<meta property="article:modified_time" content="2021-09-30T10:17:52.497Z">
+<meta property="article:modified_time" content="2021-09-30T10:57:40.033Z">
 <meta property="article:author" content="Infiniv">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="SSH">
 <meta name="twitter:card" content="summary">
 
 
@@ -255,12 +256,12 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -364,8 +365,21 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：9月 30日, 2021 18:17" itemprop="dateModified" datetime="2021-09-30T18:17:52+08:00">9月 30日, 2021</time>
+        <time title="修改时间：9月 30日, 2021 18:57" itemprop="dateModified" datetime="2021-09-30T18:57:40+08:00">9月 30日, 2021</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tools/SSH/" itemprop="url" rel="index"><span itemprop="name">SSH</span></a>
+        </span>
+    </span>
 
   
     <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -399,12 +413,14 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>我在使用VSCode进行远程开发时每次连接服务器都得输入密码，于是希望能够免密登录。</p>
+<span id="more"></span>
 <h2 id="step1-生成ssh密钥">Step1: 生成SSH密钥</h2>
 <blockquote>
-<p>如果你的用户目录（C:）下的.ssh文件夹内已经有id_rsa文件，你可能曾经生成过密钥了，可以跳过这一步。 打开cmd，输入如下命令： <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">PyBug</span>&gt; <span class="title">ssh</span>-<span class="title">keygen</span></span></span><br></pre></td></tr></table></figure> 然后一路回车。</p>
+<p>如果你的用户目录（C:）下的.ssh文件夹内已经有id_rsa文件，你可能曾经生成过密钥了，可以跳过这一步。</p>
 </blockquote>
+<p>打开cmd，输入如下命令： <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure> 然后一路回车。</p>
 <h2 id="step2-将生成的公钥上传到远程服务器上">Step2: 将生成的公钥上传到远程服务器上</h2>
-<p>将刚才生成的<code>id_rsa.pub</code>文件的内容写入服务器上的<code>~/.ssh/authorized_keys</code>文件中。可以直接在cmd里输入如下命令来完成： <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">PyBug</span>&gt; <span class="title">type</span> %<span class="title">USERPROFILE</span>%\.<span class="title">ssh</span>\<span class="title">id_rsa.pub</span> | <span class="title">ssh</span> &#123;<span class="title">IP</span>地址&#125; -<span class="title">p</span> &#123;端口号&#125; &quot;<span class="title">cat</span> &gt;&gt; .<span class="title">ssh</span>/<span class="title">authorized_keys</span>&quot;</span></span><br></pre></td></tr></table></figure> <div class="note warning"><p>注意，如果服务器上你的home目录下没有.ssh文件夹，得先用命令<code>mkdir .ssh</code>创建一个，不然上面的命令会报错。</p>
+<p>将刚才生成的<code>id_rsa.pub</code>文件的内容写入服务器上的<code>~/.ssh/authorized_keys</code>文件中。可以直接在cmd里输入如下命令来完成： <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> <span class="variable">%USERPROFILE%</span>\.ssh\id_rsa.pub | ssh &#123;IP地址&#125; -p &#123;端口号&#125; &quot;cat &gt;&gt; .ssh/authorized_keys&quot;</span><br></pre></td></tr></table></figure> <div class="note warning"><p>注意，如果服务器上你的home目录下没有.ssh文件夹，得先用命令<code>mkdir .ssh</code>创建一个，不然上面的命令会报错。</p>
 </div></p>
 
     </div>
@@ -445,6 +461,10 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+              <a href="/tags/SSH/" rel="tag"><i class="fa fa-tag"></i> SSH</a>
+          </div>
 
         
   <div class="post-widgets">

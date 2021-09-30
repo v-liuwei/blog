@@ -99,14 +99,24 @@
     <title>Windows下SSH远程连接免密登录</title>
     <url>/blog/ssh-password-free/</url>
     <content><![CDATA[<p>我在使用VSCode进行远程开发时每次连接服务器都得输入密码，于是希望能够免密登录。</p>
+<span id="more"></span>
 <h2 id="step1-生成ssh密钥">Step1: 生成SSH密钥</h2>
 <blockquote>
-<p>如果你的用户目录（C:）下的.ssh文件夹内已经有id_rsa文件，你可能曾经生成过密钥了，可以跳过这一步。 打开cmd，输入如下命令： <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">PyBug</span>&gt; <span class="title">ssh</span>-<span class="title">keygen</span></span></span><br></pre></td></tr></table></figure> 然后一路回车。</p>
+<p>如果你的用户目录（C:）下的.ssh文件夹内已经有id_rsa文件，你可能曾经生成过密钥了，可以跳过这一步。</p>
 </blockquote>
+<p>打开cmd，输入如下命令： <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure> 然后一路回车。</p>
 <h2 id="step2-将生成的公钥上传到远程服务器上">Step2: 将生成的公钥上传到远程服务器上</h2>
-<p>将刚才生成的<code>id_rsa.pub</code>文件的内容写入服务器上的<code>~/.ssh/authorized_keys</code>文件中。可以直接在cmd里输入如下命令来完成： <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">PyBug</span>&gt; <span class="title">type</span> %<span class="title">USERPROFILE</span>%\.<span class="title">ssh</span>\<span class="title">id_rsa.pub</span> | <span class="title">ssh</span> &#123;<span class="title">IP</span>地址&#125; -<span class="title">p</span> &#123;端口号&#125; &quot;<span class="title">cat</span> &gt;&gt; .<span class="title">ssh</span>/<span class="title">authorized_keys</span>&quot;</span></span><br></pre></td></tr></table></figure> <div class="note warning"><p>注意，如果服务器上你的home目录下没有.ssh文件夹，得先用命令<code>mkdir .ssh</code>创建一个，不然上面的命令会报错。</p>
+<p>将刚才生成的<code>id_rsa.pub</code>文件的内容写入服务器上的<code>~/.ssh/authorized_keys</code>文件中。可以直接在cmd里输入如下命令来完成： <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">type</span> <span class="variable">%USERPROFILE%</span>\.ssh\id_rsa.pub | ssh &#123;IP地址&#125; -p &#123;端口号&#125; &quot;cat &gt;&gt; .ssh/authorized_keys&quot;</span><br></pre></td></tr></table></figure> <div class="note warning"><p>注意，如果服务器上你的home目录下没有.ssh文件夹，得先用命令<code>mkdir .ssh</code>创建一个，不然上面的命令会报错。</p>
 </div></p>
 ]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>SSH</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>SSH</tag>
+      </tags>
   </entry>
   <entry>
     <title>文字与符号</title>
