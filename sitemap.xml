@@ -2,70 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://pybug.tech/blog/torch-tensor-is-hashable/</loc>
+    <loc>https://blog.vvvvvv.space/playground/</loc>
+    
+    <lastmod>2021-11-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vvvvvv.space/link/</loc>
+    
+    <lastmod>2021-11-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vvvvvv.space/torch-tensor-is-hashable/</loc>
     
     <lastmod>2021-10-15</lastmod>
     
   </url>
   
   <url>
-    <loc>https://pybug.tech/blog/python-decorator/</loc>
+    <loc>https://blog.vvvvvv.space/python-decorator/</loc>
     
     <lastmod>2021-10-13</lastmod>
     
   </url>
   
   <url>
-    <loc>https://pybug.tech/blog/python-class-based-descriptor-applied-to-method/</loc>
+    <loc>https://blog.vvvvvv.space/python-class-based-descriptor-applied-to-method/</loc>
     
     <lastmod>2021-10-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://pybug.tech/playground/</loc>
+    <loc>https://blog.vvvvvv.space/about/</loc>
     
     <lastmod>2021-09-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://pybug.tech/about/</loc>
+    <loc>https://blog.vvvvvv.space/ssh-password-free/</loc>
     
     <lastmod>2021-09-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://pybug.tech/blog/ssh-password-free/</loc>
-    
-    <lastmod>2021-09-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://pybug.tech/blog/LaTeX-paragraph-and-text-environment/</loc>
+    <loc>https://blog.vvvvvv.space/LaTeX-paragraph-and-text-environment/</loc>
     
     <lastmod>2021-04-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://pybug.tech/blog/LaTeX-text-and-symbols/</loc>
+    <loc>https://blog.vvvvvv.space/LaTeX-text-and-symbols/</loc>
     
     <lastmod>2021-04-27</lastmod>
     
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/</loc>
+    <loc>https://blog.vvvvvv.space/categories/</loc>
     
     <lastmod>2021-02-09</lastmod>
     
   </url>
   
   <url>
-    <loc>https://pybug.tech/tags/</loc>
+    <loc>https://blog.vvvvvv.space/tags/</loc>
     
     <lastmod>2019-12-21</lastmod>
     
@@ -73,65 +80,65 @@
   
 
   <url>
-    <loc>https://pybug.tech/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://pybug.tech/tags/LaTeX/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/tags/LaTeX/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/tags/typesetting/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/tags/typesetting/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/tags/decorator/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/tags/Python/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/tags/Python/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/tags/decorator/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/tags/Windows/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/tags/hash/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/tags/SSH/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/tags/pytorch/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/tags/hash/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/tags/Windows/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/tags/pytorch/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/tags/SSH/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -139,71 +146,71 @@
 
   
   <url>
-    <loc>https://pybug.tech/categories/Tools/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/categories/Tools/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/Python/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/categories/Tools/LaTeX/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/Tools/SSH/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/categories/Tools/LaTeX/LaTeX%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/Tools/LaTeX/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/categories/Python/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/Python/grammar/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/categories/Tools/SSH/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/Python/decorator/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/categories/Python/decorator/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/Tools/LaTeX/LaTeX%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/categories/Python/grammar/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/Python/Pytorch/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/categories/Python/Pytorch/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/Python/grammar/decorator/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/categories/Python/descriptor/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pybug.tech/categories/Python/descriptor/</loc>
-    <lastmod>2021-10-15</lastmod>
+    <loc>https://blog.vvvvvv.space/categories/Python/grammar/decorator/</loc>
+    <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
