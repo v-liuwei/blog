@@ -88,21 +88,21 @@
 
   
   <url>
+    <loc>https://blog.vvvvvv.space/tags/LaTeX/</loc>
+    <lastmod>2021-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvvvvv.space/tags/typesetting/</loc>
+    <lastmod>2021-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vvvvvv.space/tags/Python/</loc>
-    <lastmod>2021-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.vvvvvv.space/tags/hash/</loc>
-    <lastmod>2021-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.vvvvvv.space/tags/pytorch/</loc>
     <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -130,55 +130,20 @@
   </url>
   
   <url>
-    <loc>https://blog.vvvvvv.space/tags/LaTeX/</loc>
+    <loc>https://blog.vvvvvv.space/tags/hash/</loc>
     <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.vvvvvv.space/tags/typesetting/</loc>
+    <loc>https://blog.vvvvvv.space/tags/pytorch/</loc>
     <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
 
-  
-  <url>
-    <loc>https://blog.vvvvvv.space/categories/Python/</loc>
-    <lastmod>2021-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.vvvvvv.space/categories/Python/decorator/</loc>
-    <lastmod>2021-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.vvvvvv.space/categories/Python/Pytorch/</loc>
-    <lastmod>2021-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.vvvvvv.space/categories/Python/descriptor/</loc>
-    <lastmod>2021-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.vvvvvv.space/categories/Python/grammar/</loc>
-    <lastmod>2021-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
   
   <url>
     <loc>https://blog.vvvvvv.space/categories/Tools/</loc>
@@ -188,7 +153,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vvvvvv.space/categories/Python/grammar/decorator/</loc>
+    <loc>https://blog.vvvvvv.space/categories/Python/</loc>
     <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -209,7 +174,42 @@
   </url>
   
   <url>
+    <loc>https://blog.vvvvvv.space/categories/Python/decorator/</loc>
+    <lastmod>2021-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvvvvv.space/categories/Python/grammar/</loc>
+    <lastmod>2021-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vvvvvv.space/categories/Tools/LaTeX/LaTeX%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2021-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvvvvv.space/categories/Python/Pytorch/</loc>
+    <lastmod>2021-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvvvvv.space/categories/Python/descriptor/</loc>
+    <lastmod>2021-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvvvvv.space/categories/Python/grammar/decorator/</loc>
     <lastmod>2021-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

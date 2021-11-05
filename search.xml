@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>段落与文本环境</title>
+    <url>//post/LaTeX-paragraph-and-text-environment/</url>
+    <content><![CDATA[<p>本文介绍<span class="math inline">\(\LaTeX\)</span>中段落以及各种常用的文本环境的使用方法。 <span id="more"></span></p>
+<h2 id="分段">分段</h2>
+<h3 id="段首缩进">段首缩进</h3>
+<p><span class="math inline">\(\LaTeX\)</span>中使用<strong>空行</strong>或者<code>\par</code>命令来分段。每个自然段第一行有一个固定的缩进，可以由长度变量<code>\parindent</code>控制。在西文标准文档类（如article）中，<strong>每个章节的第一段</strong>是<strong>不缩进</strong>的，但可以使用indentfirst宏包启用它；而中文文档类（如ctexart）则每段缩进，并自动设置段落缩进为两个汉字宽。</p>
+<p>要临时禁用缩进，可在段前使用<code>\noindent</code>命令；或者想要在本来没有缩进的地方使用缩进，可以用<code>\indent</code>命令产生。</p>
+<h3 id="段间距离">段间距离</h3>
+<p>段与段间的垂直距离由长度变量<code>\parskip</code>控制。其默认值是橡皮长度<code>0 pt plus 1 pt</code>，在中文排版中常使用</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>&#123;<span class="keyword">\parskip</span>&#125;&#123;0 pt&#125;</span><br></pre></td></tr></table></figure>
+<p>把段间距定义为固定长度，禁止段落间距离伸长。当然也可以设置较大的<code>\parskip</code>使得分段更清晰。</p>
+<h3 id="对齐方式">对齐方式</h3>
+<p><span class="math inline">\(\LaTeX\)</span>的段落默认是两端均匀对齐的，也可以改为左对齐，右对齐或居中格式。设置命令如下：</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\raggedright</span> <span class="comment">% 设置段落左对齐 ragged right意味着右边界参差不齐</span></span><br><span class="line"><span class="keyword">\raggedleft</span> <span class="comment">% 设置段落右对齐 常常用于排版签名、日期、格言警句等</span></span><br><span class="line"><span class="keyword">\centering</span> <span class="comment">% 设置段落居中对齐 可用于强调段落</span></span><br></pre></td></tr></table></figure>
+<p>除此之外，也可以使用环境flushleft、flushright、center分别表示左对齐、右对齐、居中。<strong>这几个环境会在段落前后增加一小段垂直间距以示强调</strong>，但它们不会影响前后的文字，因此比<code>\raggedright</code>等命令更常用一些。</p>
+<h3 id="断词">断词</h3>
+<p>在默认的段落设置下，<span class="math inline">\(\LaTeX\)</span>可能会在单词的<strong>两个音节中间断行</strong>，并在前一行末尾<strong>加上连字符</strong>，即所谓<strong>断词</strong>（用连字号连接，hyphenation）。一般来说，<span class="math inline">\(\TeX\)</span>能很好的处理断词。如果有需要，也可以自己使用<code>\-</code>命令指明可能的断点，如<code>man\-u\-script</code>。还可以使用<code>\hyphenation</code>命令在导言区全局地设置断点列表，如：</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\hyphenation</span>&#123;man-u-script com-pu-ter gym-na-sium&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>断词只在均匀对齐地段落中起作用，左对齐的段落就没有断词。</strong>使用<code>\sloppy</code>命令可以允许段落中更大的空格，从而<strong>禁用断词</strong>功能；与之相对的命令是<code>\fussy</code>，让段落恢复默认的较严格的间距。更多地是使用等效的sloppypar环境，把允许更宽松间距的文本放在环境中。</p>
+<h4 id="其他断词方式">其他断词方式</h4>
+<p>以<code>none</code>选项使用hyphenat宏包可以更好地禁用断词。而ragged2e宏包则可以在左对齐（）、右对齐（）或居中（）的段落中使用断词，这样可以得到更合理的段落。ragged2e宏包还提供<code>\justifying</code>命令回到均匀对齐的段落，以及对应的Center、FlushLeft、FlushRight、justify环境，作为标准<span class="math inline">\(\LaTeX\)</span>命令和环境的补充。</p>
+<h3 id="段落宽度">段落宽度</h3>
+<p>可以使用长度变量<code>\leftskip</code>和<code>rightskip</code>来控制段落的宽度，如果是局部修改，注意把整个段落放在一个分组里面，或定义为单独的环境。例如：</p>
+<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_parwidth.jpg"></p>
+<h3 id="特殊段落">特殊段落</h3>
+<p>较为常用的一种特殊段落是“悬挂缩进”，它可以由命令<code>\hangafter</code>和<code>hangindent</code>控制，例如：</p>
+<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_hang_indent.jpg"></p>
+<p>正的<code>\hangindent</code>作用于段落左侧，负的<code>\hangindent</code>作用于段落右侧；正的<code>\hangafter</code>作用于段落的 <span class="math inline">\(n\)</span> 行之后，负的<code>\hangafter</code>作用于段落的前 <span class="math inline">\(n\)</span> 行。<strong>两者均只对当前段起作用</strong>。</p>
+<p><code>\lettrine</code>宏包利用特殊的段落形状产生<strong>首字下沉</strong>的效果，例如</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 导言区使用 \usepackage&#123;lettrine&#125;</span></span><br><span class="line"><span class="keyword">\lettrine</span>&#123;孔&#125;&#123;&#125;乙己喝过半碗酒，涨红的脸色渐渐复了原，旁人便又问道，“孔乙己，你当真认识字么？”孔乙己看着问他的人，显出不屑置辩的神气。他们便接着说道，“你怎的连半个秀才也捞不到呢？”孔乙己立刻显出颓唐不安模样，脸上笼上了一层灰色，嘴里说些话；这回可是全是之乎者也之类，一些不懂了。在这时候，众人也都哄笑起来：店内外充满了快活的空气。</span><br></pre></td></tr></table></figure>
+<p>将产生</p>
+<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_lettrine.jpg"></p>
+<p>shapepar宏包预定义了一些段落形状，可以方便的排出一些有趣的效果，例如<code>\heartpar</code>命令将产生心形的段落：</p>
+<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 导言区 \usepackage&#123;shapepar&#125;</span></span><br><span class="line"><span class="keyword">\heartpar</span>&#123;<span class="comment">%</span></span><br><span class="line">八月秋高风怒号，卷我屋上三重茅。茅飞渡江洒江郊，高者挂罥长林梢，下者飘转沉塘坳。南村群童欺我老无力，忍能对面为盗贼。公然抱茅入竹去，唇焦口燥呼不得，归来倚杖自叹息。俄顷风定云墨色，秋天漠漠向昏黑。布衾多年冷似铁，娇儿恶卧踏里裂。床头屋漏无干处，雨脚如麻未断绝。自经丧乱少睡眠，长夜沾湿何由彻？安得广厦千万间，大庇天下寒士俱欢颜！风雨不动安如山。呜呼！何时眼前突兀见此屋，吾庐独破受冻死亦足！</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将产生</p>
+<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_heartpar.jpg"></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>LaTeX</category>
+        <category>LaTeX入门</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>typesetting</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在类方法上应用基于类的装饰器时发生错误：missing 1 required positional argument</title>
     <url>//post/python-class-based-descriptor-applied-to-method/</url>
     <content><![CDATA[<p>当你想要对类方法使用装饰器时，应当格外小心...</p>
@@ -42,36 +90,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>torch.Tensor是可哈希的！</title>
-    <url>//post/torch-tensor-is-hashable/</url>
-    <content><![CDATA[<h2 id="问题的由来">问题的由来</h2>
-<p>注意到这个是源于我不小心把一段正确的代码 <del>“自以为是地优化”</del> 成了类似于下面的代码： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">some_dict = &#123;<span class="number">1</span>: <span class="string">&#x27;one&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;two&#x27;</span>&#125;</span><br><span class="line">some_tensor = torch.tensor([<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> some_tensor:</span><br><span class="line">    <span class="keyword">if</span> e <span class="keyword">in</span> some_dict:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;O&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;X&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure> 我所期望地结果是： <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">XO</span><br></pre></td></tr></table></figure> 然而实际的结果是： <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">XX</span><br></pre></td></tr></table></figure></p>
-<span id="more"></span>
-<p>咋一看有些出乎意料？的确！这个bug在我的代码里面很隐蔽，我根本没觉得这里会有什么问题，以至于找了很久很久 <del>（一个多星期）</del>，所以才会开一篇文章记录一下。</p>
-<h2 id="发生了什么">发生了什么</h2>
-<p>上面的结果意味着： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor(<span class="number">1</span>) <span class="keyword">in</span> &#123;<span class="number">1</span>: <span class="string">&#x27;one&#x27;</span>&#125;</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure> 那么可能有两个原因：（1）<code>torch.tensor(1)</code>的hash值不等于1（hash(1)==1）；（2）<code>torch.tensor(1)</code>的hash值等于1，但是<code>torch.tensor(1)</code>不等于1。这是Python判断一个对象是否在字典中的准则，即先比较hash值，再比较值。</p>
-<p>让我们看一下： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(torch.tensor(<span class="number">1</span>)) == <span class="built_in">hash</span>(<span class="number">1</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor(<span class="number">1</span>) == <span class="number">1</span></span><br><span class="line">tensor(<span class="literal">True</span>)</span><br></pre></td></tr></table></figure> 那么结论很明确了，<code>torch.tensor(1)</code>的hash值不等于1！</p>
-<h2 id="为什么出乎意料">为什么出乎意料</h2>
-<p>一方面，我觉得<code>torch.Tensor</code>可哈希的行为很奇怪，因为我记得<code>list</code>是不可哈希的： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>([<span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line">TypeError: unhashable <span class="built_in">type</span>: <span class="string">&#x27;list&#x27;</span></span><br></pre></td></tr></table></figure> 然后我又发现<code>numpy.ndarray</code>是不可哈希的： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(np.array([<span class="number">1</span>, <span class="number">2</span>]))</span><br><span class="line">TypeError: unhashable <span class="built_in">type</span>: <span class="string">&#x27;numpy.ndarray&#x27;</span></span><br></pre></td></tr></table></figure> 为什么<code>torch.Tensor</code>的哈希行为和其它mutable类型甚至和<code>np.ndarray</code>都不同呢？如果它也是不可哈希的，那么我在对它进行“是否在字典中”的判断时就会抛出异常！</p>
-<p>另一方面，即使<code>torch.Tensor</code>是可哈希的，<code>torch.tensor(1)</code>的哈希值竟然不等于1，这点就更坑了。也就是说<code>torch.tensor(1) in &#123;1: 'one'&#125;</code>不仅不抛出异常，而且还产生不符合期望的结果。真坑啊:-(!</p>
-<h2 id="一探究竟">一探究竟</h2>
-<p>在仔细浏览了这个<a href="https://github.com/pytorch/pytorch/issues/7733">issue</a>之后，我大概明白了是怎么一回事：</p>
-<ul>
-<li>在pytorch的源码中图方便使用了tensor作为字典的键；</li>
-<li><code>hash(tensor)</code>简单地实现为<code>id(tensor)</code>。这种基于object的实现，而不是基于值的实现导致了期望之外的结果； <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = torch.tensor([<span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(t) == <span class="built_in">id</span>(t)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>这算是一个历史遗留问题，其中也有不少人讨论过移除tensor的可哈希行为，甚至<a href="https://github.com/pytorch/pytorch/pull/10625">pull request</a>都准备好了。但是考虑到这个更改可能造成比较大的影响，导致意料之外的结果，开发者们最终并未接受这个PR。</p>
-]]></content>
-      <categories>
-        <category>Python</category>
-        <category>Pytorch</category>
-      </categories>
-      <tags>
-        <tag>hash</tag>
-        <tag>pytorch</tag>
       </tags>
   </entry>
   <entry>
@@ -127,51 +145,33 @@
       </tags>
   </entry>
   <entry>
-    <title>段落与文本环境</title>
-    <url>//post/LaTeX-paragraph-and-text-environment/</url>
-    <content><![CDATA[<p>本文介绍<span class="math inline">\(\LaTeX\)</span>中段落以及各种常用的文本环境的使用方法。 <span id="more"></span></p>
-<h2 id="分段">分段</h2>
-<h3 id="段首缩进">段首缩进</h3>
-<p><span class="math inline">\(\LaTeX\)</span>中使用<strong>空行</strong>或者<code>\par</code>命令来分段。每个自然段第一行有一个固定的缩进，可以由长度变量<code>\parindent</code>控制。在西文标准文档类（如article）中，<strong>每个章节的第一段</strong>是<strong>不缩进</strong>的，但可以使用indentfirst宏包启用它；而中文文档类（如ctexart）则每段缩进，并自动设置段落缩进为两个汉字宽。</p>
-<p>要临时禁用缩进，可在段前使用<code>\noindent</code>命令；或者想要在本来没有缩进的地方使用缩进，可以用<code>\indent</code>命令产生。</p>
-<h3 id="段间距离">段间距离</h3>
-<p>段与段间的垂直距离由长度变量<code>\parskip</code>控制。其默认值是橡皮长度<code>0 pt plus 1 pt</code>，在中文排版中常使用</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\setlength</span>&#123;<span class="keyword">\parskip</span>&#125;&#123;0 pt&#125;</span><br></pre></td></tr></table></figure>
-<p>把段间距定义为固定长度，禁止段落间距离伸长。当然也可以设置较大的<code>\parskip</code>使得分段更清晰。</p>
-<h3 id="对齐方式">对齐方式</h3>
-<p><span class="math inline">\(\LaTeX\)</span>的段落默认是两端均匀对齐的，也可以改为左对齐，右对齐或居中格式。设置命令如下：</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\raggedright</span> <span class="comment">% 设置段落左对齐 ragged right意味着右边界参差不齐</span></span><br><span class="line"><span class="keyword">\raggedleft</span> <span class="comment">% 设置段落右对齐 常常用于排版签名、日期、格言警句等</span></span><br><span class="line"><span class="keyword">\centering</span> <span class="comment">% 设置段落居中对齐 可用于强调段落</span></span><br></pre></td></tr></table></figure>
-<p>除此之外，也可以使用环境flushleft、flushright、center分别表示左对齐、右对齐、居中。<strong>这几个环境会在段落前后增加一小段垂直间距以示强调</strong>，但它们不会影响前后的文字，因此比<code>\raggedright</code>等命令更常用一些。</p>
-<h3 id="断词">断词</h3>
-<p>在默认的段落设置下，<span class="math inline">\(\LaTeX\)</span>可能会在单词的<strong>两个音节中间断行</strong>，并在前一行末尾<strong>加上连字符</strong>，即所谓<strong>断词</strong>（用连字号连接，hyphenation）。一般来说，<span class="math inline">\(\TeX\)</span>能很好的处理断词。如果有需要，也可以自己使用<code>\-</code>命令指明可能的断点，如<code>man\-u\-script</code>。还可以使用<code>\hyphenation</code>命令在导言区全局地设置断点列表，如：</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\hyphenation</span>&#123;man-u-script com-pu-ter gym-na-sium&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>断词只在均匀对齐地段落中起作用，左对齐的段落就没有断词。</strong>使用<code>\sloppy</code>命令可以允许段落中更大的空格，从而<strong>禁用断词</strong>功能；与之相对的命令是<code>\fussy</code>，让段落恢复默认的较严格的间距。更多地是使用等效的sloppypar环境，把允许更宽松间距的文本放在环境中。</p>
-<h4 id="其他断词方式">其他断词方式</h4>
-<p>以<code>none</code>选项使用hyphenat宏包可以更好地禁用断词。而ragged2e宏包则可以在左对齐（）、右对齐（）或居中（）的段落中使用断词，这样可以得到更合理的段落。ragged2e宏包还提供<code>\justifying</code>命令回到均匀对齐的段落，以及对应的Center、FlushLeft、FlushRight、justify环境，作为标准<span class="math inline">\(\LaTeX\)</span>命令和环境的补充。</p>
-<h3 id="段落宽度">段落宽度</h3>
-<p>可以使用长度变量<code>\leftskip</code>和<code>rightskip</code>来控制段落的宽度，如果是局部修改，注意把整个段落放在一个分组里面，或定义为单独的环境。例如：</p>
-<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_parwidth.jpg"></p>
-<h3 id="特殊段落">特殊段落</h3>
-<p>较为常用的一种特殊段落是“悬挂缩进”，它可以由命令<code>\hangafter</code>和<code>hangindent</code>控制，例如：</p>
-<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_hang_indent.jpg"></p>
-<p>正的<code>\hangindent</code>作用于段落左侧，负的<code>\hangindent</code>作用于段落右侧；正的<code>\hangafter</code>作用于段落的 <span class="math inline">\(n\)</span> 行之后，负的<code>\hangafter</code>作用于段落的前 <span class="math inline">\(n\)</span> 行。<strong>两者均只对当前段起作用</strong>。</p>
-<p><code>\lettrine</code>宏包利用特殊的段落形状产生<strong>首字下沉</strong>的效果，例如</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 导言区使用 \usepackage&#123;lettrine&#125;</span></span><br><span class="line"><span class="keyword">\lettrine</span>&#123;孔&#125;&#123;&#125;乙己喝过半碗酒，涨红的脸色渐渐复了原，旁人便又问道，“孔乙己，你当真认识字么？”孔乙己看着问他的人，显出不屑置辩的神气。他们便接着说道，“你怎的连半个秀才也捞不到呢？”孔乙己立刻显出颓唐不安模样，脸上笼上了一层灰色，嘴里说些话；这回可是全是之乎者也之类，一些不懂了。在这时候，众人也都哄笑起来：店内外充满了快活的空气。</span><br></pre></td></tr></table></figure>
-<p>将产生</p>
-<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_lettrine.jpg"></p>
-<p>shapepar宏包预定义了一些段落形状，可以方便的排出一些有趣的效果，例如<code>\heartpar</code>命令将产生心形的段落：</p>
-<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 导言区 \usepackage&#123;shapepar&#125;</span></span><br><span class="line"><span class="keyword">\heartpar</span>&#123;<span class="comment">%</span></span><br><span class="line">八月秋高风怒号，卷我屋上三重茅。茅飞渡江洒江郊，高者挂罥长林梢，下者飘转沉塘坳。南村群童欺我老无力，忍能对面为盗贼。公然抱茅入竹去，唇焦口燥呼不得，归来倚杖自叹息。俄顷风定云墨色，秋天漠漠向昏黑。布衾多年冷似铁，娇儿恶卧踏里裂。床头屋漏无干处，雨脚如麻未断绝。自经丧乱少睡眠，长夜沾湿何由彻？安得广厦千万间，大庇天下寒士俱欢颜！风雨不动安如山。呜呼！何时眼前突兀见此屋，吾庐独破受冻死亦足！</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>将产生</p>
-<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_heartpar.jpg"></p>
+    <title>torch.Tensor是可哈希的！</title>
+    <url>//post/torch-tensor-is-hashable/</url>
+    <content><![CDATA[<h2 id="问题的由来">问题的由来</h2>
+<p>注意到这个是源于我不小心把一段正确的代码 <del>“自以为是地优化”</del> 成了类似于下面的代码： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">some_dict = &#123;<span class="number">1</span>: <span class="string">&#x27;one&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;two&#x27;</span>&#125;</span><br><span class="line">some_tensor = torch.tensor([<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> some_tensor:</span><br><span class="line">    <span class="keyword">if</span> e <span class="keyword">in</span> some_dict:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;O&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;X&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure> 我所期望地结果是： <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">XO</span><br></pre></td></tr></table></figure> 然而实际的结果是： <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">XX</span><br></pre></td></tr></table></figure></p>
+<span id="more"></span>
+<p>咋一看有些出乎意料？的确！这个bug在我的代码里面很隐蔽，我根本没觉得这里会有什么问题，以至于找了很久很久 <del>（一个多星期）</del>，所以才会开一篇文章记录一下。</p>
+<h2 id="发生了什么">发生了什么</h2>
+<p>上面的结果意味着： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor(<span class="number">1</span>) <span class="keyword">in</span> &#123;<span class="number">1</span>: <span class="string">&#x27;one&#x27;</span>&#125;</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure> 那么可能有两个原因：（1）<code>torch.tensor(1)</code>的hash值不等于1（hash(1)==1）；（2）<code>torch.tensor(1)</code>的hash值等于1，但是<code>torch.tensor(1)</code>不等于1。这是Python判断一个对象是否在字典中的准则，即先比较hash值，再比较值。</p>
+<p>让我们看一下： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(torch.tensor(<span class="number">1</span>)) == <span class="built_in">hash</span>(<span class="number">1</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor(<span class="number">1</span>) == <span class="number">1</span></span><br><span class="line">tensor(<span class="literal">True</span>)</span><br></pre></td></tr></table></figure> 那么结论很明确了，<code>torch.tensor(1)</code>的hash值不等于1！</p>
+<h2 id="为什么出乎意料">为什么出乎意料</h2>
+<p>一方面，我觉得<code>torch.Tensor</code>可哈希的行为很奇怪，因为我记得<code>list</code>是不可哈希的： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>([<span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line">TypeError: unhashable <span class="built_in">type</span>: <span class="string">&#x27;list&#x27;</span></span><br></pre></td></tr></table></figure> 然后我又发现<code>numpy.ndarray</code>是不可哈希的： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(np.array([<span class="number">1</span>, <span class="number">2</span>]))</span><br><span class="line">TypeError: unhashable <span class="built_in">type</span>: <span class="string">&#x27;numpy.ndarray&#x27;</span></span><br></pre></td></tr></table></figure> 为什么<code>torch.Tensor</code>的哈希行为和其它mutable类型甚至和<code>np.ndarray</code>都不同呢？如果它也是不可哈希的，那么我在对它进行“是否在字典中”的判断时就会抛出异常！</p>
+<p>另一方面，即使<code>torch.Tensor</code>是可哈希的，<code>torch.tensor(1)</code>的哈希值竟然不等于1，这点就更坑了。也就是说<code>torch.tensor(1) in &#123;1: 'one'&#125;</code>不仅不抛出异常，而且还产生不符合期望的结果。真坑啊:-(!</p>
+<h2 id="一探究竟">一探究竟</h2>
+<p>在仔细浏览了这个<a href="https://github.com/pytorch/pytorch/issues/7733">issue</a>之后，我大概明白了是怎么一回事：</p>
+<ul>
+<li>在pytorch的源码中图方便使用了tensor作为字典的键；</li>
+<li><code>hash(tensor)</code>简单地实现为<code>id(tensor)</code>。这种基于object的实现，而不是基于值的实现导致了期望之外的结果； <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = torch.tensor([<span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(t) == <span class="built_in">id</span>(t)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>这算是一个历史遗留问题，其中也有不少人讨论过移除tensor的可哈希行为，甚至<a href="https://github.com/pytorch/pytorch/pull/10625">pull request</a>都准备好了。但是考虑到这个更改可能造成比较大的影响，导致意料之外的结果，开发者们最终并未接受这个PR。</p>
 ]]></content>
       <categories>
-        <category>Tools</category>
-        <category>LaTeX</category>
-        <category>LaTeX入门</category>
+        <category>Python</category>
+        <category>Pytorch</category>
       </categories>
       <tags>
-        <tag>LaTeX</tag>
-        <tag>typesetting</tag>
+        <tag>hash</tag>
+        <tag>pytorch</tag>
       </tags>
   </entry>
   <entry>
