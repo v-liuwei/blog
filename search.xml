@@ -3,8 +3,7 @@
   <entry>
     <title>段落与文本环境</title>
     <url>/post/LaTeX-paragraph-and-text-environment/</url>
-    <content><![CDATA[<p>本文介绍<span class="math inline">\(\LaTeX\)</span>中段落以及各种常用的文本环境的使用方法。 <span id="more"></span></p>
-<h2 id="分段">分段</h2>
+    <content><![CDATA[<h2 id="分段">分段</h2>
 <h3 id="段首缩进">段首缩进</h3>
 <p><span class="math inline">\(\LaTeX\)</span>中使用<strong>空行</strong>或者<code>\par</code>命令来分段。每个自然段第一行有一个固定的缩进，可以由长度变量<code>\parindent</code>控制。在西文标准文档类（如article）中，<strong>每个章节的第一段</strong>是<strong>不缩进</strong>的，但可以使用indentfirst宏包启用它；而中文文档类（如ctexart）则每段缩进，并自动设置段落缩进为两个汉字宽。</p>
 <p>要临时禁用缩进，可在段前使用<code>\noindent</code>命令；或者想要在本来没有缩进的地方使用缩进，可以用<code>\indent</code>命令产生。</p>
@@ -21,7 +20,7 @@
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\hyphenation</span>&#123;man-u-script com-pu-ter gym-na-sium&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>断词只在均匀对齐地段落中起作用，左对齐的段落就没有断词。</strong>使用<code>\sloppy</code>命令可以允许段落中更大的空格，从而<strong>禁用断词</strong>功能；与之相对的命令是<code>\fussy</code>，让段落恢复默认的较严格的间距。更多地是使用等效的sloppypar环境，把允许更宽松间距的文本放在环境中。</p>
 <h4 id="其他断词方式">其他断词方式</h4>
-<p>以<code>none</code>选项使用hyphenat宏包可以更好地禁用断词。而ragged2e宏包则可以在左对齐（）、右对齐（）或居中（）的段落中使用断词，这样可以得到更合理的段落。ragged2e宏包还提供<code>\justifying</code>命令回到均匀对齐的段落，以及对应的Center、FlushLeft、FlushRight、justify环境，作为标准<span class="math inline">\(\LaTeX\)</span>命令和环境的补充。</p>
+<p>以<code>none</code>选项使用hyphenat宏包可以更好地禁用断词。而ragged2e宏包则可以在左对齐（<code>\RaggedRight</code>）、右对齐（<code>\RaggedLeft</code>）或居中（<code>\Centering</code>）的段落中使用断词，这样可以得到更合理的段落。ragged2e宏包还提供<code>\justifying</code>命令回到均匀对齐的段落，以及对应的Center、FlushLeft、FlushRight、justify环境，作为标准<span class="math inline">\(\LaTeX\)</span>命令和环境的补充。</p>
 <h3 id="段落宽度">段落宽度</h3>
 <p>可以使用长度变量<code>\leftskip</code>和<code>rightskip</code>来控制段落的宽度，如果是局部修改，注意把整个段落放在一个分组里面，或定义为单独的环境。例如：</p>
 <p><img src="/post/LaTeX-paragraph-and-text-environment/latex_parwidth.jpg"></p>
@@ -39,21 +38,18 @@
 <p><img src="/post/LaTeX-paragraph-and-text-environment/latex_heartpar.jpg"></p>
 ]]></content>
       <categories>
-        <category>Tools</category>
+        <category>Code</category>
         <category>LaTeX</category>
-        <category>LaTeX入门</category>
       </categories>
       <tags>
         <tag>LaTeX</tag>
-        <tag>typesetting</tag>
+        <tag>Typesetting</tag>
       </tags>
   </entry>
   <entry>
     <title>在类方法上应用基于类的装饰器时发生错误：missing 1 required positional argument</title>
     <url>/post/python-class-based-descriptor-applied-to-method/</url>
-    <content><![CDATA[<p>当你想要对类方法使用装饰器时，应当格外小心...</p>
-<span id="more"></span>
-<div class="note info flat"><p>如果你对装饰器还知之甚少，可以移步这篇文章: <a href="../python-decorator">Python 装饰器</a>.</p>
+    <content><![CDATA[<div class="note info flat"><p>如果你对装饰器还知之甚少，可以移步这篇文章: <a href="../python-decorator">Python 装饰器</a>.</p>
 </div>
 <h2 id="两种风格的装饰器">两种风格的装饰器</h2>
 <p>当我需要一个计时器来计算我的程序执行用时时，我想到了装饰器。<del>本着少造轮子的原则</del>，我Google了一下，发现了如下两种不一样的装饰器写法：</p>
@@ -84,12 +80,13 @@
 </div>
 ]]></content>
       <categories>
+        <category>Code</category>
         <category>Python</category>
-        <category>decorator</category>
-        <category>descriptor</category>
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>Decorator</tag>
+        <tag>Descriptor</tag>
       </tags>
   </entry>
   <entry>
@@ -97,7 +94,6 @@
     <url>/post/python-decorator/</url>
     <content><![CDATA[<h2 id="从程序计时器说起">从程序计时器说起</h2>
 <p>当我们想要计算一个程序的执行时间时，也许会写这样一个简单的程序计时器： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t1 = time.time()</span><br><span class="line">func1()</span><br><span class="line">func2()</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">t2 = time.time()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;time consumed: <span class="subst">&#123;t2-t1&#125;</span>s&quot;</span>)</span><br></pre></td></tr></table></figure> 它的好处是简单易操作，<del>有手就行</del> ， 可以一次计算多个函数的总执行时间。但它的缺点也很明显，每次想计算某个函数的运行时间时，都得重复这几行代码。 然而，重复“函数调用时应该执行的操作”正是装饰器（decorator）派上用的地方。</p>
-<span id="more"></span>
 <p>下面是一个程序计时器的装饰器实现： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span>(<span class="params">func</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">        t1 = time.time()</span><br><span class="line">        ret = func(*args, **kwargs)</span><br><span class="line">        t2 = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;time consumed: <span class="subst">&#123;t2-t1&#125;</span>s&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure> 它有几个明显的特征：（1）它是一个函数；（2）它以一个函数为参数；（2）它返回一个函数。</p>
 <p>当我们想要对函数<code>func</code>计时时，只需要使用<code>@</code>语法在定义该函数时加上<code>@timer</code>。例如 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@timer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wait</span>(<span class="params">sec</span>):</span></span><br><span class="line">    time.sleep(sec)</span><br></pre></td></tr></table></figure> 这样每当我们调用函数<code>wait</code>, 都会自动输出其执行时间： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">wait(<span class="number">3</span>)</span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># time consumed: 3.0031869411468506s</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="装饰器是如何工作的">装饰器是如何工作的</h2>
@@ -113,33 +109,32 @@
 <p>(完)</p>
 ]]></content>
       <categories>
+        <category>Code</category>
         <category>Python</category>
-        <category>grammar</category>
-        <category>decorator</category>
       </categories>
       <tags>
-        <tag>decorator</tag>
+        <tag>Python</tag>
+        <tag>Decorator</tag>
       </tags>
   </entry>
   <entry>
     <title>Windows下SSH远程连接免密登录</title>
     <url>/post/ssh-password-free/</url>
-    <content><![CDATA[<p>我在使用VSCode的Remote-SSH插件进行远程开发时，每次连接服务器都得输入密码，于是希望能够免密登录。</p>
-<h2 id="step1-生成ssh密钥">Step1: 生成SSH密钥</h2>
+    <content><![CDATA[<h2 id="step1-生成ssh密钥">Step1: 生成SSH密钥</h2>
 <div class="note warning flat"><p>如果你的用户目录（<code>C:\Users\xxxxxx\</code>）下的<code>.ssh</code>文件夹内已经有<code>id_rsa</code>文件，你可能曾经生成过密钥了，可以跳过这一步。</p>
 </div>
 <p>打开cmd，输入如下命令： <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure> 然后它会提示你将要生成的密钥文件放在什么位置等等，不用管，一路按回车就好。</p>
 <h2 id="step2-将生成的公钥上传到远程服务器上">Step2: 将生成的公钥上传到远程服务器上</h2>
 <p>将刚才生成的<code>id_rsa.pub</code>文件的内容写入服务器上的<code>~/.ssh/authorized_keys</code>文件中。</p>
-<p>你可以手动复制过去，也可以可以在cmd里输入如下命令来完成： <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">type</span> <span class="variable">%USERPROFILE%</span>\.ssh\id_rsa.pub | ssh &#123;USER&#125;@&#123;HOST&#125; -p &#123;PORT&#125; &quot;<span class="built_in">mkdir</span> -p .ssh/ &amp;&amp; cat &gt;&gt; .ssh/authorized_keys&quot;</span><br></pre></td></tr></table></figure> 注意分别将命令中的<code>&#123;USER&#125;</code>, <code>&#123;HOST&#125;</code>, <code>&#123;PORT&#125;</code>替换为<mark class="hl-label default">你的用户名</mark> 、 <mark class="hl-label default">服务器的IP地址</mark> 、<mark class="hl-label default">服务器的端口号</mark> （如果你不知道端口号，那么可能是默认的<code>22</code>）。</p>
+<p>你可以手动复制过去，也可以可以在cmd里输入如下命令来完成： <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">type</span> <span class="variable">%USERPROFILE%</span>\.ssh\id_rsa.pub | ssh &#123;USER&#125;@&#123;HOST&#125; -p &#123;PORT&#125; &quot;<span class="built_in">mkdir</span> -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span><br></pre></td></tr></table></figure> 注意分别将命令中的<code>&#123;USER&#125;</code>, <code>&#123;HOST&#125;</code>, <code>&#123;PORT&#125;</code>替换为<mark class="hl-label default">你的用户名</mark> 、 <mark class="hl-label default">服务器的IP地址</mark> 、<mark class="hl-label default">服务器的端口号</mark> （如果你不知道端口号，那么可能是默认的<code>22</code>）。</p>
 <p>输入命令后回车并输入你在服务器上的密码，输入密码是看不到回显的，输入完回车就好。如果你没有看到任何输出，那么已经成功了，快打开VSCode试试吧😀。</p>
 ]]></content>
       <categories>
-        <category>Tools</category>
-        <category>SSH</category>
+        <category>Code</category>
+        <category>Misc</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
+        <tag>VSCode</tag>
         <tag>SSH</tag>
       </tags>
   </entry>
@@ -165,19 +160,19 @@
 <p>这算是一个历史遗留问题，其中也有不少人讨论过移除tensor的可哈希行为，甚至<a href="https://github.com/pytorch/pytorch/pull/10625">pull request</a>都准备好了。但是考虑到这个更改可能造成比较大的影响，导致意料之外的结果，开发者们最终并未接受这个PR。</p>
 ]]></content>
       <categories>
+        <category>Code</category>
         <category>Python</category>
-        <category>Pytorch</category>
       </categories>
       <tags>
-        <tag>hash</tag>
-        <tag>pytorch</tag>
+        <tag>Python</tag>
+        <tag>Hash</tag>
+        <tag>PyTorch</tag>
       </tags>
   </entry>
   <entry>
     <title>文字与符号</title>
     <url>/post/LaTeX-text-and-symbols/</url>
-    <content><![CDATA[<p>本文介绍<span class="math inline">\(\LaTeX\)</span>中最基本的对象：字符、盒子的使用。 <span id="more"></span></p>
-<h2 id="字斟句酌">字斟句酌</h2>
+    <content><![CDATA[<h2 id="字斟句酌">字斟句酌</h2>
 <h3 id="从字母表到单词">从字母表到单词</h3>
 <p>我们常用的字母表包括扩展的拉丁字母、希腊字母和西里尔字母(Cyrillic alphabet)，这比标准键盘上所能直接输入的52个字母要多得多。不过不用担心，数以万计的汉字我们也搞定了，区区几个字母也不在话下。解决输入超过ASCII码范围的字母的问题有传统和现代两类方案。</p>
 <p>现代的方案就是使用UTF-8编码直接输入。输入特殊的字母需要计算机键盘布局或输入法的支持。如果不方便使用特殊键盘来设置，操作系统或编辑器往往还提供了“字符映射表”一类的程序或插件，可以用鼠标选取一些字符输入。</p>
@@ -195,24 +190,21 @@
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">, . ; : ! ? ‘ ’ ( ) [ ] - / * @</span><br></pre></td></tr></table></figure>
 <p>标点<code>,.;:!?</code>用来分隔句子或部分句子，在每个标点之后应该加上空格，以保证正确的距离和换行。</p>
 <p>引号在<span class="math inline">\(\LaTeX\)</span>中用‘和’两个符号表示。单引号用一遍，双引号就用两遍。符号’同时也是表示所有格和省字的撇号。</p>
-<p>除了在数学模式中表示减号，符号<code>-</code>在<span class="math inline">\(\LaTeX\)</span>正文中也有多种用途：单独使用它是连字符；两个连用（--），是en dash，用来表示数字范围，如（2000--2020）；三个连用（---），是em dash，即破折号。不过，按照中文的写作习惯，表示数字范围也常使用符号<span class="math inline">\(\sim\)</span>（数学模式的符号$$），有时也用汉字的全角破折号或半个汉字破折号。</p>
+<p>除了在数学模式中表示减号，符号<code>-</code>在<span class="math inline">\(\LaTeX\)</span>正文中也有多种用途：单独使用它是连字符；两个连用（<code>--</code>），是en dash，用来表示数字范围，如（2000--2020）；三个连用（<code>---</code>），是em dash，即破折号。不过，按照中文的写作习惯，表示数字范围也常使用符号<span class="math inline">\(\sim\)</span>（数学模式的符号$$），有时也用汉字的全角破折号或半个汉字破折号。</p>
 <p>西文的省略号使用<code>\ldots</code>或<code>\dots</code>命令产生，相比直接输入三个句号，它所略微拉开的距离要合理得多：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">Good: One, two, three<span class="keyword">\ldots</span></span><br><span class="line"></span><br><span class="line">Bad: One, two, three...</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Good: One, two, three<span class="math inline">\(\ldots\)</span></p>
-<p>Bad: One, two, three...</p>
-</blockquote>
+<p><img src="/post/LaTeX-text-and-symbols/latex_ldots.jpg"></p>
 <p>标准键盘上不能直接录入的标点符号有10个，它们占据了主键盘上面一排的一大半：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">~ # $ % ^ &amp; &#123; &#125; _ \</span><br></pre></td></tr></table></figure>
-<p>它们都有特殊作用：数学模式符号$、注释符%、上标^、下标_、分组{ }、宏命令、带子~、#用在宏定义中，&amp;用于表格对齐。要在正文中使用这些符号，大部分是在前面加，只有个别例外：</p>
+<p>它们都有特殊作用：数学模式符号<code>$</code>、注释符<code>%</code>、上标<code>^</code>、下标<code>_</code>、分组<code>&#123; &#125;</code>、宏命令<code>\</code>、带子<code>~</code>、<code>#</code>用在宏定义中，<code>&amp;</code>用于表格对齐。要在正文中使用这些符号，大部分是在前面加<code>\</code>，只有个别例外：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\~</span>&#123;&#125; <span class="keyword">\#</span> <span class="keyword">\$</span> <span class="keyword">\%</span> <span class="keyword">\^</span>&#123;&#125; <span class="keyword">\&amp;</span> <span class="keyword">\&#123;</span> <span class="keyword">\&#125;</span> <span class="keyword">\_</span> <span class="keyword">\textbackslash</span> <span class="comment">%与上面对应</span></span><br></pre></td></tr></table></figure>
 <p>中文使用的标点与西文标点不同，中文写作使用全角标点。在科技文章中，为与数字、字母区分，中文的句号一般也使用一个小圆点表示，此时应该使用全角的“．”，而非混用西文句号。这个标点在大部分中文输入法可能不易输入，可以先统一使用句号“。”，最后统一替换。</p>
 <h3 id="空格与换行">空格与换行</h3>
 <h4 id="空格">空格</h4>
 <p>文本中的空格起着分隔单词的作用，任意多个空格与一个空格的功能相同；只有字符后面的空格是有效的，每行最前面的空格则被忽略，这样有利于复杂代码的对齐；单个换行也被看做是一个空格。</p>
-<p>以字母命名的宏，后面的空格会被忽略。如果要在命令后面使用空格，可以使用<code>\</code>，它表示两个普通单词间的空格距离；也可以在命令后加一个空的分组{}，有时也可以把命令用一个分组包裹起来。下面只有第一行得到的结果没有空格：</p>
+<p>以字母命名的宏，后面的空格会被忽略。如果要在命令后面使用空格，可以使用<code>\</code>，它表示两个普通单词间的空格距离；也可以在命令后加一个空的分组<code>&#123;&#125;</code>，有时也可以把命令用一个分组包裹起来。下面只有第一行得到的结果没有空格：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">Happy <span class="keyword">\TeX</span> ing.</span><br><span class="line">Happy <span class="keyword">\TeX</span><span class="keyword">\ </span>ing.</span><br><span class="line">Happy <span class="keyword">\TeX</span>&#123;&#125; ing. </span><br><span class="line">Happy &#123;<span class="keyword">\TeX</span>&#125; ing.</span><br></pre></td></tr></table></figure>
-<p>有一种不可打断的空格，在<span class="math inline">\(\TeX\)</span>中被称为带子（ties），用~表示。<span class="math inline">\(\TeX\)</span>禁止在这种空格之间分行，因而可以用来表示一些不宜分开的情况。</p>
+<p>有一种不可打断的空格，在<span class="math inline">\(\TeX\)</span>中被称为带子（ties），用<code>~</code>表示。<span class="math inline">\(\TeX\)</span>禁止在这种空格之间分行，因而可以用来表示一些不宜分开的情况。</p>
 <p><span class="math inline">\(\LaTeX\)</span>把大写字母后的点看做缩写标记，把小写字母后的点看做句子结束，并对它们使用不同的间距。可以使用<code>\</code>指明是普通单词间的空格，或用<code>\@.</code>指明.大写字母后的句末。</p>
 <p>汉字后的空格会被忽略。使用xelatex编译中文文档时，汉字和其他内容之间如果没有空格，xeCJK宏包会自动添加。个别时候需要忽略汉字和其他内容之间由xeCJK自动产生的空格，这时可以把汉字放进一个盒子里面。 <figure class="highlight tex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\mbox</span>&#123;条目&#125;-a不同于条目-b</span><br></pre></td></tr></table></figure></p>
 <p>在空格中，最神奇的一种可能就是被称为幻影（phantom）的空格。幻影命令<code>\phantom</code>有一个参数，作用是产生与参数内容一样大小的空盒子。类似的有<code>\hphantom</code>和<code>\vphantom</code>, 分别表示水平方向和垂直方向的幻影（在另一个方向大小为零）。</p>
@@ -240,20 +232,20 @@
 <tbody>
 <tr class="odd">
 <td>罗马</td>
-<td></td>
-<td></td>
+<td>\textrm{}</td>
+<td>\rmfamily</td>
 <td><span class="math inline">\(\textrm{Roman font family}\)</span></td>
 </tr>
 <tr class="even">
 <td>无衬线</td>
-<td></td>
-<td></td>
+<td>\textsf{}</td>
+<td>\sffamily</td>
 <td><span class="math inline">\(\textsf{Sans serif font family}\)</span></td>
 </tr>
 <tr class="odd">
 <td>打字机</td>
-<td></td>
-<td></td>
+<td>\texttt{}</td>
+<td>\ttfamily</td>
 <td><span class="math inline">\(\texttt{Typewriter font family}\)</span></td>
 </tr>
 </tbody>
@@ -274,15 +266,15 @@
 <tbody>
 <tr class="odd">
 <td>中等</td>
-<td></td>
-<td></td>
+<td>\textmd{}</td>
+<td>\mdseries</td>
 <td><span class="math inline">\(\textrm{Medium series}\)</span></td>
 </tr>
 <tr class="even">
 <td>加宽加粗</td>
-<td></td>
-<td></td>
-<td></td>
+<td>\textbf{}</td>
+<td>\bfseries</td>
+<td><span class="math inline">\(\textbf{Bold extended series}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -400,13 +392,12 @@
 <p><img src="/post/LaTeX-text-and-symbols/latex_space_and_box_eg.jpg"></p>
 ]]></content>
       <categories>
-        <category>Tools</category>
+        <category>Code</category>
         <category>LaTeX</category>
-        <category>LaTeX入门</category>
       </categories>
       <tags>
         <tag>LaTeX</tag>
-        <tag>typesetting</tag>
+        <tag>Typesetting</tag>
       </tags>
   </entry>
 </search>

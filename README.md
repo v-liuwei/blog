@@ -1,1 +1,1 @@
-My website here: [PyBug](https://pybug.tech)
+My website here: [6V's Blog](https://blog.vvvvvv.space)
