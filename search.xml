@@ -47,6 +47,33 @@
       </tags>
   </entry>
   <entry>
+    <title>git submodules 实践</title>
+    <url>/post/git-submodules-practice/</url>
+    <content><![CDATA[<p>最近用git管理项目，涉及到了 submodule。submodule 简单来说就是在一个git仓库中包含的子 git 仓库，想要同时维护好这两个互为父子关系的 git 仓库并不容易，很容易出岔子且令人困惑。</p>
+<p>举例来说，假设有一个名叫 <code>parent</code> 的 git 仓库，里面有一些文件夹和文件，其中 <code>child/</code> 文件夹本身也是一个 git 仓库。下面两者分别称为父仓库/子仓库。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">parent&#x2F;</span><br><span class="line">  .git&#x2F;</span><br><span class="line">  child&#x2F;</span><br><span class="line">    .git&#x2F;</span><br><span class="line">    file1</span><br><span class="line">    file2</span><br><span class="line">  dir1&#x2F;</span><br><span class="line">  file3</span><br><span class="line">  file4</span><br><span class="line">  .gitmodules</span><br></pre></td></tr></table></figure>
+<p>现在远程仓库的<code>master</code>分支有一些改动，父子仓库均有涉及，我们想要<code>pull</code>到本地。按照常规的操作<code>git pull origin master</code>将不能达到预期的效果：本地的父子仓库的均同步远程仓库的更新。</p>
+<p>这是因为父仓库只记录了子仓库的commit链接，以及子仓库相对于父仓库的相对路径。其中，commit链接包括子仓库的远程 URL 和 commit ID，这两者唯一确定了子仓库的状态（或者说内容）。父目录在其 .git 中记录子仓库的commit ID，并通过文件<code>.gitmodules</code>记录子仓库的 URL 和 相对路径：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[submodule &quot;child&quot;]</span><br><span class="line">	path &#x3D; child</span><br><span class="line">	url &#x3D; url_to_child_remote</span><br></pre></td></tr></table></figure>
+<p>在父仓库中执行<code>git pull origin master</code>只会更新其所记录的子仓库的commit ID，但不会更新子仓库本身。这时仓库的实际 commit ID 将与 .git 所存储的不同，表现为<code>git status</code>命令将显示子仓库<code>child</code>已修改（modified）。</p>
+<p>可以认为子仓库除了在文件结构上隶属于父仓库外完全独立于父仓库，父仓库的版本管理不会跟踪子仓库的内容，而只跟踪子仓库的 commit ID。要实际更新子仓库的内容，还需要（在父仓库中）执行<code>git submodule update</code>命令，它会通过所记录的相对路径进入子仓库里面，然后根据父仓库所记录的 commit ID 从远程拉取目标版本。</p>
+<p>其它的同步命令如<code>clone/pull/push</code>等以及<code>checkout/reset</code>等会更改本地仓库内容的命令在涉及到 submodules 时都是同样的原理，直接在父仓库中执行这些命令会产生令人困惑的结果。</p>
+<p>例如，<code>clone</code>命令也只会将子仓库的 commit ID 复制下来，而不会复制子仓库本身。因此，当 clone 完成后，<code>child/</code>只是一个空目录，里面什么也没有。与 pull 时的情况不同的是，这时因为子仓库还没有初始化，需要首先执行<code>git submodule init</code>，然后再执行<code>git submodule update</code>，或者合并为一个命令<code>git submodule update --init</code>。</p>
+<p>可以通过在这些命令中指定<code>--recurse-submodules</code>项（Git 2.14+），来自动更新子仓库，而不用在命令后再执行<code>git submodule update</code>。 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master --recurse-submodules</span><br></pre></td></tr></table></figure> 目前支持这个选项的命令包括<code>read-tree/checkout/reset/grep/clone/pull/push</code>。</p>
+<p>要自动为这些命令指定此项，可以设置<code>submodule.recurse</code>： <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global submodule.recurse <span class="literal">true</span></span></span><br></pre></td></tr></table></figure> 但需要注意的是，即使完成了这个设置，<code>clone</code>操作仍需显式地指定<code>--recurse-submodules</code>。</p>
+<p>此外，若操作未正常完成，将不会再自动执行子仓库的更新，即使 commit ID 已经正常更新了。一种情况是，pull 操作时因为冲突无法合并导致的命令执行失败。因此有理由认为下面两个命令等价</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git pull origin master --recurse-submodules</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git pull origin master &amp;&amp; git submodule update --init  <span class="comment"># &amp;&amp; 运算符意味着后面的命令的执行依赖于前面的命令的成功执行</span></span></span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git-Submodules</a></p>
+]]></content>
+      <categories>
+        <category>Code</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在类方法上应用基于类的装饰器时发生错误：missing 1 required positional argument</title>
     <url>/post/python-class-based-descriptor-applied-to-method/</url>
     <content><![CDATA[<div class="note info flat"><p>如果你对装饰器还知之甚少，可以移步这篇文章: <a href="../python-decorator">Python 装饰器</a>.</p>
@@ -127,7 +154,7 @@
 <h2 id="step2-将生成的公钥上传到远程服务器上">Step2: 将生成的公钥上传到远程服务器上</h2>
 <p>将刚才生成的<code>id_rsa.pub</code>文件的内容写入服务器上的<code>~/.ssh/authorized_keys</code>文件中。</p>
 <p>你可以手动复制过去，也可以可以在cmd里输入如下命令来完成： <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">type</span> <span class="variable">%USERPROFILE%</span>\.ssh\id_rsa.pub | ssh &#123;USER&#125;@&#123;HOST&#125; -p &#123;PORT&#125; &quot;<span class="built_in">mkdir</span> -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span><br></pre></td></tr></table></figure> 注意分别将命令中的<code>&#123;USER&#125;</code>, <code>&#123;HOST&#125;</code>, <code>&#123;PORT&#125;</code>替换为<mark class="hl-label default">你的用户名</mark> 、 <mark class="hl-label default">服务器的IP地址</mark> 、<mark class="hl-label default">服务器的端口号</mark> （如果你不知道端口号，那么可能是默认的<code>22</code>）。</p>
-<p>输入命令后回车并输入你在服务器上的密码，输入密码是看不到回显的，输入完回车就好。如果你没有看到任何输出，那么已经成功了，快打开VSCode试试吧😀。</p>
+<p>输入命令后回车并输入你在服务器上的密码，<strong>输入密码是看不到回显的</strong>，输入完回车就好。如果你没有看到任何输出，则说明设置成功了。</p>
 ]]></content>
       <categories>
         <category>Code</category>
@@ -142,22 +169,22 @@
     <title>torch.Tensor是可哈希的！</title>
     <url>/post/torch-tensor-is-hashable/</url>
     <content><![CDATA[<h2 id="问题的由来">问题的由来</h2>
-<p>注意到这个是源于我不小心把一段正确的代码 <del>“自以为是地优化”</del> 成了类似于下面的代码： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">some_dict = &#123;<span class="number">1</span>: <span class="string">&#x27;one&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;two&#x27;</span>&#125;</span><br><span class="line">some_tensor = torch.tensor([<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> some_tensor:</span><br><span class="line">    <span class="keyword">if</span> e <span class="keyword">in</span> some_dict:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;O&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;X&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure> 我所期望地结果是： <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">XO</span><br></pre></td></tr></table></figure> 然而实际的结果是： <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">XX</span><br></pre></td></tr></table></figure></p>
-<span id="more"></span>
-<p>咋一看有些出乎意料？的确！这个bug在我的代码里面很隐蔽，我根本没觉得这里会有什么问题，以至于找了很久很久 <del>（一个多星期）</del>，所以才会开一篇文章记录一下。</p>
+<p>注意到这个问题是因为我把一段正确的代码 “优化”成了类似下面的代码： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line">some_dict = &#123;<span class="number">1</span>: <span class="string">&#x27;one&#x27;</span>, <span class="number">2</span>: <span class="string">&#x27;two&#x27;</span>&#125;</span><br><span class="line">some_tensor = torch.tensor([<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line"><span class="keyword">for</span> e <span class="keyword">in</span> some_tensor:</span><br><span class="line">    <span class="keyword">if</span> e <span class="keyword">in</span> some_dict:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Yes!&quot;</span>)</span><br></pre></td></tr></table></figure> 结果导致了意料之外的结果，什么也没有输出。</p>
+<p>咋一看有些出乎意料？的确！在找 bug 时我根本没觉得这里会有什么问题，以至于找了很久很久 <del>（一个多星期）</del>。</p>
 <h2 id="发生了什么">发生了什么</h2>
 <p>上面的结果意味着： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor(<span class="number">1</span>) <span class="keyword">in</span> &#123;<span class="number">1</span>: <span class="string">&#x27;one&#x27;</span>&#125;</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure> 那么可能有两个原因：（1）<code>torch.tensor(1)</code>的hash值不等于1（hash(1)==1）；（2）<code>torch.tensor(1)</code>的hash值等于1，但是<code>torch.tensor(1)</code>不等于1。这是Python判断一个对象是否在字典中的准则，即先比较hash值，再比较值。</p>
-<p>让我们看一下： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(torch.tensor(<span class="number">1</span>)) == <span class="built_in">hash</span>(<span class="number">1</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor(<span class="number">1</span>) == <span class="number">1</span></span><br><span class="line">tensor(<span class="literal">True</span>)</span><br></pre></td></tr></table></figure> 那么结论很明确了，<code>torch.tensor(1)</code>的hash值不等于1！</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(torch.tensor(<span class="number">1</span>)) == <span class="built_in">hash</span>(<span class="number">1</span>)</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>torch.tensor(<span class="number">1</span>) == <span class="number">1</span></span><br><span class="line">tensor(<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>经过简单的测试可以知道原因是前者，即<code>torch.tensor(1)</code>的hash值不等于1！</p>
 <h2 id="为什么出乎意料">为什么出乎意料</h2>
-<p>一方面，我觉得<code>torch.Tensor</code>可哈希的行为很奇怪，因为我记得<code>list</code>是不可哈希的： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>([<span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line">TypeError: unhashable <span class="built_in">type</span>: <span class="string">&#x27;list&#x27;</span></span><br></pre></td></tr></table></figure> 然后我又发现<code>numpy.ndarray</code>是不可哈希的： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(np.array([<span class="number">1</span>, <span class="number">2</span>]))</span><br><span class="line">TypeError: unhashable <span class="built_in">type</span>: <span class="string">&#x27;numpy.ndarray&#x27;</span></span><br></pre></td></tr></table></figure> 为什么<code>torch.Tensor</code>的哈希行为和其它mutable类型甚至和<code>np.ndarray</code>都不同呢？如果它也是不可哈希的，那么我在对它进行“是否在字典中”的判断时就会抛出异常！</p>
-<p>另一方面，即使<code>torch.Tensor</code>是可哈希的，<code>torch.tensor(1)</code>的哈希值竟然不等于1，这点就更坑了。也就是说<code>torch.tensor(1) in &#123;1: 'one'&#125;</code>不仅不抛出异常，而且还产生不符合期望的结果。真坑啊:-(!</p>
+<p>一方面，我觉得<code>torch.Tensor</code>可哈希的行为很奇怪，因为<code>list</code>和<code>np.ndarray</code>都是不可哈希的： <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>([<span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line">TypeError: unhashable <span class="built_in">type</span>: <span class="string">&#x27;list&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(np.array([<span class="number">1</span>, <span class="number">2</span>]))</span><br><span class="line">TypeError: unhashable <span class="built_in">type</span>: <span class="string">&#x27;numpy.ndarray&#x27;</span></span><br></pre></td></tr></table></figure></p>
+<p>另一方面，即使<code>torch.Tensor</code>是可哈希的，我也以为<code>torch.tensor(1)</code>的哈希值应该等于1。</p>
 <h2 id="一探究竟">一探究竟</h2>
 <p>在仔细浏览了这个<a href="https://github.com/pytorch/pytorch/issues/7733">issue</a>之后，我大概明白了是怎么一回事：</p>
 <ul>
-<li>在pytorch的源码中图方便使用了tensor作为字典的键；</li>
+<li>在PyTorch的源码中图方便使用了tensor作为字典的键；</li>
 <li><code>hash(tensor)</code>简单地实现为<code>id(tensor)</code>。这种基于object的实现，而不是基于值的实现导致了期望之外的结果； <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = torch.tensor([<span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hash</span>(t) == <span class="built_in">id</span>(t)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>这算是一个历史遗留问题，其中也有不少人讨论过移除tensor的可哈希行为，甚至<a href="https://github.com/pytorch/pytorch/pull/10625">pull request</a>都准备好了。但是考虑到这个更改可能造成比较大的影响，导致意料之外的结果，开发者们最终并未接受这个PR。</p>
+<p>这算是一个历史遗留问题，也有不少人讨论过移除tensor的可哈希行为，甚至准备好了<a href="https://github.com/pytorch/pytorch/pull/10625">PR</a>。但是开发者们考虑到这个更改可能造成比较大的影响，最终并未接受这个PR。</p>
 ]]></content>
       <categories>
         <category>Code</category>

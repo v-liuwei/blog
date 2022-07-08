@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vvvvvv.space/post/torch-tensor-is-hashable/</loc>
+    
+    <lastmod>2022-07-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vvvvvv.space/post/ssh-password-free/</loc>
+    
+    <lastmod>2022-07-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vvvvvv.space/post/git-submodules-practice/</loc>
+    
+    <lastmod>2022-07-08</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.vvvvvv.space/post/LaTeX-paragraph-and-text-environment/</loc>
     
     <lastmod>2022-07-08</lastmod>
@@ -16,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://blog.vvvvvv.space/post/torch-tensor-is-hashable/</loc>
-    
-    <lastmod>2022-07-08</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.vvvvvv.space/post/LaTeX-text-and-symbols/</loc>
     
     <lastmod>2022-07-08</lastmod>
@@ -31,13 +45,6 @@
   
   <url>
     <loc>https://blog.vvvvvv.space/post/python-class-based-descriptor-applied-to-method/</loc>
-    
-    <lastmod>2022-07-08</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vvvvvv.space/post/ssh-password-free/</loc>
     
     <lastmod>2022-07-08</lastmod>
     
@@ -102,6 +109,13 @@
   </url>
   
   <url>
+    <loc>https://blog.vvvvvv.space/tags/Git/</loc>
+    <lastmod>2022-07-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vvvvvv.space/tags/Python/</loc>
     <lastmod>2022-07-08</lastmod>
     <changefreq>daily</changefreq>
@@ -160,7 +174,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vvvvvv.space/categories/Code/Misc/</loc>
+    <loc>https://blog.vvvvvv.space/categories/Code/Python/</loc>
     <lastmod>2022-07-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -174,7 +188,14 @@
   </url>
   
   <url>
-    <loc>https://blog.vvvvvv.space/categories/Code/Python/</loc>
+    <loc>https://blog.vvvvvv.space/categories/Code/Misc/</loc>
+    <lastmod>2022-07-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvvvvv.space/categories/Code/Git/</loc>
     <lastmod>2022-07-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
