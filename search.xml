@@ -75,6 +75,7 @@ pull 操作会更新 .git 中记录的子仓库的 commit ID，这将导致仓�
 <p> </p>
 <p>其它的同步命令如<code>clone/pull/push</code>等以及<code>checkout/reset</code>等会更改本地仓库内容的命令在涉及到 submodules 时都是同样的原理，直接在父仓库中执行这些命令会产生令人困惑的结果。</p>
 <p>例如，<code>clone</code>命令也只会将子仓库的 commit ID 复制下来，而不会复制子仓库本身。因此，当 clone 完成后，<code>child/</code>只是一个空目录，里面什么也没有。与 pull 时的情况不同的是，这时因为子仓库还没有初始化，需要首先执行<code>git submodule init</code>，然后再执行<code>git submodule update</code>，或者合并为一个命令<code>git submodule update --init</code>。</p>
+<p> </p>
 <p>可以通过在这些命令中指定<code>--recurse-submodules</code>项（Git 2.14+），来自动更新子仓库，而不用在命令后再执行<code>git submodule update</code>。 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull origin master --recurse-submodules</span><br></pre></td></tr></table></figure> 目前支持这个选项的命令包括<code>read-tree/checkout/reset/grep/clone/pull/push</code>。</p>
 <p>要自动为这些命令指定此项，可以设置<code>submodule.recurse</code>： <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global submodule.recurse <span class="literal">true</span></span></span><br></pre></td></tr></table></figure> 但需要注意的是，即使完成了这个设置，<code>clone</code>操作仍需显式地指定<code>--recurse-submodules</code>。</p>
 <div class="note warning flat"><p>若主操作未正常完成，将不会再自动执行子仓库的更新（即使 commit ID 已经正常更新了）。一种常见的情况是，pull 操作时因为冲突无法合并导致的命令执行失败。</p>
