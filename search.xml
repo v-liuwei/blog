@@ -145,34 +145,6 @@ pull 操作会更新 .git 中记录的子仓库的 commit ID，这将导致仓�
       </tags>
   </entry>
   <entry>
-    <title>Python装饰器</title>
-    <url>/post/python-decorator/</url>
-    <content><![CDATA[<h2 id="从程序计时器说起">从程序计时器说起</h2>
-<p>当我们想要计算一个程序的执行时间时，也许会写这样一个简单的程序计时器： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br>t1 = time.time()<br>func1()<br>func2()<br><span class="hljs-comment"># ...</span><br>t2 = time.time()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time consumed: <span class="hljs-subst">&#123;t2-t1&#125;</span>s&quot;</span>)<br></code></pre></td></tr></table></figure> 它的好处是简单易操作，<del>有手就行</del> ， 可以一次计算多个函数的总执行时间。但它的缺点也很明显，每次想计算某个函数的运行时间时，都得重复这几行代码。 然而，重复“函数调用时应该执行的操作”正是装饰器（decorator）派上用的地方。</p>
-<p>下面是一个程序计时器的装饰器实现： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">timer</span>(<span class="hljs-params">func</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>        t1 = time.time()<br>        ret = func(*args, **kwargs)<br>        t2 = time.time()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time consumed: <span class="hljs-subst">&#123;t2-t1&#125;</span>s&quot;</span>)<br>        <span class="hljs-keyword">return</span> ret<br>    <span class="hljs-keyword">return</span> wrapper<br></code></pre></td></tr></table></figure> 它有几个明显的特征：（1）它是一个函数；（2）它以一个函数为参数；（2）它返回一个函数。</p>
-<p>当我们想要对函数<code>func</code>计时时，只需要使用<code>@</code>语法在定义该函数时加上<code>@timer</code>。例如 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@timer</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wait</span>(<span class="hljs-params">sec</span>):</span><br>    time.sleep(sec)<br></code></pre></td></tr></table></figure> 这样每当我们调用函数<code>wait</code>, 都会自动输出其执行时间： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">wait(<span class="hljs-number">3</span>)<br><span class="hljs-comment"># output:</span><br><span class="hljs-comment"># time consumed: 3.0031869411468506s</span><br></code></pre></td></tr></table></figure></p>
-<h2 id="装饰器是如何工作的">装饰器是如何工作的</h2>
-<p>当我们对一个函数使用装饰器时，实际上发生了什么？</p>
-<p>实际上，<code>@</code>语法只是一个语法糖，下面的写法 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@decorator</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure> 完全等同于： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>    <span class="hljs-keyword">pass</span><br>func = decorator(func)<br></code></pre></td></tr></table></figure> 也就是说，当我们调用<code>func</code>时，实际上已经不是我们当初定义的<code>func</code>了，它变成了由<code>decorator</code>返回的函数，在前面计时器的例子中，就是<code>wrapper</code>。到这里，我们更能理解前面提到的装饰器的几个明显特征：它本身是一个函数，以函数为参数，并返回一个函数。</p>
-<p>可以看到，<code>wrapper</code>函数几乎做了与<code>func</code>函数一样的事情: 它们都以<code>(*args, **kwargs)</code>为参数，执行<code>func</code>函数要执行的任务，并返回相同的值<code>ret</code>。不同的是，在<code>wrapper</code>中，在执行<code>func</code>函数前后计算了<code>func</code>函数的运行时间。</p>
-<p>这正是装饰器该做的事情：在原有函数功能的基础上，增加一些新的功能，<strong>但不用对原来的函数体做任何修改</strong>。</p>
-<h2 id="必须是函数吗">必须是函数吗？</h2>
-<p>上面的介绍也许已经够用了，但我们或许还想一探究竟。</p>
-<p>从<code>@</code>语法糖的等效表达式就能知道，装饰器<code>decorator</code>并非必须是函数。实际上，只要表达式<code>func = decorator(func)</code>能够执行，并且返回的<code>func</code>对象的调用接口与原先定义的<code>func</code>函数一样就行了。</p>
-<p>我们看如下的类定义，它也可以作为装饰器，显然它不是函数： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">decorator</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, func</span>):</span><br>        self.func = func<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span>(<span class="hljs-params">self, *args, **kwargs</span>):</span><br>        <span class="hljs-comment"># do something</span><br>        ret = self.func(*args, **kwargs)<br>        <span class="hljs-comment"># do something</span><br>        <span class="hljs-keyword">return</span> ret<br></code></pre></td></tr></table></figure> 同样地，用<code>@</code>符号将它放在想要被装饰的函数的定义上方： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@decorator</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure> 再次强调，这等价于 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>    <span class="hljs-keyword">pass</span><br>func = decorator(func)<br></code></pre></td></tr></table></figure> 我们看看这将会发生什么。<code>func = decorator(func)</code>将<code>func</code>作为类构造参数，并将实例化的对象赋给<code>func</code>, 即现在<code>func</code>已经变成了<code>decorator</code>类的一个实例。因为这个类实现了<code>__call__</code>方法，这个类的实例将是可调用的，行为与函数几乎没有区别，我们仍然可以调用<code>func(*args, **kwargs)</code>（实际上这会被转化为<code>func.__call__(*args, **kwargs)</code>）。</p>
-<p>富有想象力的你，或许能够想到其它的装饰器实现方式:)</p>
-<p>(完)</p>
-]]></content>
-      <categories>
-        <category>Code</category>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Decorator</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows下SSH远程连接免密登录</title>
     <url>/post/ssh-password-free/</url>
     <content><![CDATA[<h2 id="step1-生成ssh密钥">Step1: 生成SSH密钥</h2>
@@ -191,6 +163,37 @@ pull 操作会更新 .git 中记录的子仓库的 commit ID，这将导致仓�
       <tags>
         <tag>VSCode</tag>
         <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tqdm-practice</title>
+    <url>/post/tqdm-practice/</url>
+    <content><![CDATA[<h2 id="在迭代结束后改变进度条的信息">在迭代结束后改变进度条的信息</h2>
+<p>在某些使用场合下，我们想要在迭代结束后，修改 tqdm 进度条的信息，比如 description，postfix 等待。</p>
+<p>如果使用 tqdm 最易上手的用法, 直接对我们的可迭代对象<code>items</code>进行一层包装，然后用 for 循环进行迭代： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">pbar = tqdm(items)<br><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> pbar:<br>    ...<br>pbar.set_postfix(&#123;<span class="hljs-string">&#x27;new&#x27;</span>: <span class="hljs-string">&#x27;content&#x27;</span>&#125;)<br></code></pre></td></tr></table></figure> 将并不能更新 postfix (尽管代码能正常运行)。</p>
+<p>这是因为在这种用法里（<code>for item in pbar</code>），tqdm 已经自动帮你完成了一切本来需要你自己来完成的操作，属于傻瓜式用法。这些操作主要包括<code>pbar.update()</code>, 以及<code>pbar.close()</code>, 见源码 <a href="https%3A%2F%2Fgithub.com%2Ftqdm%2Ftqdm%2Fblob%2Fmaster%2Ftqdm%2Fstd.py%23L1194-L1210">tqdm.__iter__()</a>。而正因为其在迭代结束后调用了 <code>close()</code> 才导致我们无法继续对 <code>pbar</code>进行任何设置。</p>
+<p>想要实现我们的目标，要使用 tqdm 的一般用法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">pbar = tqdm(total=<span class="hljs-built_in">len</span>(items))<br><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> items: <span class="hljs-comment"># 仍然对 items 进行迭代</span><br>    pbar.update(<span class="hljs-number">1</span>) <span class="hljs-comment"># 自己决定如何更新进度条</span><br>    ...<br>pbar.set_postfix(&#123;<span class="hljs-string">&#x27;new&#x27;</span>: <span class="hljs-string">&#x27;content&#x27;</span>&#125;)<br>pabr.close()       <span class="hljs-comment"># 自己手动关闭 tqdm 实例</span><br></code></pre></td></tr></table></figure>
+<h2 id="更改进度显示字符">更改进度显示字符</h2>
+<p>tqdm 的默认进度显示字符是 unicode 字符 0x258F ~ 0x2588，见源码 <a href="https%3A%2F%2Fgithub.com%2Ftqdm%2Ftqdm%2Fblob%2Fmaster%2Ftqdm%2Fstd.py%23L147">Bar.UTF</a> 。</p>
+<p>效果如下： <img src="/post/tqdm-practice/show_unicode.jpg"></p>
+<p>我们可以通过参数 <code>ascii</code> 来设置显示字符。</p>
+<blockquote><ul>
+<li><p>ascii: bool or str, optional</p>
+<p>If unspecified or False, use unicode (smooth blocks) to fill the meter. The fallback is to use ASCII characters " 123456789#".</p></li>
+</ul>
+<footer><strong>@tqdm</strong><cite><a href="https://tqdm.github.io/docs/tqdm/#__init__:~:text=ascii%3A%20bool%20or%20str%2C%20optional">docs of tqdm.__init__()</a></cite></footer></blockquote>
+<p>文档中说默认<code>ascii=None</code>时使用 unicode 字符，如果将<code>ascii</code>设置为<code>True</code>则使用 ASCII 字符<code>" 123456789#"</code>。而并没有明确说明要使用其它字符应该如何设置这个参数。在不知道该参数含义的情况下，我们很自然会直接将其设置为目标字符，例如<code>asici='='</code>，但这将会报错。</p>
+<p>查看了源码 <a href="https%3A%2F%2Fgithub.com%2Ftqdm%2Ftqdm%2Fblob%2F4f208e72552c4d916aa4fe6a955349ee8b2ed353%2Ftqdm%2Fstd.py%23L207-L212">Bar.__format__()</a> 之后才知道 <code>ascii</code> 参数至少要传两个字符，其中的字符依次表示单位长度的进度由空到满应该显示的字符。如 ASCII 字符串 <code>' 123456789#'</code> 意味着单位长度显示的字符将随着进度的推进由 <code>' '</code> 变为 <code>'1'</code>，变为 <code>'2'</code>，直到变为 <code>'#'</code>。</p>
+<p>因此要想设置进度显示字符为单一字符<code>'='</code>，需要将<code>ascii</code>设置为<code>ascii=' ='</code>（注意有一个空格）。</p>
+]]></content>
+      <categories>
+        <category>Code</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>tqdm</tag>
       </tags>
   </entry>
   <entry>
@@ -225,26 +228,23 @@ pull 操作会更新 .git 中记录的子仓库的 commit ID，这将导致仓�
       </tags>
   </entry>
   <entry>
-    <title>tqdm-practice</title>
-    <url>/post/tqdm-practice/</url>
-    <content><![CDATA[<h2 id="在迭代结束后改变进度条的信息">在迭代结束后改变进度条的信息</h2>
-<p>在某些使用场合下，我们想要在迭代结束后，修改 tqdm 进度条的信息，比如 description，postfix 等待。</p>
-<p>如果使用 tqdm 最易上手的用法, 直接对我们的可迭代对象<code>items</code>进行一层包装，然后用 for 循环进行迭代： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">pbar = tqdm(items)<br><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> pbar:<br>    ...<br>pbar.set_postfix(&#123;<span class="hljs-string">&#x27;new&#x27;</span>: <span class="hljs-string">&#x27;content&#x27;</span>&#125;)<br></code></pre></td></tr></table></figure> 将并不能更新 postfix (尽管代码能正常运行)。</p>
-<p>这是因为在这种用法里（<code>for item in pbar</code>），tqdm 已经自动帮你完成了一切本来需要你自己来完成的操作，属于傻瓜式用法。这些操作主要包括<code>pbar.update()</code>, 以及<code>pbar.close()</code>, 见源码 <a href="https%3A%2F%2Fgithub.com%2Ftqdm%2Ftqdm%2Fblob%2Fmaster%2Ftqdm%2Fstd.py%23L1194-L1210">tqdm.__iter__()</a>。而正因为其在迭代结束后调用了 <code>close()</code> 才导致我们无法继续对 <code>pbar</code>进行任何设置。</p>
-<p>想要实现我们的目标，要使用 tqdm 的一般用法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">pbar = tqdm(total=<span class="hljs-built_in">len</span>(items))<br><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> items: <span class="hljs-comment"># 仍然对 items 进行迭代</span><br>    pbar.update(<span class="hljs-number">1</span>) <span class="hljs-comment"># 自己决定如何更新进度条</span><br>    ...<br>pbar.set_postfix(&#123;<span class="hljs-string">&#x27;new&#x27;</span>: <span class="hljs-string">&#x27;content&#x27;</span>&#125;)<br>pabr.close()       <span class="hljs-comment"># 自己手动关闭 tqdm 实例</span><br></code></pre></td></tr></table></figure>
-<h2 id="更改进度显示字符">更改进度显示字符</h2>
-<p>tqdm 的默认进度显示字符是 unicode 字符 0x258F ~ 0x2588，见源码 <a href="https%3A%2F%2Fgithub.com%2Ftqdm%2Ftqdm%2Fblob%2Fmaster%2Ftqdm%2Fstd.py%23L147">Bar.UTF</a> 。</p>
-<p>效果如下： <img src="/post/tqdm-practice/show_unicode.jpg"></p>
-<p>我们可以通过参数 <code>ascii</code> 来设置显示字符。</p>
-<blockquote><ul>
-<li><p>ascii: bool or str, optional</p>
-<p>If unspecified or False, use unicode (smooth blocks) to fill the meter. The fallback is to use ASCII characters " 123456789#".</p></li>
-</ul>
-<footer><strong>@tqdm</strong><cite><a href="https://tqdm.github.io/docs/tqdm/#__init__:~:text=ascii%3A%20bool%20or%20str%2C%20optional">docs of tqdm.__init__()</a></cite></footer></blockquote>
-<p>文档中说默认<code>ascii=None</code>时使用 unicode 字符，如果将<code>ascii</code>设置为<code>True</code>则使用 ASCII 字符<code>" 123456789#"</code>。而并没有明确说明要使用其它字符应该如何设置这个参数。在不知道该参数含义的情况下，我们很自然会直接将其设置为目标字符，例如<code>asici='='</code>，但这将会报错。</p>
-<p>查看了源码 <a href="https%3A%2F%2Fgithub.com%2Ftqdm%2Ftqdm%2Fblob%2F4f208e72552c4d916aa4fe6a955349ee8b2ed353%2Ftqdm%2Fstd.py%23L207-L212">Bar.__format__()</a> 之后才知道 <code>ascii</code> 参数至少要传两个字符，其中的字符依次表示单位长度的进度由空到满应该显示的字符。如 ASCII 字符串 <code>' 123456789#'</code> 意味着单位长度显示的字符将随着进度的推进由 <code>' '</code> 变为 <code>'1'</code>，变为 <code>'2'</code>，直到变为 <code>'#'</code>。</p>
-<p>因此要想设置进度显示字符为单一字符<code>'='</code>，需要将<code>ascii</code>设置为<code>ascii=' ='</code>（注意有一个空格）。</p>
+    <title>Python装饰器</title>
+    <url>/post/python-decorator/</url>
+    <content><![CDATA[<h2 id="从程序计时器说起">从程序计时器说起</h2>
+<p>当我们想要计算一个程序的执行时间时，也许会写这样一个简单的程序计时器： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br>t1 = time.time()<br>func1()<br>func2()<br><span class="hljs-comment"># ...</span><br>t2 = time.time()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time consumed: <span class="hljs-subst">&#123;t2-t1&#125;</span>s&quot;</span>)<br></code></pre></td></tr></table></figure> 它的好处是简单易操作，<del>有手就行</del> ， 可以一次计算多个函数的总执行时间。但它的缺点也很明显，每次想计算某个函数的运行时间时，都得重复这几行代码。 然而，重复“函数调用时应该执行的操作”正是装饰器（decorator）派上用的地方。</p>
+<p>下面是一个程序计时器的装饰器实现： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">timer</span>(<span class="hljs-params">func</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>        t1 = time.time()<br>        ret = func(*args, **kwargs)<br>        t2 = time.time()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time consumed: <span class="hljs-subst">&#123;t2-t1&#125;</span>s&quot;</span>)<br>        <span class="hljs-keyword">return</span> ret<br>    <span class="hljs-keyword">return</span> wrapper<br></code></pre></td></tr></table></figure> 它有几个明显的特征：（1）它是一个函数；（2）它以一个函数为参数；（2）它返回一个函数。</p>
+<p>当我们想要对函数<code>func</code>计时时，只需要使用<code>@</code>语法在定义该函数时加上<code>@timer</code>。例如 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@timer</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wait</span>(<span class="hljs-params">sec</span>):</span><br>    time.sleep(sec)<br></code></pre></td></tr></table></figure> 这样每当我们调用函数<code>wait</code>, 都会自动输出其执行时间： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">wait(<span class="hljs-number">3</span>)<br><span class="hljs-comment"># output:</span><br><span class="hljs-comment"># time consumed: 3.0031869411468506s</span><br></code></pre></td></tr></table></figure></p>
+<h2 id="装饰器是如何工作的">装饰器是如何工作的</h2>
+<p>当我们对一个函数使用装饰器时，实际上发生了什么？</p>
+<p>实际上，<code>@</code>语法只是一个语法糖，下面的写法 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@decorator</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure> 完全等同于： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>    <span class="hljs-keyword">pass</span><br>func = decorator(func)<br></code></pre></td></tr></table></figure> 也就是说，当我们调用<code>func</code>时，实际上已经不是我们当初定义的<code>func</code>了，它变成了由<code>decorator</code>返回的函数，在前面计时器的例子中，就是<code>wrapper</code>。到这里，我们更能理解前面提到的装饰器的几个明显特征：它本身是一个函数，以函数为参数，并返回一个函数。</p>
+<p>可以看到，<code>wrapper</code>函数几乎做了与<code>func</code>函数一样的事情: 它们都以<code>(*args, **kwargs)</code>为参数，执行<code>func</code>函数要执行的任务，并返回相同的值<code>ret</code>。不同的是，在<code>wrapper</code>中，在执行<code>func</code>函数前后计算了<code>func</code>函数的运行时间。</p>
+<p>这正是装饰器该做的事情：在原有函数功能的基础上，增加一些新的功能，<strong>但不用对原来的函数体做任何修改</strong>。</p>
+<h2 id="必须是函数吗">必须是函数吗？</h2>
+<p>上面的介绍也许已经够用了，但我们或许还想一探究竟。</p>
+<p>从<code>@</code>语法糖的等效表达式就能知道，装饰器<code>decorator</code>并非必须是函数。实际上，只要表达式<code>func = decorator(func)</code>能够执行，并且返回的<code>func</code>对象的调用接口与原先定义的<code>func</code>函数一样就行了。</p>
+<p>我们看如下的类定义，它也可以作为装饰器，显然它不是函数： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">decorator</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, func</span>):</span><br>        self.func = func<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span>(<span class="hljs-params">self, *args, **kwargs</span>):</span><br>        <span class="hljs-comment"># do something</span><br>        ret = self.func(*args, **kwargs)<br>        <span class="hljs-comment"># do something</span><br>        <span class="hljs-keyword">return</span> ret<br></code></pre></td></tr></table></figure> 同样地，用<code>@</code>符号将它放在想要被装饰的函数的定义上方： <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@decorator</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>    <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure> 再次强调，这等价于 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>    <span class="hljs-keyword">pass</span><br>func = decorator(func)<br></code></pre></td></tr></table></figure> 我们看看这将会发生什么。<code>func = decorator(func)</code>将<code>func</code>作为类构造参数，并将实例化的对象赋给<code>func</code>, 即现在<code>func</code>已经变成了<code>decorator</code>类的一个实例。因为这个类实现了<code>__call__</code>方法，这个类的实例将是可调用的，行为与函数几乎没有区别，我们仍然可以调用<code>func(*args, **kwargs)</code>（实际上这会被转化为<code>func.__call__(*args, **kwargs)</code>）。</p>
+<p>富有想象力的你，或许能够想到其它的装饰器实现方式:)</p>
+<p>(完)</p>
 ]]></content>
       <categories>
         <category>Code</category>
@@ -252,7 +252,7 @@ pull 操作会更新 .git 中记录的子仓库的 commit ID，这将导致仓�
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>tqdm</tag>
+        <tag>Decorator</tag>
       </tags>
   </entry>
   <entry>
