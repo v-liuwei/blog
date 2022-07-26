@@ -1591,7 +1591,7 @@ blockquote > :last-child {
 }
 #article-container code {
   padding: 2px 4px;
-  background: rgba(133,133,133,0.133);
+  background: #f9f2f4;
   color: #e06c75;
 }
 #article-container pre {
@@ -5756,7 +5756,7 @@ blockquote.pullquote.right {
   box-shadow: none;
 }
 [data-theme='dark'] #article-container .note code {
-  background: rgba(133,133,133,0.133);
+  background: #f9f2f4;
 }
 [data-theme='dark'] #article-container .aplayer {
   filter: brightness(0.8);

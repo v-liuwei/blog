@@ -19,11 +19,11 @@ hue-6-2: #e6c07b
   --hl-color: #abb2bf;
   --hl-bg: #282c34;
   --hltools-bg: #21252b;
-  --hltools-color: #818896;
+  --hltools-color: #abb2bf;
   --hlnumber-bg: #282c34;
-  --hlnumber-color: #818896;
-  --hlscrollbar-bg: #818896;
-  /* --hlexpand-bg: #21252b11; */
+  --hlnumber-color: #abb2bf;
+  --hlscrollbar-bg: #abb2bf;
+  --hlexpand-bg: #21252b11;
 }
 
 

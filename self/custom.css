@@ -1,0 +1,36 @@
+#article-container code {
+    border-radius: 3px;
+}
+
+#article-container figure.highlight {
+    border-radius: 5px;
+}
+
+blockquote {
+    border-radius: 3px;
+}
+
+#article-container .highlight-tools {
+    min-height: 20px;
+    height: 1.618em;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+#article-container figure.highlight table::-webkit-scrollbar {
+    background-color:#282c34;
+}
+
+#article-container figure.highlight table::-webkit-scrollbar-thumb{
+    background:#abb2bf;
+    border-radius:3px;
+}
+
+#article-container figure.highlight table td.gutter {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+}
