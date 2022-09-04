@@ -2,91 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://vvvvvv.space/blog/post/tqdm-practice/</loc>
+    <loc>https://blog.vvvvvv.space/post/tqdm-practice/</loc>
     
     <lastmod>2022-09-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/post/git-submodules-practice/</loc>
+    <loc>https://blog.vvvvvv.space/post/git-submodules-practice/</loc>
     
     <lastmod>2022-07-26</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/link/</loc>
+    <loc>https://blog.vvvvvv.space/link/</loc>
     
     <lastmod>2022-07-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/about/</loc>
+    <loc>https://blog.vvvvvv.space/about/</loc>
     
     <lastmod>2022-07-14</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/post/torch-tensor-is-hashable/</loc>
+    <loc>https://blog.vvvvvv.space/post/torch-tensor-is-hashable/</loc>
     
     <lastmod>2022-07-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/post/ssh-password-free/</loc>
+    <loc>https://blog.vvvvvv.space/post/ssh-password-free/</loc>
     
     <lastmod>2022-07-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/post/LaTeX-paragraph-and-text-environment/</loc>
+    <loc>https://blog.vvvvvv.space/post/LaTeX-paragraph-and-text-environment/</loc>
     
     <lastmod>2022-07-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/post/python-decorator/</loc>
+    <loc>https://blog.vvvvvv.space/post/python-decorator/</loc>
     
     <lastmod>2022-07-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/post/LaTeX-text-and-symbols/</loc>
+    <loc>https://blog.vvvvvv.space/post/LaTeX-text-and-symbols/</loc>
     
     <lastmod>2022-07-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/post/python-class-based-descriptor-applied-to-method/</loc>
+    <loc>https://blog.vvvvvv.space/post/python-class-based-descriptor-applied-to-method/</loc>
     
     <lastmod>2022-07-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/playground/</loc>
+    <loc>https://blog.vvvvvv.space/playground/</loc>
     
     <lastmod>2021-11-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/categories/</loc>
+    <loc>https://blog.vvvvvv.space/categories/</loc>
     
     <lastmod>2021-02-09</lastmod>
     
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/</loc>
+    <loc>https://blog.vvvvvv.space/tags/</loc>
     
     <lastmod>2019-12-21</lastmod>
     
@@ -94,7 +94,7 @@
   
 
   <url>
-    <loc>https://vvvvvv.space/blog</loc>
+    <loc>https://blog.vvvvvv.space/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -102,77 +102,77 @@
 
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/LaTeX/</loc>
+    <loc>https://blog.vvvvvv.space/tags/LaTeX/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/Typesetting/</loc>
+    <loc>https://blog.vvvvvv.space/tags/Typesetting/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/Git/</loc>
+    <loc>https://blog.vvvvvv.space/tags/Git/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/Python/</loc>
+    <loc>https://blog.vvvvvv.space/tags/Python/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/Decorator/</loc>
+    <loc>https://blog.vvvvvv.space/tags/Decorator/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/Descriptor/</loc>
+    <loc>https://blog.vvvvvv.space/tags/Descriptor/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/VSCode/</loc>
+    <loc>https://blog.vvvvvv.space/tags/VSCode/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/SSH/</loc>
+    <loc>https://blog.vvvvvv.space/tags/SSH/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/Hash/</loc>
+    <loc>https://blog.vvvvvv.space/tags/tqdm/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/PyTorch/</loc>
+    <loc>https://blog.vvvvvv.space/tags/Hash/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/tags/tqdm/</loc>
+    <loc>https://blog.vvvvvv.space/tags/PyTorch/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -181,35 +181,35 @@
 
   
   <url>
-    <loc>https://vvvvvv.space/blog/categories/Code/</loc>
+    <loc>https://blog.vvvvvv.space/categories/Code/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/categories/Code/Python/</loc>
+    <loc>https://blog.vvvvvv.space/categories/Code/Misc/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/categories/Code/LaTeX/</loc>
+    <loc>https://blog.vvvvvv.space/categories/Code/LaTeX/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/categories/Code/Misc/</loc>
+    <loc>https://blog.vvvvvv.space/categories/Code/Git/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://vvvvvv.space/blog/categories/Code/Git/</loc>
+    <loc>https://blog.vvvvvv.space/categories/Code/Python/</loc>
     <lastmod>2022-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
