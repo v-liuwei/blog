@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>段落与文本环境</title>
-    <url>/post/LaTeX-paragraph-and-text-environment/</url>
+    <url>/blog/post/LaTeX-paragraph-and-text-environment/</url>
     <content><![CDATA[<h2 id="分段">分段</h2>
 <h3 id="段首缩进">段首缩进</h3>
 <p><span class="math inline">\(\LaTeX\)</span>中使用<strong>空行</strong>或者<code>\par</code>命令来分段。每个自然段第一行有一个固定的缩进，可以由长度变量<code>\parindent</code>控制。在西文标准文档类（如article）中，<strong>每个章节的第一段</strong>是<strong>不缩进</strong>的，但可以使用indentfirst宏包启用它；而中文文档类（如ctexart）则每段缩进，并自动设置段落缩进为两个汉字宽。</p>
@@ -23,10 +23,10 @@
 <p>以<code>none</code>选项使用hyphenat宏包可以更好地禁用断词。而ragged2e宏包则可以在左对齐（<code>\RaggedRight</code>）、右对齐（<code>\RaggedLeft</code>）或居中（<code>\Centering</code>）的段落中使用断词，这样可以得到更合理的段落。ragged2e宏包还提供<code>\justifying</code>命令回到均匀对齐的段落，以及对应的Center、FlushLeft、FlushRight、justify环境，作为标准<span class="math inline">\(\LaTeX\)</span>命令和环境的补充。</p>
 <h3 id="段落宽度">段落宽度</h3>
 <p>可以使用长度变量<code>\leftskip</code>和<code>rightskip</code>来控制段落的宽度，如果是局部修改，注意把整个段落放在一个分组里面，或定义为单独的环境。例如：</p>
-<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_parwidth.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-paragraph-and-text-environment/latex_parwidth.jpg"></p>
 <h3 id="特殊段落">特殊段落</h3>
 <p>较为常用的一种特殊段落是“悬挂缩进”，它可以由命令<code>\hangafter</code>和<code>hangindent</code>控制，例如：</p>
-<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_hang_indent.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-paragraph-and-text-environment/latex_hang_indent.jpg"></p>
 <p>正的<code>\hangindent</code>作用于段落左侧，负的<code>\hangindent</code>作用于段落右侧；正的<code>\hangafter</code>作用于段落的
 <span class="math inline">\(n\)</span>
 行之后，负的<code>\hangafter</code>作用于段落的前 <span class="math inline">\(n\)</span>
@@ -34,11 +34,11 @@
 <p><code>\lettrine</code>宏包利用特殊的段落形状产生<strong>首字下沉</strong>的效果，例如</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><code class="hljs tex"><span class="hljs-comment">% 导言区使用 \usepackage&#123;lettrine&#125;</span><br><span class="hljs-keyword">\lettrine</span>&#123;孔&#125;&#123;&#125;乙己喝过半碗酒，涨红的脸色渐渐复了原，旁人便又问道，“孔乙己，你当真认识字么？”孔乙己看着问他的人，显出不屑置辩的神气。他们便接着说道，“你怎的连半个秀才也捞不到呢？”孔乙己立刻显出颓唐不安模样，脸上笼上了一层灰色，嘴里说些话；这回可是全是之乎者也之类，一些不懂了。在这时候，众人也都哄笑起来：店内外充满了快活的空气。<br></code></pre></td></tr></table></figure>
 <p>将产生</p>
-<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_lettrine.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-paragraph-and-text-environment/latex_lettrine.jpg"></p>
 <p>shapepar宏包预定义了一些段落形状，可以方便的排出一些有趣的效果，例如<code>\heartpar</code>命令将产生心形的段落：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><code class="hljs tex"><span class="hljs-comment">% 导言区 \usepackage&#123;shapepar&#125;</span><br><span class="hljs-keyword">\heartpar</span>&#123;<span class="hljs-comment">%</span><br>八月秋高风怒号，卷我屋上三重茅。茅飞渡江洒江郊，高者挂罥长林梢，下者飘转沉塘坳。南村群童欺我老无力，忍能对面为盗贼。公然抱茅入竹去，唇焦口燥呼不得，归来倚杖自叹息。俄顷风定云墨色，秋天漠漠向昏黑。布衾多年冷似铁，娇儿恶卧踏里裂。床头屋漏无干处，雨脚如麻未断绝。自经丧乱少睡眠，长夜沾湿何由彻？安得广厦千万间，大庇天下寒士俱欢颜！风雨不动安如山。呜呼！何时眼前突兀见此屋，吾庐独破受冻死亦足！<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>将产生</p>
-<p><img src="/post/LaTeX-paragraph-and-text-environment/latex_heartpar.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-paragraph-and-text-environment/latex_heartpar.jpg"></p>
 ]]></content>
       <categories>
         <category>Code</category>
@@ -50,70 +50,8 @@
       </tags>
   </entry>
   <entry>
-    <title>在类方法上应用基于类的装饰器时发生错误：missing 1 required positional argument</title>
-    <url>/post/python-class-based-descriptor-applied-to-method/</url>
-    <content><![CDATA[<div class="note info flat"><p>如果你对装饰器还知之甚少，可以移步这篇文章: <a href="../python-decorator">Python 装饰器</a>.</p>
-</div>
-<h2 id="两种风格的装饰器">两种风格的装饰器</h2>
-<p>当我需要一个计时器来计算我的程序执行用时时，我想到了装饰器。<del>本着少造轮子的原则</del>，我Google了一下，发现了如下两种不一样的装饰器写法：</p>
-<div class="tabs" id="decorators-1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#decorators-1-1">基于函数的装饰器</button></li><li class="tab"><button type="button" data-href="#decorators-1-2">基于类的装饰器</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="decorators-1-1"><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">timer</span>(<span class="hljs-params">func</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>        t1 = time.time()<br>        ret = func(*args, **kwargs)<br>        t2 = time.time()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time consumed: <span class="hljs-subst">&#123;t2-t1&#125;</span>s&quot;</span>)<br>        <span class="hljs-keyword">return</span> ret<br>    <span class="hljs-keyword">return</span> wrapper<br></code></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="decorators-1-2"><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">timer</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, func</span>):</span><br>        self.f = func<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span>(<span class="hljs-params">self, *args, **kwargs</span>):</span><br>        t1 = time.time()<br>        ret = self.f(*args, **kwargs)<br>        t2 = time.time()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time consumed: <span class="hljs-subst">&#123;t2-t1&#125;</span>s&quot;</span>)<br>        <span class="hljs-keyword">return</span> ret<br></code></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<p>无论使用上面那种方式，当我们想要对函数<code>func</code>计时时，只需要在定义该函数时加上<code>@timer</code>。例如
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@timer</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">sec</span>):</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;You need to wait <span class="hljs-subst">&#123;sec&#125;</span>second(s)&#x27;</span>)<br>    time.sleep(sec)  <span class="hljs-comment"># import time first</span><br></code></pre></td></tr></table></figure>
-我们知道，<code>@</code>语法只是python的一个语法糖，这等价于
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">sec</span>):</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;You need to wait <span class="hljs-subst">&#123;sec&#125;</span>second(s)&#x27;</span>)<br>    time.sleep(sec)<br>func = timer(func)<br></code></pre></td></tr></table></figure>
-让我们看看对上述两种写法，当我们调用<code>func</code>时，实际上是在做什么：</p>
-<ul>
-<li><p>基于函数的装饰器</p>
-<blockquote>
-<p>这时<code>timer</code>是一个函数</p>
-</blockquote>
-<p>经过<code>func = timer(func)</code>,
-<code>func</code>实际上已经变成了<code>timer</code>的返回值：<code>wrapper</code>。</p>
-<p>而<code>wrapper</code>将传入的所有参数<code>*args, **kwargs</code>全部传给了<code>func</code>并将其返回值返回，做了所有原本<code>func</code>要做的事情。但除此之外，还在<code>func</code>运行前后分别打了时间戳，以计算<code>func</code>运行的时间。</p>
-<p>因此，当我们这时再调用<code>func</code>时，除了做原本该做事情外，还会输出运行时间:
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>func(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 即 wrapper(2)</span><br>You need to wait 2second(s)<br>time consumed: <span class="hljs-number">2.008380889892578</span>s<br></code></pre></td></tr></table></figure></p></li>
-<li><p>基于类的装饰器</p>
-<blockquote>
-<p>这时<code>timer</code>是一个类。</p>
-</blockquote>
-<p>经过<code>func = timer(func)</code>,
-<code>func</code>实际上已经变成了<code>timer</code>类的一个实例。
-为避免混淆，我们为这个实例另取一个名字<code>a</code>。<code>a</code>包含属性<code>f</code>,
-其值被初始化为<code>func</code>。</p>
-<p><code>timer</code>类定义了<code>__call__</code>方法，定义了该方法的类的实例可以像函数一样调用(See
-<a href="https://docs.python.org/3/reference/datamodel.html#emulating-callable-objects">Python
-docs</a>)。例如，我们可以调用<code>a(*args, **kwargs)</code>,
-这使得<code>a</code>看起来就像一个函数。实际上这会被转换成<code>timer.__call__(a, *args, **kwargs)</code>。</p>
-<p>而"函数"<code>a</code>做了与前面的函数<code>wrapper</code>几乎相同的事情：将传入的所有参数<code>*args, **kwargs</code>全部传给了<code>a.f</code>(即<code>func</code>)并将其返回值返回，并在<code>a.f</code>调用前后打上了时间戳。</p>
-<p>因此，当我们这时再调用<code>func</code>时，会达到与基于函数的装饰器相同的效果:
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>func(<span class="hljs-number">3</span>)  <span class="hljs-comment"># 即 a(3)</span><br>You need to wait 3second(s)<br>time consumed: <span class="hljs-number">3.0074422359466553</span>s<br></code></pre></td></tr></table></figure></p></li>
-</ul>
-<p>可见，两种装饰器虽然写起来不同，表现出的行为却几乎一模一样，也产生了相同的效果。</p>
-<h2 id="意外发生了">意外发生了！</h2>
-<p>前面两种装饰器对于普通函数的作用几乎没有区别，但我也想对我的类方法使用这些装饰器：
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeClass</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span><br><span class="hljs-meta">    @timer</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">method</span>(<span class="hljs-params">self, sec</span>):</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;You need to wait <span class="hljs-subst">&#123;sec&#125;</span>second(s)&#x27;</span>)<br>        time.sleep(sec)  <span class="hljs-comment"># import time first</span><br></code></pre></td></tr></table></figure>
-如果使用基于函数的装饰器，仍然可以正确地计算方法<code>method</code>的运行时间：
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>obj = SomeClass()<br><span class="hljs-meta">&gt;&gt;&gt; </span>obj.method(<span class="hljs-number">2</span>)<br>You need to wait 2second(s)<br>time consumed: <span class="hljs-number">2.0113697052001953</span>s<br></code></pre></td></tr></table></figure> 然而如果我们使用的是基于类的装饰器, 意外发生了：
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>obj = SomeClass()<br><span class="hljs-meta">&gt;&gt;&gt; </span>obj.method(<span class="hljs-number">2</span>)<br>TypeError: method() missing <span class="hljs-number">1</span> required positional argument: <span class="hljs-string">&#x27;sec&#x27;</span><br></code></pre></td></tr></table></figure></p>
-<p>为什么装饰在函数时上两者效果相同，但装饰在类方法上却产生了差异？
-如果我们从装饰器的原理出发，很容易明白这里究竟发生了什么。上面的类定义等同于
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeClass</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, sec</span>):</span><br>        self.sec = sec<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">method</span>(<span class="hljs-params">self</span>):</span><br>        time.sleep(self.sec)<br>    method = timer(method)<br></code></pre></td></tr></table></figure> 当我们创建一个该类的实例，并调用方法</p>
-<div class="note info flat"><p>This article has not finished yet.</p>
-</div>
-]]></content>
-      <categories>
-        <category>Code</category>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Decorator</tag>
-        <tag>Descriptor</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git submodules 实践</title>
-    <url>/post/git-submodules-practice/</url>
+    <url>/blog/post/git-submodules-practice/</url>
     <content><![CDATA[<p>最近用git管理项目，涉及到了 submodule。submodule
 简单来说就是在一个git仓库中包含的子 git
 仓库，想要同时维护好这两个互为父子关系的 git
@@ -203,8 +141,70 @@ merge. <figure class="highlight plaintext"><figcaption><span>.gitmodules</span><
       </tags>
   </entry>
   <entry>
+    <title>在类方法上应用基于类的装饰器时发生错误：missing 1 required positional argument</title>
+    <url>/blog/post/python-class-based-descriptor-applied-to-method/</url>
+    <content><![CDATA[<div class="note info flat"><p>如果你对装饰器还知之甚少，可以移步这篇文章: <a href="../python-decorator">Python 装饰器</a>.</p>
+</div>
+<h2 id="两种风格的装饰器">两种风格的装饰器</h2>
+<p>当我需要一个计时器来计算我的程序执行用时时，我想到了装饰器。<del>本着少造轮子的原则</del>，我Google了一下，发现了如下两种不一样的装饰器写法：</p>
+<div class="tabs" id="decorators-1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#decorators-1-1">基于函数的装饰器</button></li><li class="tab"><button type="button" data-href="#decorators-1-2">基于类的装饰器</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="decorators-1-1"><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">timer</span>(<span class="hljs-params">func</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span>(<span class="hljs-params">*args, **kwargs</span>):</span><br>        t1 = time.time()<br>        ret = func(*args, **kwargs)<br>        t2 = time.time()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time consumed: <span class="hljs-subst">&#123;t2-t1&#125;</span>s&quot;</span>)<br>        <span class="hljs-keyword">return</span> ret<br>    <span class="hljs-keyword">return</span> wrapper<br></code></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="decorators-1-2"><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">timer</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, func</span>):</span><br>        self.f = func<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span>(<span class="hljs-params">self, *args, **kwargs</span>):</span><br>        t1 = time.time()<br>        ret = self.f(*args, **kwargs)<br>        t2 = time.time()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time consumed: <span class="hljs-subst">&#123;t2-t1&#125;</span>s&quot;</span>)<br>        <span class="hljs-keyword">return</span> ret<br></code></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<p>无论使用上面那种方式，当我们想要对函数<code>func</code>计时时，只需要在定义该函数时加上<code>@timer</code>。例如
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@timer</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">sec</span>):</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;You need to wait <span class="hljs-subst">&#123;sec&#125;</span>second(s)&#x27;</span>)<br>    time.sleep(sec)  <span class="hljs-comment"># import time first</span><br></code></pre></td></tr></table></figure>
+我们知道，<code>@</code>语法只是python的一个语法糖，这等价于
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func</span>(<span class="hljs-params">sec</span>):</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;You need to wait <span class="hljs-subst">&#123;sec&#125;</span>second(s)&#x27;</span>)<br>    time.sleep(sec)<br>func = timer(func)<br></code></pre></td></tr></table></figure>
+让我们看看对上述两种写法，当我们调用<code>func</code>时，实际上是在做什么：</p>
+<ul>
+<li><p>基于函数的装饰器</p>
+<blockquote>
+<p>这时<code>timer</code>是一个函数</p>
+</blockquote>
+<p>经过<code>func = timer(func)</code>,
+<code>func</code>实际上已经变成了<code>timer</code>的返回值：<code>wrapper</code>。</p>
+<p>而<code>wrapper</code>将传入的所有参数<code>*args, **kwargs</code>全部传给了<code>func</code>并将其返回值返回，做了所有原本<code>func</code>要做的事情。但除此之外，还在<code>func</code>运行前后分别打了时间戳，以计算<code>func</code>运行的时间。</p>
+<p>因此，当我们这时再调用<code>func</code>时，除了做原本该做事情外，还会输出运行时间:
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>func(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 即 wrapper(2)</span><br>You need to wait 2second(s)<br>time consumed: <span class="hljs-number">2.008380889892578</span>s<br></code></pre></td></tr></table></figure></p></li>
+<li><p>基于类的装饰器</p>
+<blockquote>
+<p>这时<code>timer</code>是一个类。</p>
+</blockquote>
+<p>经过<code>func = timer(func)</code>,
+<code>func</code>实际上已经变成了<code>timer</code>类的一个实例。
+为避免混淆，我们为这个实例另取一个名字<code>a</code>。<code>a</code>包含属性<code>f</code>,
+其值被初始化为<code>func</code>。</p>
+<p><code>timer</code>类定义了<code>__call__</code>方法，定义了该方法的类的实例可以像函数一样调用(See
+<a href="https://docs.python.org/3/reference/datamodel.html#emulating-callable-objects">Python
+docs</a>)。例如，我们可以调用<code>a(*args, **kwargs)</code>,
+这使得<code>a</code>看起来就像一个函数。实际上这会被转换成<code>timer.__call__(a, *args, **kwargs)</code>。</p>
+<p>而"函数"<code>a</code>做了与前面的函数<code>wrapper</code>几乎相同的事情：将传入的所有参数<code>*args, **kwargs</code>全部传给了<code>a.f</code>(即<code>func</code>)并将其返回值返回，并在<code>a.f</code>调用前后打上了时间戳。</p>
+<p>因此，当我们这时再调用<code>func</code>时，会达到与基于函数的装饰器相同的效果:
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>func(<span class="hljs-number">3</span>)  <span class="hljs-comment"># 即 a(3)</span><br>You need to wait 3second(s)<br>time consumed: <span class="hljs-number">3.0074422359466553</span>s<br></code></pre></td></tr></table></figure></p></li>
+</ul>
+<p>可见，两种装饰器虽然写起来不同，表现出的行为却几乎一模一样，也产生了相同的效果。</p>
+<h2 id="意外发生了">意外发生了！</h2>
+<p>前面两种装饰器对于普通函数的作用几乎没有区别，但我也想对我的类方法使用这些装饰器：
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeClass</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span><br><span class="hljs-meta">    @timer</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">method</span>(<span class="hljs-params">self, sec</span>):</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;You need to wait <span class="hljs-subst">&#123;sec&#125;</span>second(s)&#x27;</span>)<br>        time.sleep(sec)  <span class="hljs-comment"># import time first</span><br></code></pre></td></tr></table></figure>
+如果使用基于函数的装饰器，仍然可以正确地计算方法<code>method</code>的运行时间：
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>obj = SomeClass()<br><span class="hljs-meta">&gt;&gt;&gt; </span>obj.method(<span class="hljs-number">2</span>)<br>You need to wait 2second(s)<br>time consumed: <span class="hljs-number">2.0113697052001953</span>s<br></code></pre></td></tr></table></figure> 然而如果我们使用的是基于类的装饰器, 意外发生了：
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>obj = SomeClass()<br><span class="hljs-meta">&gt;&gt;&gt; </span>obj.method(<span class="hljs-number">2</span>)<br>TypeError: method() missing <span class="hljs-number">1</span> required positional argument: <span class="hljs-string">&#x27;sec&#x27;</span><br></code></pre></td></tr></table></figure></p>
+<p>为什么装饰在函数时上两者效果相同，但装饰在类方法上却产生了差异？
+如果我们从装饰器的原理出发，很容易明白这里究竟发生了什么。上面的类定义等同于
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeClass</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, sec</span>):</span><br>        self.sec = sec<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">method</span>(<span class="hljs-params">self</span>):</span><br>        time.sleep(self.sec)<br>    method = timer(method)<br></code></pre></td></tr></table></figure> 当我们创建一个该类的实例，并调用方法</p>
+<div class="note info flat"><p>This article has not finished yet.</p>
+</div>
+]]></content>
+      <categories>
+        <category>Code</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Decorator</tag>
+        <tag>Descriptor</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python装饰器</title>
-    <url>/post/python-decorator/</url>
+    <url>/blog/post/python-decorator/</url>
     <content><![CDATA[<h2 id="从程序计时器说起">从程序计时器说起</h2>
 <p>当我们想要计算一个程序的执行时间时，也许会写这样一个简单的程序计时器：
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br>t1 = time.time()<br>func1()<br>func2()<br><span class="hljs-comment"># ...</span><br>t2 = time.time()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;time consumed: <span class="hljs-subst">&#123;t2-t1&#125;</span>s&quot;</span>)<br></code></pre></td></tr></table></figure> 它的好处是简单易操作，<del>有手就行</del> ，
@@ -246,7 +246,7 @@ merge. <figure class="highlight plaintext"><figcaption><span>.gitmodules</span><
   </entry>
   <entry>
     <title>Windows下SSH远程连接免密登录</title>
-    <url>/post/ssh-password-free/</url>
+    <url>/blog/post/ssh-password-free/</url>
     <content><![CDATA[<h2 id="step1-生成ssh密钥">Step1: 生成SSH密钥</h2>
 <div class="note warning flat"><p>如果你的用户目录（<code>C:\Users\xxxxxx\</code>）下的<code>.ssh</code>文件夹内已经有<code>id_rsa</code>文件，你可能曾经生成过密钥了，可以跳过这一步。</p>
 </div>
@@ -272,7 +272,7 @@ merge. <figure class="highlight plaintext"><figcaption><span>.gitmodules</span><
   </entry>
   <entry>
     <title>torch.Tensor是可哈希的！</title>
-    <url>/post/torch-tensor-is-hashable/</url>
+    <url>/blog/post/torch-tensor-is-hashable/</url>
     <content><![CDATA[<h2 id="问题的由来">问题的由来</h2>
 <p>注意到这个问题是因为我把一段正确的代码 “优化”成了类似下面的代码：
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br>some_dict = &#123;<span class="hljs-number">1</span>: <span class="hljs-string">&#x27;one&#x27;</span>, <span class="hljs-number">2</span>: <span class="hljs-string">&#x27;two&#x27;</span>&#125;<br>some_tensor = torch.tensor([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>])<br><span class="hljs-keyword">for</span> e <span class="hljs-keyword">in</span> some_tensor:<br>    <span class="hljs-keyword">if</span> e <span class="hljs-keyword">in</span> some_dict:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Yes!&quot;</span>)<br></code></pre></td></tr></table></figure> 结果导致了意料之外的结果，什么也没有输出。</p>
@@ -309,7 +309,7 @@ merge. <figure class="highlight plaintext"><figcaption><span>.gitmodules</span><
   </entry>
   <entry>
     <title>tqdm 实践</title>
-    <url>/post/tqdm-practice/</url>
+    <url>/blog/post/tqdm-practice/</url>
     <content><![CDATA[<h2 id="在迭代结束后改变进度条的信息">在迭代结束后改变进度条的信息</h2>
 <p>在某些使用场合下，我们想要在迭代结束后，修改 tqdm 进度条的信息，比如
 description，postfix 等待。</p>
@@ -327,7 +327,7 @@ description，postfix 等待。</p>
 <h2 id="更改进度显示字符">更改进度显示字符</h2>
 <p>tqdm 的默认进度显示字符是 unicode 字符 0x258F ~ 0x2588，见源码 <a href="https%3A%2F%2Fgithub.com%2Ftqdm%2Ftqdm%2Fblob%2Fmaster%2Ftqdm%2Fstd.py%23L147">Bar.UTF</a>
 。</p>
-<p>效果如下： <img src="/post/tqdm-practice/show_unicode.jpg"></p>
+<p>效果如下： <img src="/blog/blog/post/tqdm-practice/show_unicode.jpg"></p>
 <p>我们可以通过参数 <code>ascii</code> 来设置显示字符。</p>
 <blockquote><ul>
 <li><p>ascii: bool or str, optional</p>
@@ -357,7 +357,7 @@ ASCII 字符串 <code>' 123456789#'</code>
   </entry>
   <entry>
     <title>文字与符号</title>
-    <url>/post/LaTeX-text-and-symbols/</url>
+    <url>/blog/post/LaTeX-text-and-symbols/</url>
     <content><![CDATA[<h2 id="字斟句酌">字斟句酌</h2>
 <h3 id="从字母表到单词">从字母表到单词</h3>
 <p>我们常用的字母表包括扩展的拉丁字母、希腊字母和西里尔字母(Cyrillic
@@ -366,11 +366,11 @@ alphabet)，这比标准键盘上所能直接输入的52个字母要多得多。
 <p>显示ASCII以外的字母表需要编辑器所使用的字体的支持。并且<span class="math inline">\(\TeX\)</span>系统输出时所使用的字体也必须要能直接显示这些字母。</p>
 <p>而传统的解决方案是使用特殊的命令，给字母加上重音的标记，使用特殊字母或者整体更换字母表。</p>
 <p>重音是指加在字母上的标记。<span class="math inline">\(\LaTeX\)</span>支持的重音记号及其命令如表1：</p>
-<p><img src="/post/LaTeX-text-and-symbols/latex_accents.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_accents.jpg"></p>
 <p>使用命令可以输入的<span class="math inline">\(\LaTeX\)</span>字母，见表2。其中<code>\ij</code>
 <code>\IJ</code>
 <code>\SS</code>是字母连写，在默认的字体中没有区别。</p>
-<p><img src="/post/LaTeX-text-and-symbols/latex_special_letter.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_special_letter.jpg"></p>
 <p>如果还要输入希腊字母和西里尔字母，默认的字体就不够了，需要更换其他编码和字体。为此，<span class="math inline">\(\LaTeX\)</span>提供了babel宏包，可以方便同时访问多种语言的字母表。babel宏包可带有一个或多个语言的可选参数，支持不同的语言，如</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><code class="hljs tex"><span class="hljs-keyword">\usepackage</span>[greek,english]&#123;babel&#125;<br></code></pre></td></tr></table></figure>
 <p>将使用英语和希腊语，其中最后一个参数的英语是默认语言，此时希腊语就可以用ACSCII字符代替，如<code>\textgreek&#123;abcde&#125;</code>将输出<span class="math inline">\(\alpha\beta\varsigma\delta\varepsilon\)</span>。如果只有<code>greek</code>参数或将它放在最后，全文将默认使用希腊语。</p>
@@ -384,7 +384,7 @@ dash，用来表示数字范围，如（2000--2020）；三个连用（<code>---
 dash，即破折号。不过，按照中文的写作习惯，表示数字范围也常使用符号<span class="math inline">\(\sim\)</span>（数学模式的符号$$），有时也用汉字的全角破折号或半个汉字破折号。</p>
 <p>西文的省略号使用<code>\ldots</code>或<code>\dots</code>命令产生，相比直接输入三个句号，它所略微拉开的距离要合理得多：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><code class="hljs tex">Good: One, two, three<span class="hljs-keyword">\ldots</span><br><br>Bad: One, two, three...<br></code></pre></td></tr></table></figure>
-<p><img src="/post/LaTeX-text-and-symbols/latex_ldots.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_ldots.jpg"></p>
 <p>标准键盘上不能直接录入的标点符号有10个，它们占据了主键盘上面一排的一大半：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">~ # $ % ^ &amp; &#123; &#125; _ \<br></code></pre></td></tr></table></figure>
 <p>它们都有特殊作用：数学模式符号<code>$</code>、注释符<code>%</code>、上标<code>^</code>、下标<code>_</code>、分组<code>&#123; &#125;</code>、宏命令<code>\</code>、带子<code>~</code>、<code>#</code>用在宏定义中，<code>&amp;</code>用于表格对齐。要在正文中使用这些符号，大部分是在前面加<code>\</code>，只有个别例外：</p>
@@ -407,7 +407,7 @@ dash，即破折号。不过，按照中文的写作习惯，表示数字范围�
 <p>除了分段，也可以让<span class="math inline">\(\LaTeX\)</span>直接另起一行，并不分段。有两种相关命令：<code>\\</code>命令直接另起一行，上一行保持原来的样子；而<code>\linebreak</code>则指定一行的断点，上一行仍按完整一行散开对齐。<code>\\</code>命令可以带一个可选的长度参数，表示换行后增加的额外行距。如<code>\\[2cm]</code>。因此必须注意在命令<code>\\</code>后面如果确实需要使用方括号（即使括号在下一行），则应该在<code>\\</code>后面加空的分组以示分隔，否则会发生错误。</p>
 <h2 id="特殊符号">特殊符号</h2>
 <p>除了一般的文字，有时还需要使用一些特殊的符号，其中在正文中最为常用的如表3所示。</p>
-<p><img src="/post/LaTeX-text-and-symbols/latex_special_symbol.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_special_symbol.jpg"></p>
 <h2 id="字体">字体</h2>
 <h3 id="字体的性质">字体的性质</h3>
 <p>字体有五种基本的性质：字号（font size）、字体编码（font
@@ -453,7 +453,7 @@ family}\)</span></td>
 <p>预定义命令的字体形状有4种：直立形状（upright shape，也称为roman
 shape，默认）、意大利形状（italic shape）、倾斜形状（slanted
 shape）、小型大写形状（small capitals shape）。其命令为：</p>
-<p><img src="/post/LaTeX-text-and-symbols/latex_font_shape.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_font_shape.jpg"></p>
 <p>注意其中倾斜形状和意大利形状的区别，倾斜形状差不多是直接对符号倾斜产生的，而通常所说的“斜体”往往是指意大利形状，它类似于圆滑的手写体。</p>
 <p>预定义命令的字体系列有中等（medium，默认）和加宽加粗（bold
 extended）两类：</p>
@@ -498,11 +498,11 @@ Scheme,NFSS）。NFSS为字体划分的这些属性各自可以用一个简短�
 <p><code>\emph</code>命令表示强调，用于把直立体改为意大利体，把意大利体改为直立体。其声明形式为<code>\em</code>。除了使用意大利体表示强调之外你也可以用大写，小型大写或者粗体进行更醒目的强调。</p>
 <p><code>\underline</code>命令可以给文字加下划线以达到强调文字的目的，但这个命令作用的下划线部分不能换行，而且不太美观。ulem宏包的<code>\ulem</code>命令解决了这些问题，并且把默认的<code>emph</code>命令也改为使用下划线的方式。如果不希望这样做，可以给ulem宏包加normalem参数，或者使用<code>\normalem</code>和<code>ULforem</code>命令切换两种强调。</p>
 <p>除了下划线，ulem宏包也提供了其他一些修饰文字的命令：</p>
-<p><img src="/post/LaTeX-text-and-symbols/latex_ulem.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_ulem.jpg"></p>
 <h2 id="字号与行距">字号与行距</h2>
 <h3 id="字号">字号</h3>
 <p>基本的<span class="math inline">\(\LaTeX\)</span>提供了10个简单的声明式命令调整文字大小：</p>
-<p><img src="/post/LaTeX-text-and-symbols/latex_fontsize.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_fontsize.jpg"></p>
 <p>中文字号也可以使用同样的命令设置（字号命令不区分中西文）。不过为了明确字号的具体大小，也可以使用ctex宏包或ctexart等文档类提供的<code>\zihao</code>声明式命令设置。<code>\zihao</code>命令带一个参数，表示中文的字号，可用的范围为<code>0~8</code>及<code>-0~8</code>，如<code>\zihao&#123;0&#125;</code>表示初号，<code>\zihao&#123;-4&#125;</code>表示小四号。</p>
 <h3 id="行距">行距</h3>
 <p><span class="math inline">\(\LaTeX\)</span>中的行距是与字号直接相关的。在设置字号时，同时也就设置了基本行距为文字大小的1.2倍。行距一词指的是一行文字的基线（base
@@ -574,9 +574,9 @@ sp = 1 pt）</td>
 <p>一个长度必须数字和单位齐全，正确的长度如下所示：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><code class="hljs tex">2cm  1.5pc  -.1cm  +72.dd  1234567sp<br></code></pre></td></tr></table></figure>
 <p>在正文中可以使用下面的命令表示不可换行的水平间距：</p>
-<p><img src="/post/LaTeX-text-and-symbols/latex_space.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_space.jpg"></p>
 <p>可以使用下面的命令表示可以换行的水平间距：</p>
-<p><img src="/post/LaTeX-text-and-symbols/latex_space_able.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_space_able.jpg"></p>
 <p>当上面的命令中没有合适的距离时，可以用<code>\hspace&#123;&lt;距离&gt;&#125;</code>命令来产生指定的水平间距，如<code>\hspace&#123;1cm&#125;</code>将产生长度为1cm的间距。这个命令产生的距离是可以断行的，当它出现在行首时，<span class="math inline">\(\LaTeX\)</span>会忽略它产生的距离，此时可以用带星号的命令<code>\hspace*&#123;&lt;距离&gt;&#125;</code>阻止距离被忽略。</p>
 <p><code>\hspace</code>可以产生随内容可伸缩的距离，即所谓胶（glue）或者橡皮长度（rubber
 length，又称弹性长度）。橡皮长度的语法是：</p>
@@ -599,7 +599,7 @@ pt）。</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><code class="hljs tex"><span class="hljs-keyword">\newsavebox</span>&#123;<span class="hljs-keyword">\mybox</span>&#125;<br><span class="hljs-keyword">\sbox</span>&#123;<span class="hljs-keyword">\mybox</span>&#125;&#123;我想反复使用的文本&#125; <br><span class="hljs-comment">% 或 \savebox&#123;\mybox&#125;[&lt;宽度&gt;][&lt;对齐&gt;]&#123;我想反复使用的文本&#125;</span><br><span class="hljs-comment">% 或 \begin&#123;lrbox&#125;&#123;\mybox&#125;我想反复使用的文本\end&#123;lrbox&#125;</span><br></code></pre></td></tr></table></figure>
 <p>之后就可以使用<code>\usebox&#123;\mybox&#125;</code>来产生<code>我想反复使用的文本</code>。</p>
 <p><span class="math inline">\(\TeX\)</span>中的每个盒子都有其宽度（width）、高度（height）和深度（depth），高度和深度以基点（base）为界：</p>
-<p><img src="/post/LaTeX-text-and-symbols/latex_box.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_box.jpg"></p>
 <p>可以用以下命令把内容的宽度、高度或深度赋值给长度变量：</p>
 <figure class="highlight tex"><table><tr><td class="code"><pre><code class="hljs tex"><span class="hljs-keyword">\settowidth</span>&#123;&lt;长度变量&gt;&#125;&#123;&lt;内容&gt;&#125;<br><span class="hljs-keyword">\settoheight</span>&#123;&lt;长度变量&gt;&#125;&#123;&lt;内容&gt;&#125;<br><span class="hljs-keyword">\settodepth</span>&#123;&lt;长度变量&gt;&#125;&#123;&lt;内容&gt;&#125;<br></code></pre></td></tr></table></figure>
 <p>也可以用以下命令分别得到盒子的宽度和深度：</p>
@@ -607,7 +607,7 @@ pt）。</p>
 <p>除此之外，在<code>\makebox</code>、<code>\framebox</code>等盒子命令的参数中，也可以使用<code>\width</code>、<code>height</code>、<code>\depth</code>、<code>\totalheight</code>来分别表示盒子内容的自然宽度、高度、深度、高度和深度之和。</p>
 <h3 id="例子">例子</h3>
 <p>下面给出一些使用长度和盒子的例子：</p>
-<p><img src="/post/LaTeX-text-and-symbols/latex_space_and_box_eg.jpg"></p>
+<p><img src="/blog/blog/post/LaTeX-text-and-symbols/latex_space_and_box_eg.jpg"></p>
 ]]></content>
       <categories>
         <category>Code</category>
